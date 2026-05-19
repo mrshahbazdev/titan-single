@@ -44,7 +44,7 @@
                           	@if($texts)
                           		@foreach($texts as $text)
 		                            <tr>
-		                              <td>{{ $text->TextName }}</td>
+		                              <td>{{ $text->title }}</td>
 		                              
 		                              <td><button class="btn btn-default" title="Edit" wire:click="edit({{ $text->id }})" style="margin: 2px;"><i class="fa fa-edit"></i></button></td>
 		                              
