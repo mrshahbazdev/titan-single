@@ -54,6 +54,7 @@
       } ?></div>
 
       <form action="wallet/walletUpdate" method="post">
+      @csrf
       <div class="form-item" data-v-425224d2=""><div class="custom-input" data-v-425224d2=""><span class="prefix" data-v-425224d2="">Account Holder Name</span><div class="input-wrap" data-v-425224d2="" style="width: 155px;"><input name="fullname" type="text" placeholder="Account Holder Name" data-v-425224d2="" value="<?php if (isset($bank)) { echo $bank->name; }else{ if(isset($datas['fullname'])){ echo $datas['fullname']; } } ?>"></div></div></div>
 
       <div class="form-item" data-v-425224d2=""><div class="custom-input" data-v-425224d2=""><span class="prefix" data-v-425224d2="">Account Number</span><div class="input-wrap" data-v-425224d2="" style="width: 155px;"><input name="wallet" type="text" value="<?php if (isset($bank)) { echo $bank->cardNumber; }else{ if(isset($datas['wallet'])){ echo $datas['wallet']; } } ?>"  placeholder="Account Number" data-v-425224d2=""></div></div></div>
