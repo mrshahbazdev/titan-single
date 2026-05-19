@@ -69,7 +69,7 @@
         
         <div class="status " style="background-color: #d60d0d;" data-v-66c9e6a3="">Decline</div>
 <?php } ?>
-      </div><div class="content" data-v-66c9e6a3=""><div class="desc" data-v-66c9e6a3=""><div class="time" data-v-66c9e6a3=""><?php echo $user['created_at'] ?? ''; ?></div><strong class="label" data-v-66c9e6a3="">Transfer To Bank Address</strong><div class="label" data-v-66c9e6a3=""><?php echo $user['accountNumber'] ?? ''.' '. $user['name'] ?? ''.' '.$user['fullname'] ?? ''; ?> </div></div><div class="money" data-v-66c9e6a3=""><span data-v-66c9e6a3=""> Rs <?php echo $user['orderAmount']; ?></span></div></div></div>
+      </div><div class="content" data-v-66c9e6a3=""><div class="desc" data-v-66c9e6a3=""><div class="time" data-v-66c9e6a3=""><?php echo $user['created_at'] ? date('Y-m-d H:i:s', $user['created_at']) : ''; ?></div><strong class="label" data-v-66c9e6a3="">Transfer To Bank Address</strong><div class="label" data-v-66c9e6a3=""><?php echo $user['accountNumber'] ?? ''.' '. $user['name'] ?? ''.' '.$user['fullname'] ?? ''; ?> </div></div><div class="money" data-v-66c9e6a3=""><span data-v-66c9e6a3=""> Rs <?php echo $user['orderAmount']; ?></span></div></div></div>
       <?php endforeach; ?>
 
     </div>
