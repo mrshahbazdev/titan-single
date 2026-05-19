@@ -77,15 +77,15 @@
   </table>
 </div>
 <div class="title" data-v-eb047502="">Recharge Amount</div>
-    <div class="quick-money" data-v-eb047502=""><div class="money-item" data-v-eb047502=""><div data-v-eb047502="">100</div></div><div class="money-item" data-v-eb047502=""><div data-v-eb047502="">200</div></div><div class="money-item" data-v-eb047502=""><div data-v-eb047502="">500</div></div></div><div class="custom-input" data-v-eb047502=""><span class="prefix" data-v-eb047502="">Amount</span><div class="input-wrap" data-v-eb047502="" style="width: 155px;"><input type="number" name="amount" placeholder="Rs 0.00" class="deposit" data-v-eb047502=""></div></div><br><div class="custom-input" data-v-eb047502=""><span class="prefix" data-v-eb047502="">Transaction ID</span><div class="input-wrap" data-v-eb047502="" ><input type="text" name="tid" placeholder="Enter Transaction ID" class="tid" data-v-eb047502=""></div></div></div></div>
+    <div class="quick-money" data-v-eb047502=""><div class="money-item" data-v-eb047502=""><div data-v-eb047502="">100</div></div><div class="money-item" data-v-eb047502=""><div data-v-eb047502="">200</div></div><div class="money-item" data-v-eb047502=""><div data-v-eb047502="">500</div></div></div><div class="custom-input" data-v-eb047502=""><span class="prefix" data-v-eb047502="">Amount</span><div class="input-wrap select-wrap" style="width: 155px;"><input type="number" name="amount" placeholder="Rs 0.00" class="deposit" data-v-eb047502=""></div></div><br><div class="custom-input" data-v-eb047502=""><span class="prefix" data-v-eb047502="">Transaction ID</span><div class="input-wrap" data-v-eb047502="" ><input type="text" name="tid" placeholder="Enter Transaction ID" class="tid" data-v-eb047502=""></div></div></div></div>
     <br>
     <div class="custom-input" data-v-eb047502="">
       <span class="prefix" data-v-eb047502="">Payment Method</span>
-    <div class="input-wrap" data-v-eb047502="" style="width: 155px;">
+    <div class="input-wrap select-wrap" style="width: 155px;">
      
       <!-- select drop down payment method -->
-      <select name="paymentmethod" class="paymentmethod" data-v-eb047502="">
-        <option>Select Payment Method</option>
+      <select name="paymentmethod" class="paymentmethod styled-select" data-v-eb047502="">
+        <option value="" disabled selected>Select Payment Method</option>
         <?php
             if(!empty($bankData)){
             foreach($bankData as $bank){
@@ -212,3 +212,46 @@
         });
     </script>
 <?php endif; ?>
+<style>
+/* Custom Select Dropdown Styling */
+.styled-select {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-family: 'Instrument Sans', sans-serif;
+  color: #1b1b18;
+  background-color: #fff;
+  border: 1px solid #e5e5e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%231b1b18' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+}
+
+.styled-select:hover {
+  border-color: #461a3e;
+}
+
+.styled-select:focus {
+  outline: none;
+  border-color: #461a3e;
+  box-shadow: 0 0 0 3px rgba(70, 26, 62, 0.1);
+}
+
+.styled-select option {
+  padding: 12px;
+  background-color: #fff;
+  color: #1b1b18;
+}
+
+.select-wrap {
+  position: relative;
+  width: 155px;
+}
+</style>
