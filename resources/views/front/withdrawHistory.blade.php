@@ -56,8 +56,8 @@
     <div class="container w100" data-v-66c9e6a3="" data-v-74290877="">
 
       <?php
-      if($users->num_rows() > 0){
-        $userData = $users->result();
+      if($users->count() > 0){
+        $userData = $users;
       foreach ($userData as $user): ?>
       <div class="log-item" data-v-66c9e6a3=""><div class="flex-row" data-v-66c9e6a3="">
       <?php if($user->status == 2){ ?>    
@@ -67,7 +67,7 @@
       <?php }elseif($user->status == 0){ ?>
       <div class="status status-2" data-v-66c9e6a3="">Rejected</div>
       <?php } ?>
-    </div><div class="content" data-v-66c9e6a3=""><div class="desc" data-v-66c9e6a3=""><div class="time" data-v-66c9e6a3=""><?php echo $user->updated_at; ?></div><strong class="label" data-v-66c9e6a3="">Method</strong><div class="label" data-v-66c9e6a3=""><?php echo $user->method; ?> </div></div><div class="money" data-v-66c9e6a3=""><span data-v-66c9e6a3=""> Rs <?php echo $user->amount; ?></span></div></div></div>
+    </div><div class="content" data-v-66c9e6a3=""><div class="desc" data-v-66c9e6a3=""><div class="time" data-v-66c9e6a3=""><?php echo $user->created_at ? date("Y-m-d H:i:s", $user->created_at) : ""; ?></div><strong class="label" data-v-66c9e6a3="">Method</strong><div class="label" data-v-66c9e6a3=""><?php echo $user->method; ?> </div></div><div class="money" data-v-66c9e6a3=""><span data-v-66c9e6a3=""> Rs <?php echo $user->amount; ?></span></div></div></div>
       <?php endforeach; 
         }else{
           echo "<h3>No Record Found</h3>";
