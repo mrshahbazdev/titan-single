@@ -9,5 +9,5 @@ class MemberLevel extends Model
     protected $table = 'memberlevels';
     public $timestamps = false;
 
-    protected $fillable = ['level', 'levelName', 'orderReciveLimit', 'ordersGrabbed', 'commissionRate', 'price'];
+    protected $fillable = ['level', 'levelName', 'orderReciveLimit', 'ordersGrabbed', 'commissionRate', 'price', 'minimumBalanceLimit'];
 }
