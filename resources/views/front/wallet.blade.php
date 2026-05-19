@@ -66,7 +66,7 @@
              $method = \DB::table('payment_methods')->get();
              foreach ($method as $key => $value) {
            ?>
-            <div role="radio" class="van-radio van-radio--horizontal" tabindex="0" data-v-425224d2=""><div class="van-radio__icon van-radio__icon--round"><i class="van-badge__wrapper van-icon van-icon-success"><!----><!----><!----></i></div><span class="van-radio__label" data-v-425224d2=""><?php echo $value->bank_name; ?></span></div>
+            <div role="radio" class="van-radio van-radio--horizontal" tabindex="0" data-v-425224d2=""><div class="van-radio__icon van-radio__icon--round"><i class="van-badge__wrapper van-icon van-icon-success"><!----><!----><!----></i></div><span class="van-radio__label" data-v-425224d2=""><?php echo $value->name; ?></span></div>
             <?php } ?>
 
           </div>
