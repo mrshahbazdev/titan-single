@@ -54,6 +54,7 @@
         <div class="van-nav-bar__title van-ellipsis">Home</div><div class="van-nav-bar__right van-haptics-feedback"><a href="withdrawal/withdrawalhistory" class="" data-v-74290877="" style="color: rgb(0, 0, 0); font-weight: bold;">Withdrawal History</a></div></div></div><div class="desc-title" data-v-74290877="">Please be patient, your withdrawal will be processed within one hour.</div></div>
       
       <form action="withdrawal/request" method="post">
+      @csrf
       <div class="w100" data-v-0b8ab34c="" data-v-74290877=""><div class="form-wrap" data-v-0b8ab34c=""><div class="form-item balance" data-v-0b8ab34c=""><div class="title" data-v-0b8ab34c="">Account Balance</div><div class="text" data-v-0b8ab34c="">Rs <?php echo number_format($balance->balance, 2); ?></div></div><div class="form-item" data-v-0b8ab34c=""><div class="title" data-v-0b8ab34c="">Withdrawal Method</div><strong class="text" data-v-0b8ab34c="">Transfer To Bank Address</strong><div class="card" data-v-0b8ab34c=""><?php echo session('username'); ?></div><div class="card" data-v-0b8ab34c=""><?php if (isset($bank)) {
         echo $bank->bankName;
       } ?></div><div class="card" data-v-0b8ab34c=""><?php if (isset($bank)) {
