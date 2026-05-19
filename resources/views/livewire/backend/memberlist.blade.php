@@ -1,3 +1,4 @@
+@use Carbon\Carbon;
 <div>
     <script>
         document.addEventListener('livewire:initialized', () => {
@@ -160,9 +161,9 @@
 
                                                         </td>
                                                         <td>{{ $member->memberLevel }}</td>
-                                                        <td>{{ $member->created_at }}</td>
+                                                        <td>{{ $member->registrationTime ? CarbonCarbon::parse($member->registrationTime)->format("Y-m-d H:i:s") : "" }}</td>
                                                         <td>
-                                                            <span>{{ $member->updated_at }}</span>
+                                                            <span>{{ $member->lastLongInTime ? CarbonCarbon::parse($member->lastLongInTime)->format("Y-m-d H:i:s") : "" }}</span>
                                                         </td>
                                                         <td wire:click="optionOpen({{ $member->id }})">
                                                             <i class="fa fa-edit"></i>
