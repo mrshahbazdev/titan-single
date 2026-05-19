@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Livewire\WithPagination;
 use App\Services\UserService;
-use App\Models\Rechargelist;
+use App\Models\RechargeList;
 
 
 class Rechargerecord extends Component

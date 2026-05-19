@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Livewire\WithPagination;
 use App\Services\UserService;
-use App\Models\Withdrawlist;
+use App\Models\WithdrawList;
 use App\Models\Member;
 
 class Withdrawrecorde extends Component
@@ -25,7 +25,7 @@ class Withdrawrecorde extends Component
     }
     public function approval($id)
     {
-    	$member = Withdrawlist::findOrFail($id);
+    	$member = WithdrawList::findOrFail($id);
     	$data = array();
     	$data['oprate'] = 2;
     	$this->dispatch('swal',[
@@ -38,7 +38,7 @@ class Withdrawrecorde extends Component
 
     public function decline($id)
     {
-    	$member = Withdrawlist::findOrFail($id);
+    	$member = WithdrawList::findOrFail($id);
         
         $orderAmount = $member->orderAmount;
         $lastStatus = $member->oprate;
@@ -68,7 +68,7 @@ class Withdrawrecorde extends Component
     }
     public function render()
     {	
-    	$query = Withdrawlist::orderBy('id', 'desc');
+    	$query = WithdrawList::orderBy('id', 'desc');
     	
         if ($this->search) {
          	$this->username = false;

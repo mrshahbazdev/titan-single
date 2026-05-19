@@ -160,9 +160,9 @@
 
                                                         </td>
                                                         <td>{{ $member->memberLevel }}</td>
-                                                        <td>{{ $member->registrationTime ? $member->registrationTime : "" }}</td>
+                                                        <td>{{ date("Y-m-d H:i:s", $member->registrationTime) }}</td>
                                                         <td>
-                                                            <span>{{ $member->lastLongInTime ? $member->lastLongInTime : "" }}</span>
+                                                            <span>{{ date("Y-m-d H:i:s", $member->lastLongInTime) }}</span>
                                                         </td>
                                                         <td wire:click="optionOpen({{ $member->id }})">
                                                             <i class="fa fa-edit"></i>

@@ -51,7 +51,7 @@
                           	@if($leveled)
                           		@foreach($leveled as $level)
 		                            <tr>
-		                              <td>{{ $level->name }}</td>
+		                              <td>{{ $level->levelName }}</td>
 		                              <td>{{ $level->commissionRate }}</td>
 		                              <!-- <td>{{ $level->minimumBalanceLimit }}</td> -->
 		                              <td>{{ $level->orderReciveLimit }}</td>
