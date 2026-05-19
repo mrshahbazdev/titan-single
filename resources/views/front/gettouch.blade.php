@@ -229,6 +229,7 @@
           <circle cx="50" cy="50" r="20" fill="none"></circle>
         </svg></span><!----></div><!----><!---->
   </div>
+@include('front.sidebar')
 </body>
 
 

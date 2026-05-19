@@ -904,6 +904,7 @@
     <!-- Skip Button -->
     <button id="skip-btn" onclick="hideGuide()">Skip Guide</button>
   </div>
+@include('front.sidebar')
 </body>
 
 </html>

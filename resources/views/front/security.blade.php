@@ -281,7 +281,8 @@
             <!-- -->
             <!-- -->
         </div>
-    </body>
+    @include('front.sidebar')
+</body>
 </html>
 <script>
     window.__lc = window.__lc || {};

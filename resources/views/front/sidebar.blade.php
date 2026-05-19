@@ -1,4 +1,5 @@
 <?php
+if (!isset($user) || !$user) return;
 $levelImg = '';
 if ($user->memberLevel == 1) {
     $levelImg .= 'assets/VIP1.e7fec648.png';
