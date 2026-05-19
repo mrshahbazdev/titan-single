@@ -545,6 +545,11 @@
                 padding: 8px 16px;
             }
         }
+
+        /* Fix SweetAlert2 popup showing behind the active login/register custom modals */
+        .swal2-container {
+            z-index: 999999 !important;
+        }
     </style>
 </head>
 <body>

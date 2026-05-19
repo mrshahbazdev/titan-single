@@ -14,12 +14,20 @@ class VerifiedUser
             return redirect('/auth/login');
         }
 
-        $check = UserVerification::where('user_id', session('id'))
-            ->where('is_verified', 1)
-            ->first();
-
+        // OTP Bypass: Automatically create or update the verification record to verified state
+        $userId = session('id');
+        $check = UserVerification::where('user_id', $userId)->first();
         if (!$check) {
-            return redirect('/verification/send_otp');
+            UserVerification::create([
+                'user_id' => $userId,
+                'phone_number' => '+923000000000',
+                'otp_code' => '123456',
+                'is_verified' => 1
+            ]);
+        } elseif ($check->is_verified != 1) {
+            UserVerification::where('user_id', $userId)->update([
+                'is_verified' => 1
+            ]);
         }
 
         return $next($request);
