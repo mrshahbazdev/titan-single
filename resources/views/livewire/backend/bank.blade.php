@@ -45,9 +45,9 @@
                           	@if($bankinfo)
                           		@foreach($bankinfo as $bank)
 		                            <tr>
-		                              <td>{{ $bank->bank_name }}</td>
+		                              <td>{{ $bank->name }}</td>
 		                              <td>{{ $bank->account_number }}</td>
-		                              <td>{{ $bank->account_title }}</td>
+		                              <td>{{ $bank->account_name }}</td>
 		                              
 		                              <td>
 		                              	<button class="btn btn-default" title="Edit" wire:click="edit({{ $bank->id }})" style="margin: 2px;"><i class="fa fa-edit"></i></button>

@@ -130,9 +130,9 @@
             foreach($bankData as $bank){
         ?>
       <tr>
-        <td><?php echo $bank->bank_name; ?></td>
+        <td><?php echo $bank->name; ?></td>
         <td><?php echo $bank->account_number; ?></td>
-        <td><?php echo $bank->account_title; ?></td>
+        <td><?php echo $bank->account_name; ?></td>
       </tr>
       <?php } } else { ?>
       <tr>

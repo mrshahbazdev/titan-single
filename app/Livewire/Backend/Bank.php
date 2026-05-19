@@ -46,9 +46,9 @@ class Bank extends Component
     public function insertData(){
         $this->validate();
     	$payment_methods = new PaymentMethod();
-    	$payment_methods->bank_name = $this->bankname;
+    	$payment_methods->name = $this->bankname;
     	$payment_methods->account_number = $this->bankaccountnumber;
-    	$payment_methods->account_title = $this->accountHolderName;
+    	$payment_methods->account_name = $this->accountHolderName;
     	$payment_methods->save();
     	$this->reset(['bankname','bankaccountnumber','accountHolderName']);
     	$this->addProductModel = false;
@@ -56,9 +56,9 @@ class Bank extends Component
     public function edit($id){
         $this->editProductModel = true;
         $bank = PaymentMethod::where('id', $id)->first();
-        $this->bankname = $bank->bank_name;
+        $this->bankname = $bank->name;
         $this->bankaccountnumber = $bank->account_number;
-        $this->accountHolderName = $bank->account_title;
+        $this->accountHolderName = $bank->account_name;
         $this->id = $id;
 
     }
@@ -71,9 +71,9 @@ class Bank extends Component
     public function update(){
         $this->validate();
         $payment_methods = PaymentMethod::find($this->id);
-        $payment_methods->bank_name = $this->bankname;
+        $payment_methods->name = $this->bankname;
         $payment_methods->account_number = $this->bankaccountnumber;
-        $payment_methods->account_title = $this->accountHolderName;
+        $payment_methods->account_name = $this->accountHolderName;
         $payment_methods->save();
         $this->reset(['bankname','bankaccountnumber','accountHolderName']);
         $this->editProductModel = false;
