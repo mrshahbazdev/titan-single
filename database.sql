@@ -1,5 +1,5 @@
 -- MySQL Dump of Crownbridge Laravel SQLite Database
--- Generated on 2026-05-19 10:18:27
+-- Generated on 2026-05-19 10:25:31
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ------------------------------------------------------
@@ -15,7 +15,8 @@ CREATE TABLE `addroles` (
   `memberManagement` INT NOT NULL DEFAULT '0',
   `transactionManagement` INT NOT NULL DEFAULT '0',
   `created_at` DATETIME NULL,
-  `updated_at` DATETIME NULL
+  `updated_at` DATETIME NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `addroles`
@@ -30,7 +31,8 @@ CREATE TABLE `announcements` (
   `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(255) NOT NULL,
   `message` TEXT NULL,
-  `status` INT NOT NULL DEFAULT '1'
+  `status` INT NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `announcements`
@@ -43,7 +45,8 @@ DROP TABLE IF EXISTS `cache`;
 CREATE TABLE `cache` (
   `key` VARCHAR(255) NOT NULL,
   `value` TEXT NOT NULL,
-  `expiration` INT NOT NULL
+  `expiration` INT NOT NULL,
+  PRIMARY KEY (`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `cache`
@@ -56,7 +59,8 @@ DROP TABLE IF EXISTS `cache_locks`;
 CREATE TABLE `cache_locks` (
   `key` VARCHAR(255) NOT NULL,
   `owner` VARCHAR(255) NOT NULL,
-  `expiration` INT NOT NULL
+  `expiration` INT NOT NULL,
+  PRIMARY KEY (`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `cache_locks`
@@ -71,7 +75,8 @@ CREATE TABLE `continuousorders` (
   `userId` INT NOT NULL,
   `continuous` INT NOT NULL DEFAULT '0',
   `amount` DECIMAL(16,2) NOT NULL DEFAULT '0',
-  `status` INT NOT NULL DEFAULT '0'
+  `status` INT NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `continuousorders`
@@ -91,7 +96,8 @@ CREATE TABLE `customerservicelist` (
   `link` VARCHAR(255) NULL,
   `status` INT NOT NULL DEFAULT '1',
   `workTime` VARCHAR(255) NULL,
-  `addTime` VARCHAR(255) NULL
+  `addTime` VARCHAR(255) NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `customerservicelist`
@@ -108,7 +114,8 @@ CREATE TABLE `failed_jobs` (
   `queue` TEXT NOT NULL,
   `payload` TEXT NOT NULL,
   `exception` TEXT NOT NULL,
-  `failed_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `failed_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `failed_jobs`
@@ -122,7 +129,8 @@ CREATE TABLE `homerotators` (
   `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(255) NULL,
   `image` VARCHAR(255) NULL,
-  `addTime` VARCHAR(255) NULL
+  `addTime` VARCHAR(255) NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `homerotators`
@@ -142,7 +150,8 @@ CREATE TABLE `job_batches` (
   `options` TEXT NULL,
   `cancelled_at` INT NULL,
   `created_at` INT NOT NULL,
-  `finished_at` INT NULL
+  `finished_at` INT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `job_batches`
@@ -159,7 +168,8 @@ CREATE TABLE `jobs` (
   `attempts` INT NOT NULL,
   `reserved_at` INT NULL,
   `available_at` INT NOT NULL,
-  `created_at` INT NOT NULL
+  `created_at` INT NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `jobs`
@@ -177,7 +187,8 @@ CREATE TABLE `memberlevels` (
   `ordersGrabbed` INT NOT NULL DEFAULT '0',
   `commissionRate` DECIMAL(16,2) NOT NULL DEFAULT '0',
   `price` DECIMAL(16,2) NOT NULL DEFAULT '0',
-  `levelImage` VARCHAR(255) NULL
+  `levelImage` VARCHAR(255) NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `memberlevels`
@@ -212,7 +223,8 @@ CREATE TABLE `members` (
   `withdrawalStatus` INT NOT NULL DEFAULT '1',
   `paymentPassword` VARCHAR(255) NULL,
   `memberAgent` INT NOT NULL DEFAULT '0',
-  `taskStatus` INT NOT NULL DEFAULT '0'
+  `taskStatus` INT NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `members`
@@ -226,7 +238,8 @@ DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE `migrations` (
   `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `migration` VARCHAR(255) NOT NULL,
-  `batch` INT NOT NULL
+  `batch` INT NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `migrations`
@@ -243,7 +256,8 @@ DROP TABLE IF EXISTS `password_reset_tokens`;
 CREATE TABLE `password_reset_tokens` (
   `email` VARCHAR(255) NOT NULL,
   `token` VARCHAR(255) NOT NULL,
-  `created_at` DATETIME NULL
+  `created_at` DATETIME NULL,
+  PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `password_reset_tokens`
@@ -258,7 +272,8 @@ CREATE TABLE `payment_methods` (
   `name` VARCHAR(255) NOT NULL,
   `account_number` VARCHAR(255) NULL,
   `account_name` VARCHAR(255) NULL,
-  `status` INT NOT NULL DEFAULT '1'
+  `status` INT NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `payment_methods`
@@ -272,7 +287,8 @@ DROP TABLE IF EXISTS `productcategories`;
 CREATE TABLE `productcategories` (
   `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `categoryName` VARCHAR(255) NOT NULL,
-  `status` INT NOT NULL DEFAULT '1'
+  `status` INT NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `productcategories`
@@ -294,7 +310,8 @@ CREATE TABLE `productorder` (
   `price` DECIMAL(16,2) NOT NULL DEFAULT '0',
   `comission` DECIMAL(16,2) NOT NULL DEFAULT '0',
   `status` INT NOT NULL DEFAULT '0',
-  `time` VARCHAR(255) NULL
+  `time` VARCHAR(255) NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `productorder`
@@ -311,7 +328,8 @@ CREATE TABLE `products` (
   `productImage` VARCHAR(255) NULL,
   `productCategory` VARCHAR(255) NULL,
   `productDescription` TEXT NULL,
-  `status` INT NOT NULL DEFAULT '1'
+  `status` INT NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `products`
@@ -334,7 +352,8 @@ CREATE TABLE `rechargelist` (
   `userId` INT NOT NULL,
   `username` VARCHAR(255) NULL,
   `orderAmout` DECIMAL(16,2) NOT NULL DEFAULT '0',
-  `created_at` VARCHAR(255) NULL
+  `created_at` VARCHAR(255) NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `rechargelist`
@@ -352,7 +371,8 @@ CREATE TABLE `rechargerequests` (
   `method` VARCHAR(255) NULL,
   `status` INT NOT NULL DEFAULT '0',
   `created_at` DATETIME NULL,
-  `updated_at` DATETIME NULL
+  `updated_at` DATETIME NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `rechargerequests`
@@ -365,7 +385,8 @@ DROP TABLE IF EXISTS `referrals`;
 CREATE TABLE `referrals` (
   `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `referrer_id` INT NOT NULL,
-  `referred_id` INT NOT NULL
+  `referred_id` INT NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `referrals`
@@ -381,7 +402,8 @@ CREATE TABLE `sessions` (
   `ip_address` VARCHAR(255) NULL,
   `user_agent` TEXT NULL,
   `payload` TEXT NOT NULL,
-  `last_activity` INT NOT NULL
+  `last_activity` INT NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `sessions`
@@ -404,7 +426,8 @@ CREATE TABLE `systemsettings` (
   `withdrawalTimes` INT NOT NULL DEFAULT '0',
   `minRecharge` DECIMAL(16,2) NOT NULL DEFAULT '0',
   `maxRecharge` DECIMAL(16,2) NOT NULL DEFAULT '0',
-  `rechargeTimes` INT NOT NULL DEFAULT '0'
+  `rechargeTimes` INT NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `systemsettings`
@@ -422,7 +445,8 @@ CREATE TABLE `systemusers` (
   `role` VARCHAR(255) NULL,
   `remember_token` VARCHAR(255) NULL,
   `created_at` DATETIME NULL,
-  `updated_at` DATETIME NULL
+  `updated_at` DATETIME NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `systemusers`
@@ -437,7 +461,8 @@ CREATE TABLE `textmanagements` (
   `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `pageName` VARCHAR(255) NOT NULL,
   `title` VARCHAR(255) NULL,
-  `content` TEXT NULL
+  `content` TEXT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `textmanagements`
@@ -456,7 +481,8 @@ CREATE TABLE `todayrewards` (
   `userId` INT NOT NULL,
   `reward` DECIMAL(16,2) NOT NULL DEFAULT '0',
   `tasks` INT NOT NULL DEFAULT '0',
-  `created_at` VARCHAR(255) NULL
+  `created_at` VARCHAR(255) NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `todayrewards`
@@ -469,7 +495,8 @@ DROP TABLE IF EXISTS `trial_periods`;
 CREATE TABLE `trial_periods` (
   `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `tasks` INT NOT NULL DEFAULT '0',
-  `days` INT NOT NULL DEFAULT '0'
+  `days` INT NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `trial_periods`
@@ -483,7 +510,8 @@ CREATE TABLE `user_trials` (
   `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `user_id` INT NOT NULL,
   `trial_end_date` VARCHAR(255) NULL,
-  `payment_status` INT NOT NULL DEFAULT '0'
+  `payment_status` INT NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `user_trials`
@@ -503,7 +531,8 @@ CREATE TABLE `user_verifications` (
   `is_verified` INT NOT NULL DEFAULT '0',
   `last_otp_sent` DATETIME NULL,
   `created_at` DATETIME NULL,
-  `updated_at` DATETIME NULL
+  `updated_at` DATETIME NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `user_verifications`
@@ -519,7 +548,8 @@ CREATE TABLE `userbankinfos` (
   `name` VARCHAR(255) NULL,
   `cardNumber` VARCHAR(255) NULL,
   `bankName` VARCHAR(255) NULL,
-  `phoneNumber` VARCHAR(255) NULL
+  `phoneNumber` VARCHAR(255) NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `userbankinfos`
@@ -537,7 +567,8 @@ CREATE TABLE `users` (
   `password` VARCHAR(255) NOT NULL,
   `remember_token` VARCHAR(255) NULL,
   `created_at` DATETIME NULL,
-  `updated_at` DATETIME NULL
+  `updated_at` DATETIME NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `users`
@@ -557,7 +588,8 @@ CREATE TABLE `withdrawlists` (
   `bankName` VARCHAR(255) NULL,
   `name` VARCHAR(255) NULL,
   `created_at` VARCHAR(255) NULL,
-  `oprate` INT NOT NULL DEFAULT '0'
+  `oprate` INT NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `withdrawlists`
