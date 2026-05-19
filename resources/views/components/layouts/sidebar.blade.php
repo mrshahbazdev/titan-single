@@ -2,7 +2,7 @@
       <div class="page-body-wrapper">
         <!-- Page Sidebar Start-->
         <div class="sidebar-wrapper" data-layout="stroke-svg">
-          <div class="logo-wrapper"><a href="#"><img class="img-fluid" src="{{ asset('assets/uploads/img/new_logo.png') }}" alt="logo"></a>
+          <div class="logo-wrapper" style="padding: 8px 0;"><a href="#"><img class="img-fluid" src="{{ asset('assets/uploads/img/new_logo.png') }}" alt="logo" style="max-width: 180px; height: auto;"></a>
             <div class="back-btn"><i class="fa fa-angle-left"> </i></div>
             <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid"> </i></div>
           </div>
