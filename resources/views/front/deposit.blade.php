@@ -42,6 +42,7 @@
     <div class="main-container" data-v-08abc850="">
       <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #3f8ed0; --van-button-primary-background-color: #3f8ed0;"><div class="container h100 w100" data-v-eb047502="">
       <form method="post" >
+      @csrf
       <div class="content-wrap" data-v-eb047502=""><div class="van-nav-bar van-hairline--bottom" data-v-eb047502=""><div class="van-nav-bar__content"><a href="journey"><div class="van-nav-bar__left van-haptics-feedback"><i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"><!----><!----><!----></i><!----></div></a><div class="van-nav-bar__title van-ellipsis">Home</div>
       <a href="deposit/deposithistory">
       <div class="van-nav-bar__right van-haptics-feedback"><span class="bold" data-v-eb047502="">Recharge History</span></div>

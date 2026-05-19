@@ -209,6 +209,7 @@
                                                ?>
                                             </div>
                                             <form action="security/passchange" method="post">
+      @csrf
                                                 <div class="form-wrap" data-v-46ef8df8="">
                                                     <div class="form-item" data-v-46ef8df8="">
                                                         <div class="custom-input" data-v-46ef8df8="">
