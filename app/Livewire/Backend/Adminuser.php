@@ -23,7 +23,7 @@ class Adminuser extends Component
     public $postId;
 
     protected $rules = [
-        'username' => 'required|unique:systemusers|regex:/^\S*$/u',
+        'username' => 'required|unique:system_users|regex:/^\S*$/u',
         'password' => 'required',
         'selectedRole' => 'required',
     ];
@@ -43,7 +43,7 @@ class Adminuser extends Component
     public function addNew()
     {
         $this->validate();
-        $sysuser = new systemuser();
+        $sysuser = new SystemUser();
         $sysuser->username = $this->username;
         $sysuser->role = $this->selectedRole;
         $sysuser->password = Hash::make($this->password);
@@ -59,7 +59,7 @@ class Adminuser extends Component
     public function edit($id)
     {
        $this->postId = $id;
-       $editUser = systemuser::where('id', $id)->first();
+       $editUser = SystemUser::where('id', $id)->first();
        $this->username = $editUser->username;
        $this->selectedRole = $editUser->role;
        $this->editProductModel = true;
@@ -69,7 +69,7 @@ class Adminuser extends Component
         $data = array(
             'role' => $this->selectedRole
         );
-        $updated  = systemuser::where('id', $this->postId)->first();
+        $updated  = SystemUser::where('id', $this->postId)->first();
         if ($this->password) {
             $data['password'] = Hash::make($this->password);
         }
@@ -89,7 +89,7 @@ class Adminuser extends Component
     public function resetnow()
     {
         $id = $this->postId;
-        $roleDelete = systemuser::where('id', $id);
+        $roleDelete = SystemUser::where('id', $id);
         if ($roleDelete) {
             $roleDelete->delete();
         }
@@ -102,7 +102,7 @@ class Adminuser extends Component
     }
     public function render()
     {
-    	$query = systemuser::orderBy('id', 'desc');
+    	$query = SystemUser::orderBy('id', 'desc');
     	$users = $query->paginate(15);
         $usernames = addrole::whereIn('roleName', $users->pluck('role')->toArray())->pluck('roleName','roleName');
         return view('livewire.backend.adminuser',compact('users','usernames'))->layout('components.layouts.admin',['user' => $this->user]);
