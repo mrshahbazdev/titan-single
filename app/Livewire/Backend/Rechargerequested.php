@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Livewire\WithPagination;
 use App\Services\UserService;
-use App\Models\rechargerequest;
+use App\Models\RechargeRequest;
 use App\Models\Member;
-use App\Models\Rechargelist;
-use App\Models\user_trial;
+use App\Models\RechargeList;
+use App\Models\UserTrial;
 
 class Rechargerequested extends Component
 {
@@ -27,8 +27,8 @@ class Rechargerequested extends Component
     }
     public function approval($id)
     {
-    	$member = rechargerequest::findOrFail($id);
-        $rechargelist = new Rechargelist();
+    	$member = RechargeRequest::findOrFail($id);
+        $rechargelist = new RechargeList();
         // get user_id from member
         $userId = $member->user_id;
         // get username from member where id = $userId
@@ -59,7 +59,7 @@ class Rechargerequested extends Component
 
     public function decline($id)
     {
-    	$member = rechargerequest::findOrFail($id);
+    	$member = RechargeRequest::findOrFail($id);
         
         $lastStatus = $member->status;
     	$data = array();
@@ -74,7 +74,7 @@ class Rechargerequested extends Component
     }
     public function render()
     {	
-    	$query = rechargerequest::orderBy('id', 'desc');
+    	$query = RechargeRequest::orderBy('id', 'desc');
     	$query->where('status', 1);
         if ($this->search) {
          	$this->username = false;

@@ -4,7 +4,7 @@ namespace App\Livewire\Backend;
 use Livewire\Component;  // Import the Livewire Component
 use Illuminate\Support\Facades\Auth;
 // models payment_methods
-use App\Models\trial_period;
+use App\Models\TrialPeriod;
 // validation for form
 use Livewire\WithValidation;
 
@@ -40,14 +40,14 @@ class Trailperiod extends Component
    
     public function render()
     {
-    	$query = trial_period::orderBy('id', 'desc');
+    	$query = TrialPeriod::orderBy('id', 'desc');
     	$bankinfo = $query->paginate(15);
         return view('livewire.backend.trailperiod',compact('bankinfo'))->layout('components.layouts.admin',['user' => $this->user]);
     }
 
     public function edit($id){
         $this->editProductModel = true;
-        $bank = trial_period::where('id', $id)->first();
+        $bank = TrialPeriod::where('id', $id)->first();
         $this->days = $bank->days;
         $this->tasks = $bank->tasks;
         $this->per_level = $bank->per_level;
@@ -58,7 +58,7 @@ class Trailperiod extends Component
     
     public function update(){
         $this->validate();
-        $payment_methods = trial_period::find($this->id);
+        $payment_methods = TrialPeriod::find($this->id);
         $payment_methods->days = $this->days;
         $payment_methods->tasks = $this->tasks;
         $payment_methods->per_level = $this->per_level;

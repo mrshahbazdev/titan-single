@@ -26,7 +26,7 @@ class Rechargerecord extends Component
     }
     public function render()
     {
-    	$query = Rechargelist::orderBy('id', 'desc');
+    	$query = RechargeList::orderBy('id', 'desc');
     	
         if ($this->search) {
          	$this->username = false;

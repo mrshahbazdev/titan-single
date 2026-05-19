@@ -6,11 +6,11 @@ use Livewire\Component;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Member;
-use App\Models\Referrals;
-use App\Models\Memberlevel;
-use App\Models\Todayreward;
-use App\Models\Rechargelist;
-use App\Models\Userbankinfo;
+use App\Models\Referral;
+use App\Models\MemberLevel;
+use App\Models\TodayReward;
+use App\Models\RechargeList;
+use App\Models\UserBankInfo;
 use Livewire\WithPagination;
 use App\Services\UserService;
 use Illuminate\Support\Facades\Hash;
@@ -147,7 +147,7 @@ class Memberlist extends Component
     public function resetnow()
     {
         $id = $this->memberId;
-        $todayreward = Todayreward::where('userId', $id);
+        $todayreward = TodayReward::where('userId', $id);
         if ($todayreward) {
             $todayreward->delete();
         }
@@ -166,7 +166,7 @@ class Memberlist extends Component
     {
         $this->resetValidation();
         $this->memberId = $id;
-        $bank = Userbankinfo::where('userId', $id)->first();
+        $bank = UserBankInfo::where('userId', $id)->first();
         $this->bankinfoModel = true;
         $this->optionClose = false;
         if ($bank) {
@@ -189,7 +189,7 @@ class Memberlist extends Component
         //$this->validate();
         $fieldsToValidate = ['name', 'bankName', 'cardNumber','phoneNumber'];
         $this->validateMultiple($fieldsToValidate);
-        $bank = Userbankinfo::where('userId', $id)->first();
+        $bank = UserBankInfo::where('userId', $id)->first();
         if ($bank) {
           $data = array(
                     "name" => $this->name,
@@ -205,7 +205,7 @@ class Memberlist extends Component
                     'icon' => 'success',
                 ]);
         }else{
-            $add = new Userbankinfo();
+            $add = new UserBankInfo();
             $add->userId = $id;
             $add->name = $this->name;
             $add->bankName = $this->bankName;
@@ -231,7 +231,7 @@ class Memberlist extends Component
         $this->validate();
         $this->myCode = UserService::generateUniqueUsername();
         $CodeCheck = Member::where('myCode', $this->inviteCode)->first();
-        $getLevelInfo = Memberlevel::where('level', $li)->first();
+        $getLevelInfo = MemberLevel::where('level', $li)->first();
         if (!$CodeCheck) {
             $this->inviteCodeCheck = true;
         }else{
@@ -257,8 +257,8 @@ class Memberlist extends Component
             $newMember->inviteCode = $this->inviteCode;
             $newMember->qrImage = $this->qrImage;
             $newMember->myCode = $this->myCode;
-            $newMember->paymentPassword = md5($this->payPassword);
-            $newMember->password = md5($this->password);
+            $newMember->paymentPassword = Hash::make($this->payPassword);
+            $newMember->password = Hash::make($this->password);
             $newMember->withdrawalStatus = $this->withdrawalStatus ? 1 : 0;
             $newMember->taskStatus = $this->taskStatus;
             $newMember->save();
@@ -268,7 +268,7 @@ class Memberlist extends Component
             $parentId = $user->id;
             // get last id
             $lastId = $newMember->id;
-            $referral = new Referrals();
+            $referral = new Referral();
             $referral->referrer_id = $parentId;
             $referral->referred_id = $lastId;
             $referral->save();
@@ -329,7 +329,7 @@ class Memberlist extends Component
     {
         $fieldsToValidate = ['balance','debitCondition'];
         $this->validateMultiple($fieldsToValidate);
-        $recharge = new Rechargelist();
+        $recharge = new RechargeList();
 
 
         $member = Member::findOrFail($id);
@@ -358,7 +358,7 @@ class Memberlist extends Component
     }
     public function editMember($id)
     {
-        $this->memberlevels = Memberlevel::all();
+        $this->memberlevels = MemberLevel::all();
         $this->optionClose = false;
         $this->addEditModal();
         $member = Member::findOrFail($id);
@@ -401,10 +401,10 @@ class Memberlist extends Component
                 'taskStatus' => $this->taskStatus,
             ];
             if ($this->password) {
-                $data['password'] = md5($this->password);
+                $data['password'] = Hash::make($this->password);
             }
             if ($this->payPassword) {
-                $data['paymentPassword'] = md5($this->payPassword);
+                $data['paymentPassword'] = Hash::make($this->payPassword);
             }
 
             $memberUpdate->update($data);
@@ -432,15 +432,15 @@ class Memberlist extends Component
             $query->where('ph', 'like', '%' . $this->sph. '%'); // Adjust 'name' to the column you want to search
         }
         $members = $query->paginate(10);
-        $memberlevels = Memberlevel::all();
+        $memberlevels = MemberLevel::all();
 
-        $dailyLimit = Memberlevel::whereIn('level', $members->pluck('memberLevel')->toArray())->pluck('orderReciveLimit','level');
+        $dailyLimit = MemberLevel::whereIn('level', $members->pluck('memberLevel')->toArray())->pluck('orderReciveLimit','level');
         $usernames = Member::whereIn('myCode', $members->pluck('inviteCode')->toArray())->pluck('username', 'myCode');
-        $totalActions = Todayreward::whereIn('userId', $members->pluck('id')->toArray())->pluck('userId');
+        $totalActions = TodayReward::whereIn('userId', $members->pluck('id')->toArray())->pluck('userId');
         $currentDate = Carbon::today();
-        $todayActions = Todayreward::whereIn('userId', $members->pluck('id')->toArray())->whereDate('created_at', $currentDate)->pluck('userId');
+        $todayActions = TodayReward::whereIn('userId', $members->pluck('id')->toArray())->whereDate('created_at', $currentDate)->pluck('userId');
 
-        $todayCommission = Todayreward::whereIn('userId', $members->pluck('id'))->whereDate('created_at', $currentDate)->get(['userId', 'reward']);
+        $todayCommission = TodayReward::whereIn('userId', $members->pluck('id'))->whereDate('created_at', $currentDate)->get(['userId', 'reward']);
 
         return view('livewire.backend.memberlist',compact('members','memberlevels','usernames','dailyLimit','totalActions','todayActions','todayCommission'))->layout('components.layouts.admin',['user' => $this->user]);
     }

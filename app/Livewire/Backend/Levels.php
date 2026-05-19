@@ -3,7 +3,7 @@
 namespace App\Livewire\Backend;
 
 use Livewire\Component;
-use App\Models\Memberlevel;
+use App\Models\MemberLevel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Http\File;
@@ -51,7 +51,7 @@ class Levels extends Component
 	public function mount()
     {
 		$this->user = Auth::user();
-		$this->memberlevels = Memberlevel::all();
+		$this->memberlevels = MemberLevel::all();
 		
     }
     public function addNewModal()
@@ -80,7 +80,7 @@ class Levels extends Component
 
 		
 			 
-    	$post = new Memberlevel();
+    	$post = new MemberLevel();
     	$post->name = $this->name;
     	$post->ordersGrabbed = $this->ordersGrabbed;
     	$post->commissionRate = $this->commissionRate;
@@ -104,7 +104,7 @@ class Levels extends Component
     public function edit($id)
     {
     	$this->postId = $id;
-    	$post = Memberlevel::where('id',$id)->first();
+    	$post = MemberLevel::where('id',$id)->first();
     	$this->editProductModel = true;
     	$this->name = $post->name;
     	$this->commissionRate = $post->commissionRate;
@@ -116,7 +116,7 @@ class Levels extends Component
     }
     public function update()
     {
-    	$update = Memberlevel::where('id',$this->postId)->first();
+    	$update = MemberLevel::where('id',$this->postId)->first();
     	$data = array(
     		'name' => $this->name,
     		'commissionRate' => $this->commissionRate,
@@ -137,14 +137,14 @@ class Levels extends Component
     {
     	$this->resetModel = true;
     	$this->postId = $id;
-    	$post = Memberlevel::where('id',$id)->first();
+    	$post = MemberLevel::where('id',$id)->first();
     	$this->imageName = $post->img;
     	
     }
     public function resetnow()
     {
     	$id = $this->postId;
-        $productDelete = Memberlevel::where('id', $id);
+        $productDelete = MemberLevel::where('id', $id);
         if ($productDelete) {
             $productDelete->delete();
         }
@@ -169,7 +169,7 @@ class Levels extends Component
     }
     public function render()
     {
-    	$query = Memberlevel::orderBy('id', 'asc');
+    	$query = MemberLevel::orderBy('id', 'asc');
     	$leveled = $query->paginate(15);
         return view('livewire.backend.levels',compact('leveled'))->layout('components.layouts.admin',['user' => $this->user]);
     }

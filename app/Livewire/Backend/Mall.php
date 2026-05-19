@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\WithPagination;
 use Carbon\Carbon;
-use App\Models\product;
+use App\Models\Product;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File as FileSystem;
@@ -55,7 +55,7 @@ class Mall extends Component
     {	
     	$this->resetValidation();
     	$this->postId = $id;
-    	$post = product::where('id',$id)->first();
+    	$post = Product::where('id',$id)->first();
     	$this->editProductModel =  true;
     	$this->productName = $post->productName;
     	$this->productPrice = $post->productPrice;
@@ -66,7 +66,7 @@ class Mall extends Component
     	
     	$fieldsToValidate = ['productPrice', 'productName'];
         $this->validateMultiple($fieldsToValidate);
-        $pordut = product::where('id',$this->postId)->first();
+        $pordut = Product::where('id',$this->postId)->first();
         if($this->productImage){
         	$photo = $this->productImage[0];
         	$file = new File($photo['path']);
@@ -115,7 +115,7 @@ class Mall extends Component
     public function pdelete($id)
     {
     	$this->postId = $id;
-    	$post = product::where('id',$id)->first();
+    	$post = Product::where('id',$id)->first();
     	$this->imageName = $post->productImage;
     	$this->resetModel = true;
 
@@ -123,7 +123,7 @@ class Mall extends Component
     public function resetnow()
     {
         $id = $this->postId;
-        $productDelete = product::where('id', $id);
+        $productDelete = Product::where('id', $id);
         if ($productDelete) {
             $productDelete->delete();
         }
@@ -157,7 +157,7 @@ class Mall extends Component
 
 		// Move the file to the public directory
 		$file->move($publicPath, $filename);
-		$data = new product();
+		$data = new Product();
 		$data->productImage = $filename;
 		$data->productName = $this->productName;
 		$data->productPrice = $this->productPrice;
@@ -175,7 +175,7 @@ class Mall extends Component
     }
     public function render()
     {
-    	$query = product::orderBy('id', 'desc');
+    	$query = Product::orderBy('id', 'desc');
     	$products = $query->paginate(15);
         return view('livewire.backend.mall',compact('products'))->layout('components.layouts.admin',['user' => $this->user]);
     }

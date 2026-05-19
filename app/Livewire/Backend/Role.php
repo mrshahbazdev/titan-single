@@ -6,7 +6,7 @@ use Livewire\Component;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
-use App\Models\addrole;
+use App\Models\AddRole;
 
 
 class Role extends Component
@@ -36,7 +36,7 @@ class Role extends Component
 	public function edit($id)
 	{
 		$this->postId = $id;
-		$edit = addrole::where('id', $id)->first();
+		$edit = AddRole::where('id', $id)->first();
 		$this->roleName = $edit->roleName;
 		$this->frontPage = $edit->frontPage;
 		$this->systemManagement = $edit->systemManagement;
@@ -48,7 +48,7 @@ class Role extends Component
 	public function addNew()
 	{
 		$this->validate();
-		$roledata = new addrole();
+		$roledata = new AddRole();
 		$roledata->roleName = $this->roleName;
 		$roledata->frontPage = $this->frontPage? 1 : 0;
 		$roledata->systemManagement = $this->systemManagement? 1 : 0;
@@ -66,7 +66,7 @@ class Role extends Component
 	public function update()
 	{
 		$id = $this->postId;
-		$update = addrole::where('id', $id)->first();
+		$update = AddRole::where('id', $id)->first();
 		$data = array(
 			'frontPage' => $this->frontPage? 1 : 0,
 			'systemManagement' => $this->systemManagement? 1 : 0,
@@ -90,7 +90,7 @@ class Role extends Component
 	public function resetnow()
 	{
 		$id = $this->postId;
-        $roleDelete = addrole::where('id', $id);
+        $roleDelete = AddRole::where('id', $id);
         if ($roleDelete) {
             $roleDelete->delete();
         }
@@ -103,7 +103,7 @@ class Role extends Component
 	}
     public function render()
     {
-    	$query = addrole::orderBy('id', 'desc');
+    	$query = AddRole::orderBy('id', 'desc');
     	$roles = $query->paginate(15);
         return view('livewire.backend.role',compact('roles'))->layout('components.layouts.admin',['user' => $this->user]);
     }

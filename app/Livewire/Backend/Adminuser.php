@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\systemuser;
-use App\Models\addrole;
+use App\Models\SystemUser;
+use App\Models\AddRole;
 
 class Adminuser extends Component
 {
