@@ -99,6 +99,7 @@ Route::middleware(['front.auth'])->group(function () {
 
         // Bank
         Route::get('/banks', [BankController::class, 'index']);
+        Route::get('/bank', [BankController::class, 'index']);
 
         // Text Pages
         Route::get('/about', [TextPageController::class, 'about']);

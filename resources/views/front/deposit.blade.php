@@ -205,7 +205,7 @@
         Swal.fire({
             icon: 'success',
             title: 'Success',
-            text: '<?php echo session('success') }}',
+            text: '<?php echo session('success'); ?>',
             showConfirmButton: true,
             confirmButtonText: 'OK'
         });
