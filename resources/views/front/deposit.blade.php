@@ -63,9 +63,9 @@
             foreach($bankData as $bank){
         ?>
       <tr>
-        <td><?php echo $bank->bank_name; ?></td>
+        <td><?php echo $bank->name; ?></td>
         <td><?php echo $bank->account_number; ?></td>
-        <td><?php echo $bank->account_title; ?></td>
+        <td><?php echo $bank->account_name; ?></td>
       </tr>
       <?php } } else { ?>
       <tr>
@@ -89,7 +89,7 @@
             if(!empty($bankData)){
             foreach($bankData as $bank){
         ?>
-         <option value="<?php echo $bank->bank_name; ?>"><?php echo $bank->bank_name; ?></option>
+         <option value="<?php echo $bank->name; ?>"><?php echo $bank->name; ?></option>
         <?php } } else { ?>
         <option value="0">No Bank Found</option>
         <?php } ?>
