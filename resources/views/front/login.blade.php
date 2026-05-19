@@ -86,7 +86,7 @@
                     <h2 class="form-title">Sign In</h2>
                     <p class="form-subtitle">Enter your credentials to access your account</p>
                 </div>
-                <form id="loginForm" method="POST" action="{{ url('auth/authenticate') }}">
+                <form id="loginForm" method="POST" action="{{ url('auth/login') }}">
                     @csrf
                     <div class="form-group">
                         <label class="input-label" for="username">Username</label>
@@ -110,7 +110,7 @@
                 e.preventDefault();
                 var formData = $(this).serialize();
                 $.ajax({
-                    url: '{{ url("auth/authenticate") }}',
+                    url: '{{ url("auth/login") }}',
                     type: 'POST',
                     data: formData,
                     dataType: 'json',
