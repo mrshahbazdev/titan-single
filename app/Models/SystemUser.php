@@ -10,7 +10,7 @@ class SystemUser extends Authenticatable
 {
     use Notifiable;
 
-    //protected $table = 'systemusers';
+    protected $table = 'systemusers';
 
     protected $fillable = [
         'role', 'password',
