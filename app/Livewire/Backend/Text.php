@@ -4,8 +4,8 @@ namespace App\Livewire\Backend;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Textmanagement;
-use App\Models\Bankinfo;
+use App\Models\TextManagement;
+use App\Models\UserBankInfo;
 class Text extends Component
 {
 	public $editProductModel = false;
@@ -33,7 +33,7 @@ class Text extends Component
     public function edit($id)
     {
     	//$this->rest();
-    	$page = Textmanagement::where('id', $id)->first();
+    	$page = TextManagement::where('id', $id)->first();
     	$this->editProductModel = true;
     	$this->id = $id;
     	$this->pageName = $page->pageName;
@@ -43,7 +43,7 @@ class Text extends Component
     public function update(){
         $id = $this->id;
         //$this->validate();
-       $bank = Textmanagement::where('id', $id)->first();
+       $bank = TextManagement::where('id', $id)->first();
         $this->res = true;
         if ($bank) {
           $data = array(
@@ -65,7 +65,7 @@ class Text extends Component
     }
     public function render()
     {
-    	$query = Textmanagement::orderBy('id', 'desc');
+    	$query = TextManagement::orderBy('id', 'desc');
     	$texts = $query->paginate(15);
         return view('livewire.backend.text',compact('texts'))->layout('components.layouts.admin',['user' => $this->user]);
     }
@@ -73,7 +73,7 @@ class Text extends Component
     {
     	
     	$this->validate();
-    	$page = new Textmanagement();
+    	$page = new TextManagement();
     	$page->TextContent = $this->TextContent;
     	$page->pageName = $this->pageName;
     	$page->TextName = $this->TextName;

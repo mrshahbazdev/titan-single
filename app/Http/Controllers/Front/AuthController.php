@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Member;
 use App\Models\SystemSetting;
 use App\Models\MemberLevel;
@@ -34,13 +35,11 @@ class AuthController extends Controller
     public function loginPost(Request $request)
     {
         $username = $request->input('username');
-        $password = md5($request->input('password'));
+        $password = $request->input('password');
 
-        $user = Member::where('username', $username)
-            ->where('password', $password)
-            ->first();
+        $user = Member::where('username', $username)->first();
 
-        if ($user) {
+        if ($user && Hash::check($password, $user->password)) {
             if ($user->status == 0) {
                 return response()->json(['status' => false, 'message' => 'Your account has been suspended']);
             }
@@ -79,7 +78,7 @@ class AuthController extends Controller
         ]);
 
         $username = $request->input('username');
-        $password = md5($request->input('password'));
+        $password = Hash::make($request->input('password'));
         $invitationCode = $request->input('invitation_code');
         $phoneNumber = $request->input('phone_number');
 
@@ -134,7 +133,7 @@ class AuthController extends Controller
             'lastLongInTime' => time(),
             'orderStatus' => 1,
             'withdrawalStatus' => 1,
-            'paymentPassword' => md5('000000'),
+            'paymentPassword' => Hash::make('000000'),
             'memberAgent' => 0,
             'taskStatus' => 0,
         ]);
@@ -157,13 +156,11 @@ class AuthController extends Controller
     public function credentialcheck(Request $request)
     {
         $username = $request->input('username');
-        $password = md5($request->input('password'));
+        $password = $request->input('password');
 
-        $user = Member::where('username', $username)
-            ->where('password', $password)
-            ->first();
+        $user = Member::where('username', $username)->first();
 
-        if ($user) {
+        if ($user && Hash::check($password, $user->password)) {
             return response()->json(['status' => true]);
         }
         return response()->json(['status' => false]);

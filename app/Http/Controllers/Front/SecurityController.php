@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Member;
 use App\Models\SystemSetting;
 use App\Models\TodayReward;
@@ -34,15 +35,13 @@ class SecurityController extends Controller
             'newcpassword' => 'required|min:6|same:newfpassword',
         ]);
 
-        $oldPassword = md5($request->input('oldpassword'));
-        $newPassword = md5($request->input('newfpassword'));
+        $oldPasswordInput = $request->input('oldpassword');
+        $newPassword = $request->input('newfpassword');
 
-        $member = Member::where('username', $userName)
-            ->where('password', $oldPassword)
-            ->first();
+        $member = Member::where('username', $userName)->first();
 
-        if ($member) {
-            Member::where('username', $userName)->update(['password' => $newPassword]);
+        if ($member && Hash::check($oldPasswordInput, $member->password)) {
+            Member::where('username', $userName)->update(['password' => Hash::make($newPassword)]);
             $data['errro'] = ['success' => 'Your Password Updated'];
         } else {
             $data['errror'] = 'Your Old Password Wrong';

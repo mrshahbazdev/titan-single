@@ -6,11 +6,11 @@ use Livewire\Component;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\continuousorder;
+use App\Models\ContinuousOrder;
 use App\Models\Member;
-use App\Models\Memberlevel;
-use App\Models\Todayreward;
-use App\Models\product;
+use App\Models\MemberLevel;
+use App\Models\TodayReward;
+use App\Models\Product;
 
 
 
@@ -41,11 +41,11 @@ class Singleorder extends Component
         $query = Member::where('id', $this->uid)->first();
         $this->username = $query->username;
         $this->balance = $query->balance;
-        $this->orderByLevel = Memberlevel::where('level', $query->memberLevel)->first()->orderReciveLimit;
+        $this->orderByLevel = MemberLevel::where('level', $query->memberLevel)->first()->orderReciveLimit;
 
         $currentDate = Carbon::today();
-        $this->todayorder = Todayreward::where('userId', $query->id)->whereDate('created_at', $currentDate)->count();
-        $this->allorders = Todayreward::where('userId', $query->id)->count();
+        $this->todayorder = TodayReward::where('userId', $query->id)->whereDate('created_at', $currentDate)->count();
+        $this->allorders = TodayReward::where('userId', $query->id)->count();
 
         $this->user = Auth::user();
     }
@@ -60,7 +60,7 @@ class Singleorder extends Component
     {
         $this->totalOrderYets;
         if ($this->continuous > $this->totalOrderYets) {
-            $sets = new continuousorder();
+            $sets = new ContinuousOrder();
             $sets->userId = $this->uid;
             $sets->productId =  $this->postId;
             $sets->continuous = $this->continuous;
@@ -91,7 +91,7 @@ class Singleorder extends Component
     public function resetnow()
     {
         $id = $this->deleteId;
-        $roleDelete = continuousorder::where('id', $id);
+        $roleDelete = ContinuousOrder::where('id', $id);
         if ($roleDelete) {
             $roleDelete->delete();
         }
@@ -104,7 +104,7 @@ class Singleorder extends Component
     }
     public function render()
     {
-        $query = product::orderBy('id','desc');
+        $query = Product::orderBy('id','desc');
 
         if ($this->search) {
             
@@ -112,9 +112,9 @@ class Singleorder extends Component
         }
         
         //$members = $query->paginate(10);
-        $singleOrders = continuousorder::where('userId',$this->uid)->get();
+        $singleOrders = ContinuousOrder::where('userId',$this->uid)->get();
         $articles = $query->paginate($this->perPage);
-    	$productPrices = product::whereIn('id', $singleOrders->pluck('productId')->toArray())->pluck('productPrice','id');
+    	$productPrices = Product::whereIn('id', $singleOrders->pluck('productId')->toArray())->pluck('productPrice','id');
         return view('livewire.backend.singleorder',compact('singleOrders','productPrices','articles'))->layout('components.layouts.admin',['user' => $this->user]);
     }
     public function resetclose()

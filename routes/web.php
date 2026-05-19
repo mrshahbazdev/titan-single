@@ -31,6 +31,7 @@ use App\Livewire\Backend\Trailperiod;
 use App\Livewire\Backend\Rechargerequested;
 use App\Livewire\Backend\Addannouncements;
 use App\Livewire\UserDetails;
+use App\Http\Controllers\Admin\LogoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -117,7 +118,7 @@ Route::middleware(['front.auth'])->group(function () {
 
 // Admin auth (no middleware - guest only)
 Route::get('/admin', AdminLogin::class)->middleware('guest')->name('login');
-Route::get('/admin/logout', [AdminLogin::class, 'logout'])->name('logout');
+Route::get('/admin/logout', [LogoutController::class, 'logout'])->name('logout');
 
 // Admin protected routes (Livewire)
 Route::middleware(['auth'])->group(function () {

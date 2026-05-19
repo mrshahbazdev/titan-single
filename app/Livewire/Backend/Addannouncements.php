@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Livewire\WithPagination;
 use App\Services\UserService;
-use App\Models\announcement;
+use App\Models\Announcement;
 
 class Addannouncements extends Component
 {
@@ -28,7 +28,7 @@ class Addannouncements extends Component
         $this->validate([
            'message' =>'required',
         ]);
-        $announcement = new announcement();
+        $announcement = new Announcement();
         $announcement->message = $this->message;
         $announcement->save();
         $this->message = '';
@@ -41,7 +41,7 @@ class Addannouncements extends Component
     }
     public function render()
     {	
-    	$query = announcement::orderBy('id', 'desc');
+    	$query = Announcement::orderBy('id', 'desc');
     	
         $messages = $query->paginate(15);
         return view('livewire.backend.announcement',compact('messages'))->layout('components.layouts.admin',['user' => $this->user]);
@@ -68,7 +68,7 @@ class Addannouncements extends Component
 	public function resetnow()
 	{
 		$id = $this->postId;
-        $roleDelete = announcement::where('id', $id);
+        $roleDelete = Announcement::where('id', $id);
         if ($roleDelete) {
             $roleDelete->delete();
         }
