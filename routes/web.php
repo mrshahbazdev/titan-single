@@ -42,8 +42,8 @@ use App\Http\Controllers\Admin\LogoutController;
 Route::get('/', [HomeController::class, 'index']);
 
 // Auth routes
-Route::get('/auth/login', [AuthController::class, 'login']);
-Route::post('/auth/login', [AuthController::class, 'loginPost']);
+Route::get('/auth/login', [AuthController::class, 'login'])->name('front.login');
+Route::post('/auth/login', [AuthController::class, 'loginPost'])->name('front.login.post');
 Route::get('/auth/signup', [AuthController::class, 'signup']);
 Route::post('/auth/signup', [AuthController::class, 'signupPost']);
 Route::get('/auth/reg', [AuthController::class, 'signup']);
