@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - Titan</title>
+    <title>Register - CrownBridge Travel</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet">
@@ -168,8 +168,8 @@
 <body>
     <div class="container">
         <div class="card">
-            <div class="logo">Titan<span>.</span></div>
-            <p class="tagline">Your journey to success starts here</p>
+            <div class="logo">CrownBridge Travel</div>
+            <p class="tagline">Your gateway to exclusive travel experiences</p>
             
             <h1 class="title">Create account</h1>
             <p class="subtitle">Sign up to get started</p>
