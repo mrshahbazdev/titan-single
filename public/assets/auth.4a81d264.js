@@ -1,0 +1,1 @@
+import{s}from"./index.3fb3bc1b.js";function o(t){return s.post("/Api/Register",t)}function r(t){return s.post("/Api/Login",t)}function i(t){return s.post("/Api/setLoginPwd",t)}function e(){return s.post("/Api/Login/Out")}function a(t){return s.post("/Api/setPayPwd",t)}function u(t){return s.post("/Api/User/Avatar",t)}export{r as a,a as b,i as c,e as l,o as r,u};

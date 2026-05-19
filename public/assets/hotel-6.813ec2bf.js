@@ -1,0 +1,1 @@
+var _="/assets/booking-1.d2bf80f8.png",s="/assets/hotel-1.934d31c8.png",a="/assets/hotel-2.28c85c9e.png",e="/assets/hotel-3.8f7874b0.png",o="/assets/hotel-4.794420b1.png",g="/assets/hotel-5.58c26e6b.png",t="/assets/hotel-6.7428e47f.png";export{_,s as a,a as b,e as c,o as d,g as e,t as f};
