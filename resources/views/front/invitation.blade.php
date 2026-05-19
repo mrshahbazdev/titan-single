@@ -146,7 +146,7 @@
                   </button>
                 </div>
                 <p class="copyright" data-v-973ab4c6="">Copyright © 2024 <?php
-                                                                          $query = $this->db->get('systemsettings')->row();
+                                                                          $query = \DB::table('systemsettings')->first();
                                                                           ?><?php echo $query->siteTitle; ?> . All Rights Reserved.</p>
               </div>
             </div>

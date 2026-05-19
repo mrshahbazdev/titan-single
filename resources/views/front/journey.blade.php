@@ -42,9 +42,9 @@
 </head>
 
 <body style="font-size: 12px;">
-<?php $query_announcements = $this->db->order_by('id', 'DESC')->limit(1)->get('announcements');
-        if($query_announcements->num_rows() > 0){
-          $announcement = $query_announcements->row();
+<?php $query_announcements = \DB::table('announcements')->orderBy('id', 'DESC')->limit(1)->get();
+        if($query_announcements->count() > 0){
+          $announcement = $query_announcements->first();
           ?>
   <div class="announcement-bar" id="announcementBar" data-announcement-id="<?php echo $announcement->id; ?>">
     <div class="announcement-content">
@@ -265,8 +265,8 @@
                   </div>
                   <div class="list-bottom" data-v-dad6ad44="">
                     <?php
-                    $trial_user = $this->db->where('user_id', $user->id)->where('payment_status', 'pending')->get('user_trials');
-                    $trial_period = $this->db->get('trial_periods')->row();
+                    $trial_user = \DB::table('user_trials')->where('user_id', $user->id)->where('payment_status', 'pending')->get();
+                    $trial_period = \DB::table('trial_periods')->first();
                     if ($user->withdrawalStatus !== '0') {
                     ?>
 
@@ -282,12 +282,12 @@
                     <?php
                     }
                     if ($user->orderStatus !== '0') {
-                      $levels = $this->db->where('level', $user->memberLevel)->get('memberlevels')->row();
+                      $levels = \DB::table('memberlevels')->where('level', $user->memberLevel)->first();
                     ?>
 
                       <div class="list-item" data-v-dad6ad44="">
                         <div class="title" data-v-dad6ad44="">Daily Journey</div>
-                        <?php if ($trial_user->num_rows() > 0) { ?>
+                        <?php if ($trial_user->count() > 0) { ?>
                           <div class="subtitle" data-v-dad6ad44=""><?php echo $trial_period->tasks; ?></div>
                         <?php } else { ?>
                           <div class="subtitle" data-v-dad6ad44=""><?php echo $levels->orderReciveLimit; ?></div>
@@ -307,8 +307,8 @@
                   </div>
                 </div>
                 <?php
-                if ($trial_user->num_rows() > 0) {
-                  $trial = $trial_user->row();
+                if ($trial_user->count() > 0) {
+                  $trial = $trial_user->first();
                   $currentDate = date('Y-m-d');
 
                   if ($currentDate > $trial->trial_end_date) {
@@ -742,15 +742,15 @@
                   <div class="card-container">
                     <?php
 
-                    $referral = $this->db->where('referrer_id', $user->id)->get('referrals');
-                    $row = $referral->num_rows();
+                    $referral = \DB::table('referrals')->where('referrer_id', $user->id)->get();
+                    $row = $referral->count();
 
                     // Assume $user_balance is already defined and holds the user's balance
                     $user_balance = $user->balance; // Replace with actual balance retrieval logic
 
-                    if ($trial_user->num_rows() > 0) {
+                    if ($trial_user->count() > 0) {
                       $user->memberLevel = '0';
-                      $querys = $this->db->order_by('level', 'asc')->get('memberlevels')->result();
+                      $querys = \DB::table('memberlevels')->orderBy('level', 'asc')->get();
 
                       #array_unshift($querys, (object) array('level' => 0, 'ordersGrabbed' => 0, 'minimumBalanceLimit' => 0, 'orderReciveLimit' => $trial_period->tasks, 'name' => 'Free Trial ', 'commissionRate' => $trial_period->commission, 'img' => 'trial.png'));
                       foreach ($querys as $key => $value) {
@@ -811,7 +811,7 @@
                       <?php }
                     } else {
 
-                      $querys = $this->db->order_by('level', 'asc')->get('memberlevels')->result();
+                       $querys = \DB::table('memberlevels')->orderBy('level', 'asc')->get();
                       # array_unshift($querys, (object) array('level' => 0, 'name' => 'Free Trial ', 'ordersGrabbed' => 0, 'minimumBalanceLimit' => 0, 'orderReciveLimit' => $trial_period->tasks, 'commissionRate' => $trial_period->commission, 'img' => 'trial.png'));
                       foreach ($querys as $key => $value) {
                         // commission rate add on key 0 is free trial equl to level 1

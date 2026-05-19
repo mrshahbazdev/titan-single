@@ -32,9 +32,9 @@ if ($user->memberLevel == 1) {
       ?>
 <div class="van-popup van-popup--left" style="display:none; z-index: 2002; width: 90%; overflow: initial;"><div class="container" data-v-55585ad4="" data-v-08abc850=""><div class="head" data-v-55585ad4=""><img src="<?php echo $query->siteLogo; ?>" class="avatar" alt="" data-v-55585ad4=""><div class="user-card" data-v-55585ad4=""><div class="card-wrap" data-v-55585ad4=""><div class="user-top" data-v-55585ad4=""><div class="user-icon" data-v-55585ad4=""><div class="van-uploader" data-v-55585ad4=""><div class="van-uploader__wrapper"><div class="van-uploader__preview"><div class="van-image van-uploader__preview-image"><img src="assets/avatar.ca9e4964.png" class="van-image__img" style="object-fit: cover;"><!----><!----></div><!----><!----></div><div class="van-uploader__upload"><i class="van-badge__wrapper van-icon van-icon-photograph van-uploader__upload-icon"><!----><!----><!----></i><!----><input type="file" class="van-uploader__input" accept="image/*"></div></div></div></div><div class="user-right" data-v-55585ad4=""><div class="username" data-v-55585ad4=""><span class="name" data-v-55585ad4=""><?php echo $user->username; ?></span>
 <?php
-$querys = $this->db->where('user_id', $user->id)->where('payment_status','paid')->get('user_trials');
+$querys = \DB::table('user_trials')->where('user_id', $user->id)->where('payment_status','paid')->get();
 ?>
-<?php if($querys->num_rows() > 0){ ?>
+<?php if($querys->count() > 0){ ?>
     <img width="30" src="<?php echo $levelImg; ?>" alt="" data-v-55585ad4="">
 <?php }else{ ?>
     <img width="30" src="assets/trial.png" alt="" data-v-55585ad4="">
@@ -106,7 +106,7 @@ $querys = $this->db->where('user_id', $user->id)->where('payment_status','paid')
 </a>
 
 </div><p class="txt-center Powered" data-v-55585ad4="">Copyright ©   <?php echo date('Y'); 
-            $query = $this->db->get('systemsettings')->row();
+            $query = \DB::table('systemsettings')->first();
              ?><?php echo ' '.$query->siteTitle; ?>. <br> All Rights Reserved.</p></div><!----></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">

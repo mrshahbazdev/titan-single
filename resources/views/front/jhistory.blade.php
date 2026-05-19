@@ -62,7 +62,7 @@
           <div class="van-nav-bar__title van-ellipsis">History</div><div class="van-nav-bar__right van-haptics-feedback"><div class="desc" data-v-5d4adb0a=""><?php echo count($total); ?> records</div></div></div></div><div class="white-bg" data-v-5d4adb0a=""><div class="item-wrap" data-v-5d4adb0a="">
         <?php 
         foreach ($total as $key => $value) {
-          $query = $this->db->where('id',$value['productId'])->get('products')->row();
+          $query = \DB::table('products')->where('id',$value['productId'])->first();
          if ($value['status'] == 0) {
            
         

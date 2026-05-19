@@ -71,7 +71,7 @@
             <div class="vip-wrap" data-v-9fe837d0="">
               <div class="vip-list" data-v-9fe837d0="">
                 <?php 
-                  $querys = $this->db->order_by('level','asc')->get('memberlevels')->result();
+                  $querys = \DB::table('memberlevels')->orderBy('level','asc')->get();
                   foreach ($querys as $key => $value) {
                   
                  ?>
