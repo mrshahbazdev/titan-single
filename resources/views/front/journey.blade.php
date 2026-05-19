@@ -761,38 +761,38 @@
                         <!-- Card 1 -->
                         <div class="card">
                           <div class="card-header">
-                            <h3><?php echo $value->name; ?></h3>
+                            <h3><?php echo $value->levelName; ?></h3>
                           </div>
                           <div class="card-image">
-                            <img src="livewire/public/backend/level/<?php echo $value->img; ?>" alt="Level 1 Badge">
+                            <img src="livewire/public/backend/level/<?php echo $value->levelImage; ?>" alt="Level 1 Badge">
                           </div>
                           <div class="card-body">
                             <?php
-                            if ($row >= $value->ordersGrabbed && $user_balance >= $value->minimumBalanceLimit) {
+                            if ($row >= $value->ordersGrabbed && $user_balance >= $value->price) {
                               echo "<p>Congratulations! You've reached Level " . $value->level . ". Claimed Now</p>";
                             } else {
                               echo "<p>Please complete basic requirements to unlock this level.</p>";
                             }  ?>
-                            <p>Minimum Balance: <?php echo $value->minimumBalanceLimit; ?> PKR</p>
+                            <p>Minimum Balance: <?php echo $value->price; ?> PKR</p>
                             <p>Minimum Referral: <?php echo $row; ?>/<?php echo $value->ordersGrabbed; ?></p>
                             <p>Featured </p>
                             <p>Daily Journey: <?php echo $value->orderReciveLimit; ?></p>
                             <p>Commission Rate: <?php echo $value->commissionRate; ?> PKR</p>
                             <button class="unlock-button <?php
-                                                          if ($row >= $value->ordersGrabbed && $user_balance >= $value->minimumBalanceLimit) {
+                                                          if ($row >= $value->ordersGrabbed && $user_balance >= $value->price) {
                                                             if ($value->level <= $user->memberLevel) {
                                                             } else {
                                                               echo 'claim';
                                                             }
                                                           } ?>" <?php
-                                                                if ($row >= $value->ordersGrabbed && $user_balance >= $value->minimumBalanceLimit) {
+                                                                if ($row >= $value->ordersGrabbed && $user_balance >= $value->price) {
 
                                                                   if ($value->level <= $user->memberLevel) {
                                                                   } else {
                                                                     echo 'id="' . $value->level . '"';
                                                                   }
                                                                 } ?>><?php
-                                                                      if ($row >= $value->ordersGrabbed && $user_balance >= $value->minimumBalanceLimit) {
+                                                                      if ($row >= $value->ordersGrabbed && $user_balance >= $value->price) {
                                                                         if ($value->level <= $user->memberLevel) {
                                                                           echo "Already Claimed";
                                                                         } else {
@@ -820,39 +820,39 @@
                         <!-- Card 1 -->
                         <div class="card">
                           <div class="card-header">
-                            <h3><?php echo $value->name; ?></h3>
+                            <h3><?php echo $value->levelName; ?></h3>
                           </div>
                           <div class="card-image">
-                            <img src="livewire/public/backend/level/<?php echo $value->img; ?>" alt="Level 1 Badge">
+                            <img src="livewire/public/backend/level/<?php echo $value->levelImage; ?>" alt="Level 1 Badge">
                           </div>
                           <div class="card-body">
                             <?php
-                            if ($row >= $value->ordersGrabbed && $user_balance >= $value->minimumBalanceLimit) {
+                            if ($row >= $value->ordersGrabbed && $user_balance >= $value->price) {
                               echo "<p>Congratulations! You've reached Level " . $value->level . ". Claimed Now</p>";
                             } else {
                               echo "<p>Please complete your previous level to unlock this level.</p>";
                             }  ?>
 
-                            <p>Minimum Balance: <?php echo $value->minimumBalanceLimit; ?> PKR</p>
+                            <p>Minimum Balance: <?php echo $value->price; ?> PKR</p>
                             <p>Minimum Referral: <?php echo $row; ?>/<?php echo $value->ordersGrabbed; ?></p>
                             <p>Featured </p>
                             <p>Daily Journey: <?php echo $value->orderReciveLimit; ?></p>
                             <p>Commission Rate: <?php echo $value->commissionRate; ?> PKR</p>
                             <button class="unlock-button <?php
-                                                          if ($row >= $value->ordersGrabbed && $user_balance >= $value->minimumBalanceLimit) {
+                                                          if ($row >= $value->ordersGrabbed && $user_balance >= $value->price) {
                                                             if ($value->level <= $user->memberLevel) {
                                                             } else {
                                                               echo 'claim';
                                                             }
                                                           } ?>" <?php
-                                                                if ($row >= $value->ordersGrabbed && $user_balance >= $value->minimumBalanceLimit) {
+                                                                if ($row >= $value->ordersGrabbed && $user_balance >= $value->price) {
 
                                                                   if ($value->level <= $user->memberLevel) {
                                                                   } else {
                                                                     echo 'id="' . $value->level . '"';
                                                                   }
                                                                 } ?>><?php
-                                                                      if ($row >= $value->ordersGrabbed && $user_balance >= $value->minimumBalanceLimit) {
+                                                                      if ($row >= $value->ordersGrabbed && $user_balance >= $value->price) {
                                                                         if ($value->level <= $user->memberLevel) {
                                                                           echo "Already Claimed";
                                                                         } else {

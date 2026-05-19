@@ -75,12 +75,12 @@
                   foreach ($querys as $key => $value) {
                   
                  ?>
-                <div class="vip-item" data-v-9fe837d0="">
+                 <div class="vip-item" data-v-9fe837d0="">
                   <div class="vip-icon" data-v-9fe837d0="">
-                    <img src="livewire/public/backend/level/<?php echo $value->img; ?>" alt="" data-v-9fe837d0="">
+                    <img src="livewire/public/backend/level/<?php echo $value->levelImage; ?>" alt="" data-v-9fe837d0="">
                   </div>
                   <div class="vip-name flex-auto" data-v-9fe837d0="">
-                    <div class="name" data-v-9fe837d0=""><?php echo $value->name; ?></div>
+                    <div class="name" data-v-9fe837d0=""><?php echo $value->levelName; ?></div>
                     <div class="num" data-v-9fe837d0=""><?php echo $value->commissionRate; ?> %</div>
                   </div>
 
