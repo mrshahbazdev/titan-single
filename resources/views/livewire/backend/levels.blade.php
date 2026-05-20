@@ -1,6 +1,8 @@
 <div>
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/vendors/dropzone.css') }}">
+    <script src="{{ asset('backend/js/dropzone/dropzone.js') }}"></script>
+    <script src="{{ asset('backend/js/dropzone/dropzone-script.js') }}"></script>
     <div>
-   <!-- Place the first <script> tag in your HTML's <head> -->
 
 
 	<script>
