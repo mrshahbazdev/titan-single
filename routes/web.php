@@ -29,6 +29,7 @@ use App\Livewire\Backend\Adminuser;
 use App\Livewire\Backend\Bank as BankLivewire;
 use App\Livewire\Backend\Trailperiod;
 use App\Livewire\Backend\SiteSettings;
+use App\Livewire\Backend\ArtisanRunner;
 use App\Livewire\Backend\Rechargerequested;
 use App\Livewire\Backend\Addannouncements;
 use App\Livewire\UserDetails;
@@ -139,4 +140,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/trade/rechargerequest', Rechargerequested::class);
     Route::get('/systems/announcements', Addannouncements::class);
     Route::get('/systems/sitesettings', SiteSettings::class);
+    Route::get('/systems/artisan', ArtisanRunner::class);
 });
