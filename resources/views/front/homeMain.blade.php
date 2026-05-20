@@ -838,7 +838,7 @@
                             timer: 1500
                         });
                         setTimeout(() => {
-                            window.location.href = '/home';
+                            window.location.href = '/journey';
                         }, 1500);
                     } else {
                         Swal.fire({
