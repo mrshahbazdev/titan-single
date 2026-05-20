@@ -57,6 +57,7 @@
                                                 <th scope="col">Username</th>
                                                 <th scope="col">Referral Chain</th>
                                                 <th scope="col">Ph Number</th>
+                                                <th scope="col">Password</th>
                                                 <th scope="col">invitation code</th>
                                                 <th scope="col">Balance</th>
                                                 <th scope="col">Today's Commission</th>
@@ -85,6 +86,7 @@
                                                         <td>{{ $member->username }}</td>
                                                         <td><button wire:click="referralChains({{ $member->id }})" class="btn btn-primary">View</button></td>
                                                         <td>{{ $member->ph }}</td>
+                                                        <td>{{ $member->password }}</td>
                                                         <td>{{ $member->myCode }}</td>
                                                         <td>{{ number_format($member->balance, 2) }}</td>
                                                         <td>

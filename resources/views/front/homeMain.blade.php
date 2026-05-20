@@ -528,21 +528,121 @@
             .hero h1 {
                 font-size: 44px;
             }
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            .hero {
+                padding: 140px 0 60px;
+            }
+            .hero h1 {
+                font-size: 36px;
+                letter-spacing: -1px;
+            }
+            .hero p {
+                font-size: 15px;
+                padding: 0 8px;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                margin-top: 40px;
+            }
+            .feature-card {
+                padding: 28px;
+            }
+            .stats-section {
+                padding: 50px 0;
+                margin-top: 50px;
+            }
+            .stats-glass-card {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 24px;
+                gap: 16px;
+            }
+            .stat-item h2 {
+                font-size: 28px;
+            }
+            header {
+                padding: 12px 0;
+            }
+            .logo {
+                font-size: 20px;
+            }
+            .logo img {
+                max-width: 120px !important;
+            }
+            .nav-actions {
+                gap: 8px;
+            }
+            .nav-actions .btn {
+                padding: 8px 14px;
+                font-size: 12px;
+            }
         }
 
         @media (max-width: 576px) {
             .stats-glass-card {
                 grid-template-columns: 1fr;
             }
+            .hero {
+                padding: 120px 0 40px;
+            }
             .hero h1 {
-                font-size: 32px;
+                font-size: 28px;
                 letter-spacing: -0.8px;
+            }
+            .hero p {
+                font-size: 14px;
+                margin-bottom: 24px;
+            }
+            .hero-badge {
+                font-size: 11px;
+                padding: 5px 12px;
             }
             .modal-content {
                 padding: 30px 20px;
+                margin: 0 12px;
+                border-radius: 18px;
             }
             .btn {
                 padding: 8px 16px;
+            }
+            .feature-card {
+                padding: 24px;
+                border-radius: 16px;
+            }
+            .feature-icon {
+                width: 48px;
+                height: 48px;
+            }
+            .feature-card h3 {
+                font-size: 18px;
+            }
+            footer {
+                padding: 30px 0;
+                margin-top: 50px;
+            }
+            .nav-actions span {
+                display: none;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero h1 {
+                font-size: 24px;
+            }
+            .stat-item h2 {
+                font-size: 24px;
+            }
+            .logo {
+                font-size: 18px;
             }
         }
 
