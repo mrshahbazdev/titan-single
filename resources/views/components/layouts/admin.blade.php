@@ -56,11 +56,9 @@
     <div class="page-wrapper compact-wrapper" id="pageWrapper">
     @include('components.layouts.header')
     @include('components.layouts.sidebar')
-    <!-- page-wrapper Start-->
-    <div class="page-wrapper compact-wrapper" id="pageWrapper">
+    <!-- page content Start-->
     {{ $slot }}
 
-     </div>
         </div>
 
      <!-- latest jquery-->
@@ -83,7 +81,7 @@
     <script src="{{ asset('backend/js/header-slick.js') }}"></script>
        <!-- Theme js-->
     <script src="{{ asset('backend/js/script.js') }}"></script>
-    @customLivewireScripts
+    @livewireScripts
   </body>
 
 </html>

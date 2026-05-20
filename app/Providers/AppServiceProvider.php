@@ -40,5 +40,11 @@ class AppServiceProvider extends ServiceProvider
             
             $view->with(compact('user', 'rewards', 'query'));
         });
+
+        view()->composer(['components.layouts.sidebar', 'components.layouts.header'], function ($view) {
+            $settings = \App\Models\SystemSetting::first();
+            $siteLogoUrl = $settings && $settings->siteLogo ? $settings->siteLogo : null;
+            $view->with('siteLogoUrl', $siteLogoUrl);
+        });
     }
 }

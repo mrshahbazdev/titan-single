@@ -2,7 +2,7 @@
       <div class="page-body-wrapper">
         <!-- Page Sidebar Start-->
         <div class="sidebar-wrapper" data-layout="stroke-svg">
-          <div class="logo-wrapper" style="padding: 8px 0;"><a href="#"><img class="img-fluid" src="{{ asset('assets/uploads/img/new_logo.png') }}" alt="logo" style="max-width: 180px; height: auto;"></a>
+          <div class="logo-wrapper" style="padding: 8px 0;"><a href="#"><img class="img-fluid" src="{{ $siteLogoUrl ?? asset('assets/uploads/img/new_logo.png') }}" alt="logo" style="max-width: 140px; max-height: 50px; height: auto; object-fit: contain;"></a>
             <div class="back-btn"><i class="fa fa-angle-left"> </i></div>
             <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid"> </i></div>
           </div>
@@ -48,6 +48,7 @@
                     <li><a href="{{ url('systems/users') }}">System Users</a></li>
                     <li><a href="{{ url('systems/bank') }}">Banks Details</a></li>
                     <li><a href="{{ url('systems/trialperiod') }}">Trial Period</a></li>
+                    <li><a href="{{ url('systems/sitesettings') }}">Site Settings</a></li>
                   </ul>
                 </li>
                 <li class="sidebar-list">
@@ -56,7 +57,7 @@
                   <span class="">Trade Lists</span></a>
                   <ul class="sidebar-submenu">
                     <li><a href="{{ url('trade/rechargelist') }}">Recharges Lists</a></li>
-                    <li><a href="{{ url('trade/withdrawlist  ') }}">Withdraw Lists</a></li>
+                    <li><a href="{{ url('trade/withdrawlist') }}">Withdraw Lists</a></li>
                     <li><a href="{{ url('/trade/rechargerequest') }}">Recharge Requests</a></li>
                   </ul>
                 </li>
