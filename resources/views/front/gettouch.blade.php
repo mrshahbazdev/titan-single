@@ -167,7 +167,7 @@
             </script>
             <noscript><a href="https://www.livechat.com/chat-with/18625629/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
             <!-- End of LiveChat code -->
-            <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #3f8ed0; --van-button-primary-background-color: #3f8ed0;">
+            <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #00f2fe; --van-button-primary-background-color: #00f2fe;">
               <div class="container w100" data-v-60f2d5b2="">
                 <div class="banner-top" data-v-60f2d5b2=""></div>
                 <div class="van-nav-bar van-hairline--bottom" data-v-60f2d5b2="">

@@ -244,7 +244,7 @@
               <source src="assets/video.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #3f8ed0; --van-button-primary-background-color: #3f8ed0;">
+            <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #00f2fe; --van-button-primary-background-color: #00f2fe;">
               <div class="container w100" data-v-dad6ad44="">
                 <div class="van-nav-bar van-hairline--bottom" data-v-dad6ad44="">
                   <div class="van-nav-bar__content">
@@ -314,20 +314,20 @@
                   if ($currentDate > $trial->trial_end_date) {
                     if ($trial->payment_status == 'pending') {
                 ?>
-                      <button type="button" id="journey" class="van-button van-button--primary van-button--normal van-button--block" data-v-dad6ad44="" style="color: white; background: #461a3e; border-color: #461a3e;">
+                      <button type="button" id="journey" class="van-button van-button--primary van-button--normal van-button--block" data-v-dad6ad44="" style="background: var(--gradient-text); color: #07090e; border: none; box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);">
                         <div class="van-button__content"><!----><span class="van-button__text">Trial Expired</span><!----></div>
                       </button>
                     <?php }
                   } else { ?>
                     <a href="jsubmission">
-                      <button type="button" id="journey" class="van-button van-button--primary van-button--normal van-button--block" data-v-dad6ad44="" style="color: white; background: #461a3e; border-color: #461a3e;">
+                      <button type="button" id="journey" class="van-button van-button--primary van-button--normal van-button--block" data-v-dad6ad44="" style="background: var(--gradient-text); color: #07090e; border: none; box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);">
                         <div class="van-button__content"><!----><span class="van-button__text">Start Journey</span><!----></div>
                       </button>
                     </a>
                   <?php }
                 } else { ?>
                   <a href="jsubmission">
-                    <button type="button" id="journey" class="van-button van-button--primary van-button--normal van-button--block" data-v-dad6ad44="" style="color: white; background: #461a3e; border-color: #461a3e;">
+                    <button type="button" id="journey" class="van-button van-button--primary van-button--normal van-button--block" data-v-dad6ad44="" style="background: var(--gradient-text); color: #07090e; border: none; box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);">
                       <div class="van-button__content"><!----><span class="van-button__text">Start Journey</span><!----></div>
                     </button>
                   </a>
@@ -338,7 +338,7 @@
                   <style>
                     /* Announcement Bar Styles */
                     .announcement-bar {
-                      background: linear-gradient(135deg, #461a3e,rgb(97, 95, 97));
+                      background: linear-gradient(135deg, #07090e,rgb(97, 95, 97));
                       /* Gradient background */
                       color: white;
                       text-align: center;
@@ -494,7 +494,7 @@
                     .card {
                       background-color: #fff;
                       border-radius: 10px;
-                      box-shadow: 0 4px 8px #461a3e;
+                      box-shadow: 0 4px 8px #07090e;
                       width: 100%;
                       max-width: 250px;
                       /* Fixed width for each card */
@@ -505,12 +505,12 @@
 
                     .card:hover {
                       transform: translateY(-10px);
-                      box-shadow: 0 8px 16px #461a3e;
+                      box-shadow: 0 8px 16px #07090e;
                     }
 
                     /* Card Header */
                     .card-header {
-                      background-color: #461a3e;
+                      background-color: #07090e;
                       color: white;
                       padding: 20px;
                     }
@@ -533,7 +533,7 @@
                       /* Makes the image circular */
                       object-fit: cover;
                       /* Ensures the image fits well */
-                      border: 3px solid #461a3e;
+                      border: 3px solid #07090e;
                       /* Adds a border around the image */
                     }
 
@@ -550,7 +550,7 @@
 
                     /* Unlock Button */
                     .unlock-button {
-                      background-color: #461a3e;
+                      background-color: #07090e;
                       color: white;
                       border: none;
                       padding: 10px 20px;
@@ -562,7 +562,7 @@
                     }
 
                     .unlock-button:hover {
-                      background-color: #461a3e;
+                      background-color: #07090e;
                     }
 
                     /* Card Footer */
@@ -628,7 +628,7 @@
 
                     .guide-tooltip {
                       position: absolute;
-                      background-color: white;
+                      background-color: #07090e;
                       padding: 20px;
                       border-radius: 10px;
                       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);

@@ -21,8 +21,8 @@
             --color-text-light: #EDEDEC;
             --color-text-muted: #706f6c;
             --color-text-muted-dark: #A1A09A;
-            --color-accent: #f53003;
-            --color-accent-dark: #FF4433;
+            --color-accent: #00f2fe;
+            --color-accent-dark: #00f2fe;
             --color-border: #19140035;
             --color-border-light: #e3e3e0;
             --color-border-dark: #3E3E3A;
@@ -215,16 +215,16 @@
                     dataType: 'json',
                     success: function(response) {
                         if(response.status == false){
-                            Swal.fire({ icon: 'error', title: 'Error!', text: response.message, confirmButtonColor: '#f53003' });
+                            Swal.fire({ icon: 'error', title: 'Error!', text: response.message, confirmButtonColor: '#00f2fe' });
                             submitBtn.prop('disabled', false).text('Create Account');
                         }
                         if(response.status == true){
-                            Swal.fire({ icon: 'success', title: 'Welcome!', text: 'Account created', confirmButtonColor: '#f53003' });
+                            Swal.fire({ icon: 'success', title: 'Welcome!', text: 'Account created', confirmButtonColor: '#00f2fe' });
                             setTimeout(function() { window.location.href = '{{ url("auth/login") }}'; }, 2000);
                         }
                     },
                     error: function(xhr, status, error) {
-                        Swal.fire({ icon: 'error', title: 'Error!', text: 'Something went wrong.', confirmButtonColor: '#f53003' });
+                        Swal.fire({ icon: 'error', title: 'Error!', text: 'Something went wrong.', confirmButtonColor: '#00f2fe' });
                         submitBtn.prop('disabled', false).text('Create Account');
                     }
                 });

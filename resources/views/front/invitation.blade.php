@@ -128,7 +128,7 @@
             </a>
           </div>
           <div class="main-container" data-v-08abc850="">
-            <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #3f8ed0; --van-button-primary-background-color: #3f8ed0;">
+            <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #00f2fe; --van-button-primary-background-color: #00f2fe;">
               <div class="container w100" data-v-973ab4c6="">
                 <div class="van-nav-bar van-hairline--bottom" data-v-973ab4c6="">
                   <div class="van-nav-bar__content">
@@ -141,7 +141,7 @@
 
                 <div class="bottom-box" data-v-973ab4c6="">
                   <p class="desc" data-v-973ab4c6="">Referral Code</p>
-                  <p class="code" id="textToCopy" data-v-973ab4c6=""><?php echo $user->myCode; ?></p><button type="button" id="copyButton" class="van-button van-button--primary van-button--normal van-button--round" data-v-973ab4c6="" style="color: white; background: #461a3e; border-color: #461a3e;">
+                  <p class="code" id="textToCopy" data-v-973ab4c6=""><?php echo $user->myCode; ?></p><button type="button" id="copyButton" class="van-button van-button--primary van-button--normal van-button--round" data-v-973ab4c6="" style="background: var(--gradient-text); color: #07090e; border: none; box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);">
                     <div class="van-button__content"><!----><span class="van-button__text">Copy Referral Code</span><!----></div>
                   </button>
                 </div>

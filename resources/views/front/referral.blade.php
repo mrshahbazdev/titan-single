@@ -100,7 +100,7 @@
         <source src="assets/video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video> -->
-      <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #3f8ed0; --van-button-primary-background-color: #3f8ed0;">
+      <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #00f2fe; --van-button-primary-background-color: #00f2fe;">
         <div class="container w100" data-v-dad6ad44="">
             <div class="van-nav-bar van-hairline--bottom" data-v-dad6ad44="">
          
@@ -180,7 +180,7 @@
             position: absolute;
             top: 0;
             right: 50%;
-            border-top: 2px solid #461a3e;
+            border-top: 2px solid #07090e;
             width: 50%;
             height: 20px;
         }
@@ -201,19 +201,19 @@
         }
 
         .tree li:last-child::before {
-            border-right: 2px solid #461a3e;
+            border-right: 2px solid #07090e;
             border-radius: 0 10px 0 0;
         }
 
         .tree li:first-child::after {
-            border-left: 2px solid #461a3e;
+            border-left: 2px solid #07090e;
             border-radius: 10px 0 0 0;
         }
 
         /* Tree Nodes */
         .tree .node {
             display: inline-block;
-            background: #461a3e;
+            background: #07090e;
             color: #fff;
             padding: 10px 15px;
             text-align: center;
@@ -297,7 +297,7 @@
 
   /* Header styles */
   .table th {
-    background-color: #461a3e; /* Dark purple header */
+    background-color: #07090e; /* Dark purple header */
     color: #fff; /* White text in the header */
     text-transform: uppercase;
     font-weight: bold;
@@ -306,16 +306,16 @@
 
   /* Row styles */
   .table tbody tr:nth-child(odd) {
-    background-color: #f9f9f9; /* Light gray for odd rows */
+    background-color: #0f121d; /* Light gray for odd rows */
   }
 
   .table tbody tr:nth-child(even) {
-    background-color: #07090efff; /* White for even rows */
+    background-color: #07090e; /* White for even rows */
   }
 
   /* Hover effect */
   .table tbody tr:hover {
-    background-color: #461a3e; /* Dark purple on hover */
+    background-color: #07090e; /* Dark purple on hover */
     color: #fff; /* White text on hover */
     transition: background-color 0.3s ease, color 0.3s ease;
   }

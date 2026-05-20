@@ -47,7 +47,7 @@
     </div>
     
 
-      <div class="main-container no-footer" data-v-08abc850=""><div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #3f8ed0; --van-button-primary-background-color: #3f8ed0;"><div class="container w100" data-v-74290877=""><div class="wrap" data-v-74290877=""><div class="van-nav-bar van-hairline--bottom" data-v-74290877=""><div class="van-nav-bar__content">
+      <div class="main-container no-footer" data-v-08abc850=""><div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #00f2fe; --van-button-primary-background-color: #00f2fe;"><div class="container w100" data-v-74290877=""><div class="wrap" data-v-74290877=""><div class="van-nav-bar van-hairline--bottom" data-v-74290877=""><div class="van-nav-bar__content">
         <a href="journey">
         <div class="van-nav-bar__left van-haptics-feedback"><i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"><!----><!----><!----></i><!----></div>
         </a>
@@ -75,7 +75,7 @@
        ?></div>  
       <div class="form-item" data-v-0b8ab34c=""><div class="title" data-v-0b8ab34c="">Withdrawal Amount</div><div class="custom-input" data-v-0b8ab34c=""><span class="prefix" data-v-0b8ab34c="">Amount</span><div class="input-wrap" data-v-0b8ab34c="" style="width: 155px;">
         <input type="hidden" name="mybalance" value="<?php echo $balance->balance; ?>">
-        <input type="number " step="any" required="" name="orderd" placeholder="Rs 0.00" class="orderd"></div></div></div></div><button type="Submit" class="van-button van-button--primary van-button--normal van-button--block" data-v-0b8ab34c="" style="color: white; background: #461a3e; border-color: #461a3e;"><div class="van-button__content"><!----><span class="van-button__text">Submit</span><!----></div></button></div></div>
+        <input type="number " step="any" required="" name="orderd" placeholder="Rs 0.00" class="orderd"></div></div></div></div><button type="Submit" class="van-button van-button--primary van-button--normal van-button--block" data-v-0b8ab34c="" style="background: var(--gradient-text); color: #07090e; border: none; box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);"><div class="van-button__content"><!----><span class="van-button__text">Submit</span><!----></div></button></div></div>
         </form>
       </div></div>
     
