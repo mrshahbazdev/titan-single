@@ -18,7 +18,7 @@ class AuthController extends Controller
     public function index()
     {
         if (session('username')) {
-            return redirect('/home');
+            return redirect('/journey');
         }
         return redirect('/auth/login');
     }
@@ -26,7 +26,7 @@ class AuthController extends Controller
     public function login()
     {
         if (session('username')) {
-            return redirect('/home');
+            return redirect('/journey');
         }
         $settings = SystemSetting::first();
         return view('front.login', ['query' => $settings]);
@@ -61,7 +61,7 @@ class AuthController extends Controller
     public function signup()
     {
         if (session('username')) {
-            return redirect('/home');
+            return redirect('/journey');
         }
         $settings = SystemSetting::first();
         $code = request()->query('code', '');
