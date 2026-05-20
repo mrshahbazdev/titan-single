@@ -10,8 +10,6 @@ use Illuminate\Support\Facades\Hash;
 use Livewire\WithPagination;
 use Carbon\Carbon;
 use App\Models\Product;
-use Livewire\WithFileUploads;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File as FileSystem;
 
 
@@ -19,7 +17,6 @@ use Illuminate\Support\Facades\File as FileSystem;
 class Mall extends Component
 {
 	use WithPagination;
-	use WithFileUploads;
 
 	public $newProductModel = false;
 	public $editProductModel = false;
@@ -28,7 +25,7 @@ class Mall extends Component
 	public $productPrice;
 	public $productName;
 	public $postId;
-	public array $productImage = [];
+	public $productImageBase64 = '';
 	public $imageName;
 	protected $paginationTheme = 'bootstrap';
 	protected $rulee = [
@@ -38,7 +35,7 @@ class Mall extends Component
 	protected $rules = [
             'productName' => 'required',
             'productPrice' => 'required|numeric',
-            'productImage' => 'required',
+            'productImageBase64' => 'required',
     ];
     protected $messages = [
     		'productName.required' => 'Please Enter Product Name',
@@ -67,15 +64,19 @@ class Mall extends Component
     	$fieldsToValidate = ['productPrice', 'productName'];
         $this->validateMultiple($fieldsToValidate);
         $pordut = Product::where('id',$this->postId)->first();
-        if($this->productImage){
-        	$photo = $this->productImage[0];
-        	$file = new File($photo['path']);
-        	$filename = uniqid() . '.' . $file->extension();
+        if($this->productImageBase64){
+        	$imageInfo = explode(',', $this->productImageBase64);
+        	$decodedImage = base64_decode($imageInfo[1]);
+        	$extension = 'png';
+        	if (strpos($imageInfo[0], 'jpeg') !== false || strpos($imageInfo[0], 'jpg') !== false) {
+        	    $extension = 'jpg';
+        	}
+        	$filename = uniqid() . '.' . $extension;
         	$publicPath = public_path('backend/productImage');
         	if (!FileSystem::exists($publicPath)) {
 		    	FileSystem::makeDirectory($publicPath, 0755, true, true);
 			}
-			$file->move($publicPath, $filename);
+			file_put_contents($publicPath . '/' . $filename, $decodedImage);
 			$data = array(
 				'productName' => $this->productName,
 				'productPrice' => $this->productPrice,
@@ -88,13 +89,13 @@ class Mall extends Component
                     'text' => 'Product Updated Successfully',
                     'icon' => 'success',
                 ]);
-			$f =public_path('../backend/productImage/' .  $this->imageName);
+			$f = public_path('backend/productImage/' .  $this->imageName);
 			if (FileSystem::exists($f)) {
 				FileSystem::delete($f);
 			}
 			$this->productName = '';
 			$this->productPrice = '';
-			$this->productImage = [];
+			$this->productImageBase64 = '';
         }else{
         	$data = array(
 				'productName' => $this->productName,
@@ -109,7 +110,7 @@ class Mall extends Component
                 ]);
 			$this->productName = '';
 			$this->productPrice = '';
-			$this->productImage = [];
+			$this->productImageBase64 = '';
         }
     }
     public function pdelete($id)
@@ -142,21 +143,23 @@ class Mall extends Component
     {
 
     	$this->validate();
-    	$photo = $this->productImage[0];
-        //Storage::putFile('productImage', new File($photo['path']));
-        $file = new File($photo['path']);
-        $filename = uniqid() . '.' . $file->extension();
-        
-		// Get the public directory path
-		$publicPath = public_path('../backend/productImage');
 
-		// Ensure the directory exists; if not, create it
+    	// Decode base64 image
+    	$imageInfo = explode(',', $this->productImageBase64);
+    	$decodedImage = base64_decode($imageInfo[1]);
+    	$extension = 'png';
+    	if (strpos($imageInfo[0], 'jpeg') !== false || strpos($imageInfo[0], 'jpg') !== false) {
+    	    $extension = 'jpg';
+    	}
+    	$filename = uniqid() . '.' . $extension;
+
+		$publicPath = public_path('backend/productImage');
+
 		if (!FileSystem::exists($publicPath)) {
 		    FileSystem::makeDirectory($publicPath, 0755, true, true);
 		}
 
-		// Move the file to the public directory
-		$file->move($publicPath, $filename);
+		file_put_contents($publicPath . '/' . $filename, $decodedImage);
 		$data = new Product();
 		$data->productImage = $filename;
 		$data->productName = $this->productName;

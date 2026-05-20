@@ -3,20 +3,16 @@
 namespace App\Livewire\Backend;
 
 use Livewire\Component;
-use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\File;
 use Illuminate\Support\Facades\File as FileSystem;
 use App\Models\SystemSetting;
 
 class SiteSettings extends Component
 {
-    use WithFileUploads;
-
     public $user;
     public $siteTitle;
     public $siteUrl;
-    public $siteLogo;
+    public $siteLogoBase64 = '';
     public $currentLogo;
     public $minWithdrawal;
     public $maxWithdrawal;
@@ -56,22 +52,29 @@ class SiteSettings extends Component
             $settings = new SystemSetting();
         }
 
-        if ($this->siteLogo) {
-            $photo = $this->siteLogo;
-            $filename = 'site_logo_' . time() . '.' . $photo->getClientOriginalExtension();
+        if ($this->siteLogoBase64) {
+            $imageInfo = explode(',', $this->siteLogoBase64);
+            $decodedImage = base64_decode($imageInfo[1]);
+
+            $extension = 'png';
+            if (strpos($imageInfo[0], 'jpeg') !== false || strpos($imageInfo[0], 'jpg') !== false) {
+                $extension = 'jpg';
+            } elseif (strpos($imageInfo[0], 'gif') !== false) {
+                $extension = 'gif';
+            }
+
+            $filename = 'site_logo_' . time() . '.' . $extension;
 
             $publicPath = public_path('assets/uploads/img');
             if (!FileSystem::exists($publicPath)) {
                 FileSystem::makeDirectory($publicPath, 0755, true, true);
             }
 
-            $photo->storeAs('', $filename, 'logo_upload');
-
-            $oldLogo = $settings->siteLogo;
+            file_put_contents($publicPath . '/' . $filename, $decodedImage);
 
             $settings->siteLogo = asset('assets/uploads/img/' . $filename);
             $this->currentLogo = $settings->siteLogo;
-            $this->siteLogo = null;
+            $this->siteLogoBase64 = '';
         }
 
         $settings->siteTitle = $this->siteTitle;

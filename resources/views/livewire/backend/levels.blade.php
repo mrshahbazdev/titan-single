@@ -1,7 +1,4 @@
 <div>
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/vendors/dropzone.css') }}">
-    <script src="{{ asset('backend/js/dropzone/dropzone.js') }}"></script>
-    <script src="{{ asset('backend/js/dropzone/dropzone-script.js') }}"></script>
     <div>
 
 
@@ -19,6 +16,17 @@
     });
 });
 
+function handleLevelImage(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            @this.set('imgBase64', e.target.result);
+            var preview = document.getElementById('levelImgPreview');
+            preview.innerHTML = '<img src="' + e.target.result + '" style="max-width:150px;max-height:150px;border-radius:8px;margin-top:5px;">';
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 </script>
 <script src="https://cdn.jsdelivr.net/npm/tinymce@7/tinymce.min.js" referrerpolicy="origin"></script>
 <div class="page-body">
@@ -148,11 +156,10 @@
 					              @error('minimumBalanceLimit')<span style="color: red;">{{ $message }}</span>@enderror
 					            </div>
 					        	<div class="col-md-12">
-					              <livewire:dropzone
-						            wire:model="img"
-						            :rules="['mimes:png,jpeg']"
-						            :multiple="false" />
-					              @error('img')<span style="color: red;">{{ $message }}</span>@enderror
+					              <label class="form-label">Level Image</label>
+					              <input class="form-control" type="file" accept=".png,.jpeg,.jpg" onchange="handleLevelImage(this)">
+					              <div id="levelImgPreview" class="mt-2"></div>
+					              @error('imgBase64')<span style="color: red;">{{ $message }}</span>@enderror
 					            </div>
 					           
 

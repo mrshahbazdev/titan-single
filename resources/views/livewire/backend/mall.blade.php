@@ -1,8 +1,5 @@
 <div>
    <div>
-   	<link rel="stylesheet" type="text/css" href="{{ asset('backend/css/vendors/dropzone.css') }}">
-   	 <script src="{{ asset('backend/js/dropzone/dropzone.js') }}"></script>
-    <script src="{{ asset('backend/js/dropzone/dropzone-script.js') }}"></script>
    	<script>
 	document.addEventListener('livewire:initialized', () => {
     Livewire.on('swal', (event) => {
@@ -18,6 +15,17 @@
 	
 });
 
+function handleProductImage(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            @this.set('productImageBase64', e.target.result);
+            var preview = input.parentElement.querySelector('.img-preview');
+            if (preview) preview.innerHTML = '<img src="' + e.target.result + '" style="max-width:150px;max-height:150px;border-radius:8px;margin-top:5px;">';
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 </script>
 <div class="page-body">
  	<div class="container-fluid basic_table">
@@ -113,11 +121,10 @@
 					              @error('productPrice')<span style="color: red;">{{ $message }}</span>@enderror
 					            </div>
 					            <div class="col-md-12">
-					              <livewire:dropzone
-						            wire:model="productImage"
-						            :rules="['mimes:png,jpeg,jpg']"
-						            :multiple="false" />
-					              @error('productImage')<span style="color: red;">{{ $message }}</span>@enderror
+					              <label class="form-label">Product Image</label>
+					              <input class="form-control" type="file" accept=".png,.jpeg,.jpg" onchange="handleProductImage(this)">
+					              <div class="img-preview mt-2"></div>
+					              @error('productImageBase64')<span style="color: red;">{{ $message }}</span>@enderror
 					            </div>
 					        
 					           
@@ -156,11 +163,10 @@
 					              @error('productPrice')<span style="color: red;">{{ $message }}</span>@enderror
 					            </div>
 					            <div class="col-md-12">
-					              <livewire:dropzone
-						            wire:model="productImage"
-						            :rules="['image','mimes:png,jpeg,jpg']"
-						            :multiple="false" />
-					              @error('productImage')<span style="color: red;">{{ $message }}</span>@enderror
+					              <label class="form-label">Product Image</label>
+					              <input class="form-control" type="file" accept=".png,.jpeg,.jpg" onchange="handleProductImage(this)">
+					              <div class="img-preview mt-2"></div>
+					              @error('productImageBase64')<span style="color: red;">{{ $message }}</span>@enderror
 					            </div>
 					        
 					           

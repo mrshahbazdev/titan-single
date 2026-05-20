@@ -12,6 +12,17 @@
                 })
             });
         });
+
+        function handleLogoUpload(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    @this.set('siteLogoBase64', e.target.result);
+                    document.getElementById('logoPreviewImg').innerHTML = '<img src="' + e.target.result + '" alt="New Logo Preview" style="max-width: 200px; max-height: 100px; object-fit: contain;">';
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
     </script>
 
     <div class="page-body">
@@ -45,25 +56,15 @@
                                                     </div>
                                                     <div class="col-md-4 text-center">
                                                         <label class="form-label fw-bold">Preview</label>
-                                                        <div class="border rounded p-3 bg-dark" style="min-height: 120px; display: flex; align-items: center; justify-content: center;">
-                                                            @if($siteLogo)
-                                                                <img src="{{ $siteLogo->temporaryUrl() }}" alt="New Logo Preview" style="max-width: 200px; max-height: 100px; object-fit: contain;">
-                                                            @else
-                                                                <span class="text-muted">Upload to preview</span>
-                                                            @endif
+                                                        <div id="logoPreviewImg" class="border rounded p-3 bg-dark" style="min-height: 120px; display: flex; align-items: center; justify-content: center;">
+                                                            <span class="text-muted">Upload to preview</span>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <label class="form-label fw-bold">Upload New Logo</label>
-                                                        <input type="file" wire:model="siteLogo" class="form-control" accept="image/*">
+                                                        <input type="file" class="form-control" accept="image/*" onchange="handleLogoUpload(this)">
                                                         <small class="text-muted">Recommended: PNG or JPG, max 2MB</small>
-                                                        @error('siteLogo') <span class="text-danger d-block mt-1">{{ $message }}</span> @enderror
-                                                        <div wire:loading wire:target="siteLogo" class="mt-2">
-                                                            <div class="spinner-border spinner-border-sm text-primary" role="status">
-                                                                <span class="visually-hidden">Uploading...</span>
-                                                            </div>
-                                                            <span class="text-primary ms-1">Uploading...</span>
-                                                        </div>
+                                                        @error('siteLogoBase64') <span class="text-danger d-block mt-1">{{ $message }}</span> @enderror
                                                     </div>
                                                 </div>
                                             </div>
