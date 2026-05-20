@@ -166,7 +166,7 @@
                                     </img>
                                 </div>
                                 <div class="main-container" data-v-08abc850="">
-                                    <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #3f8ed0; --van-button-primary-background-color: #3f8ed0;">
+                                    <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #00f2fe; --van-button-primary-background-color: #00f2fe;">
                                         <div class="container h100 w100" data-v-46ef8df8="">
                                             <div class="van-nav-bar van-hairline--bottom" data-v-46ef8df8="">
                                                 <div class="van-nav-bar__content">
@@ -242,7 +242,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="btn-wrap" data-v-46ef8df8="">
-                                                        <button class="van-button van-button--default van-button--normal van-button--block" data-v-46ef8df8="" style="color: white; background: #461a3e; border-color: #461a3e;" type="submit">
+                                                        <button class="van-button van-button--default van-button--normal van-button--block" data-v-46ef8df8="" style="background: var(--gradient-text); color: #07090e; border: none; box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);" type="submit">
                                                             <div class="van-button__content">
                                                                 <!-- -->
                                                                 <span class="van-button__text">

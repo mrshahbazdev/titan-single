@@ -40,7 +40,7 @@
       </a>
     </div>
     <div class="main-container" data-v-08abc850="">
-      <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #3f8ed0; --van-button-primary-background-color: #3f8ed0;"><div class="container h100 w100" data-v-eb047502="">
+      <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #00f2fe; --van-button-primary-background-color: #00f2fe;"><div class="container h100 w100" data-v-eb047502="">
       <form method="post" >
       @csrf
       <div class="content-wrap" data-v-eb047502=""><div class="van-nav-bar van-hairline--bottom" data-v-eb047502=""><div class="van-nav-bar__content"><a href="journey"><div class="van-nav-bar__left van-haptics-feedback"><i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"><!----><!----><!----></i><!----></div></a><div class="van-nav-bar__title van-ellipsis">Home</div>
@@ -98,7 +98,7 @@
       <!-- end select drop down payment method -->
   </div>
 </div> 
-      <button type="submit" class="van-button van-button--primary van-button--normal van-button--block" data-v-eb047502="" style="color: white; background: #461a3e; border-color: #461a3e;"><div class="van-button__content"><!----><span class="van-button__text">Recharge</span><!----></div></button> 
+      <button type="submit" class="van-button van-button--primary van-button--normal van-button--block" data-v-eb047502="" style="background: var(--gradient-text); color: #07090e; border: none; box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);"><div class="van-button__content"><!----><span class="van-button__text">Recharge</span><!----></div></button>
 
         </div>
       </form>
@@ -160,7 +160,7 @@
 
   /* Header styles */
   .table th {
-    background-color: #461a3e; /* Dark purple header */
+    background-color: #07090e; /* Dark purple header */
     color: #fff; /* White text in the header */
     text-transform: uppercase;
     font-weight: bold;
@@ -169,16 +169,16 @@
 
   /* Row styles */
   .table tbody tr:nth-child(odd) {
-    background-color: #f9f9f9; /* Light gray for odd rows */
+    background-color: #0f121d; /* Light gray for odd rows */
   }
 
   .table tbody tr:nth-child(even) {
-    background-color: #07090efff; /* White for even rows */
+    background-color: #07090e; /* White for even rows */
   }
 
   /* Hover effect */
   .table tbody tr:hover {
-    background-color: #461a3e; /* Dark purple on hover */
+    background-color: #07090e; /* Dark purple on hover */
     color: #fff; /* White text on hover */
     transition: background-color 0.3s ease, color 0.3s ease;
   }
@@ -235,12 +235,12 @@
 }
 
 .styled-select:hover {
-  border-color: #461a3e;
+  border-color: #07090e;
 }
 
 .styled-select:focus {
   outline: none;
-  border-color: #461a3e;
+  border-color: #07090e;
   box-shadow: 0 0 0 3px rgba(70, 26, 62, 0.1);
 }
 

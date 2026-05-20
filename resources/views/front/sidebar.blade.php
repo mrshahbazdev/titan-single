@@ -45,7 +45,7 @@ $querys = \DB::table('user_trials')->where('user_id', $user->id)->where('payment
    
     <img  src="assets/copy.809b1ee4.png" width="20" data-v-55585ad4="">
    
-</div></div></div></div><div class="flex-center w100 mt20" data-v-55585ad4="" style="font-size: 14px;"><div class="van-progress" data-v-55585ad4="" style="height: 6px; width: 100%;"><span class="van-progress__portion" style="width: 100%; background: #461a3e;"></span><span class="van-progress__pivot" style="left: 100%; transform: translate(-100%, -50%); background: #461a3e;">100%</span></div></div></div><div class="money-card-wrap" data-v-55585ad4=""><div class="money-card txt-center van-hairline--right" data-v-55585ad4=""><div class="title" data-v-55585ad4="">Rs <?php echo number_format($user->balance, 2); ?></div><div class="text mt6" data-v-55585ad4="">Account Balance</div></div><div class="money-card txt-center" data-v-55585ad4=""><div class="title" data-v-55585ad4="">Rs <?php echo $vales; ?></div><div class="text mt6" data-v-55585ad4="">Commission</div></div></div></div></div><div class="van-grid" data-v-55585ad4="">
+</div></div></div></div><div class="flex-center w100 mt20" data-v-55585ad4="" style="font-size: 14px;"><div class="van-progress" data-v-55585ad4="" style="height: 6px; width: 100%;"><span class="van-progress__portion" style="width: 100%; background: #07090e;"></span><span class="van-progress__pivot" style="left: 100%; transform: translate(-100%, -50%); background: #07090e;">100%</span></div></div></div><div class="money-card-wrap" data-v-55585ad4=""><div class="money-card txt-center van-hairline--right" data-v-55585ad4=""><div class="title" data-v-55585ad4="">Rs <?php echo number_format($user->balance, 2); ?></div><div class="text mt6" data-v-55585ad4="">Account Balance</div></div><div class="money-card txt-center" data-v-55585ad4=""><div class="title" data-v-55585ad4="">Rs <?php echo $vales; ?></div><div class="text mt6" data-v-55585ad4="">Commission</div></div></div></div></div><div class="van-grid" data-v-55585ad4="">
   <div class="van-grid-item" data-v-55585ad4="" style="flex-basis: 25%;">
         <a href="about">
         <div class="van-grid-item__content van-grid-item__content--center"><div class="van-badge__wrapper"><img src="assets/my-icon-4.6c6f4529.png" width="30" data-v-55585ad4=""><!----></div><span class="van-grid-item__text">About Us</span></div>
@@ -144,10 +144,10 @@ $('.code').click(function () {
 </script>
 <style type="text/css">
     .money-card-wrap{
-        background-color: #461a3e !important;
+        background-color: #07090e !important;
     }
     .cell-group .cell-item:hover{
-        background-color:  #461a3e !important;
+        background-color:  #07090e !important;
         color: white;
         font-size: .40333rem;
     }

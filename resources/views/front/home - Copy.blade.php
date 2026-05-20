@@ -36,7 +36,7 @@
       </a>
     </div>
     <div class="main-container" data-v-08abc850="">
-      <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #3f8ed0; --van-button-primary-background-color: #3f8ed0;">
+      <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #00f2fe; --van-button-primary-background-color: #00f2fe;">
         <div class="container w100" data-v-9fe837d0="">
           <div class="banner-top" data-v-9fe837d0=""></div>
           <div class="head-top" data-v-9fe837d0="">

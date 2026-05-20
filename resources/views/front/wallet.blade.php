@@ -45,7 +45,7 @@
     </div>
     <div class="main-container" data-v-08abc850="">
      
-      <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #3f8ed0; --van-button-primary-background-color: #3f8ed0;"><div class="container h100 w100" data-v-425224d2=""><div class="form-wrap" data-v-425224d2=""><div class="van-nav-bar van-hairline--bottom" data-v-425224d2=""><div class="van-nav-bar__content"><a href="journey"><div class="van-nav-bar__left van-haptics-feedback"><i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"><!----><!----><!----></i><!----></div></a><div class="van-nav-bar__title van-ellipsis">Home</div><!----></div></div><div class="padding-box" data-v-425224d2=""><div class="desc-box" data-v-425224d2=""><div class="page-desc" data-v-425224d2="">Dear user, please check that information you have provided is correct to ensure that your withdrawal will not be delayed, thank you.</div></div></div>
+      <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #00f2fe; --van-button-primary-background-color: #00f2fe;"><div class="container h100 w100" data-v-425224d2=""><div class="form-wrap" data-v-425224d2=""><div class="van-nav-bar van-hairline--bottom" data-v-425224d2=""><div class="van-nav-bar__content"><a href="journey"><div class="van-nav-bar__left van-haptics-feedback"><i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"><!----><!----><!----></i><!----></div></a><div class="van-nav-bar__title van-ellipsis">Home</div><!----></div></div><div class="padding-box" data-v-425224d2=""><div class="desc-box" data-v-425224d2=""><div class="page-desc" data-v-425224d2="">Dear user, please check that information you have provided is correct to ensure that your withdrawal will not be delayed, thank you.</div></div></div>
       <div style="color: red; font-size: 20px;"><?php if (isset($errror)) {
         print_r($errror);
       } ?></div>
@@ -77,7 +77,7 @@
 
       <div class="form-item" data-v-425224d2=""><div class="custom-input" data-v-425224d2=""><span class="prefix" data-v-425224d2="">Phone Number</span><div class="input-wrap" data-v-425224d2="" style="width: 155px;"><input name="number" type="tel" value="<?php if (isset($bank)) { echo $bank->phoneNumber; }else{ if(isset($datas['number'])){ echo $datas['number']; } } ?>" placeholder="Phone Number" data-v-425224d2=""></div></div></div>
 
-      <div class="btn-wrap" data-v-425224d2=""><button type="submit" class="van-button van-button--primary van-button--normal van-button--block" data-v-425224d2="" style="color: white; background: #461a3e; border-color: #461a3e;"><div class="van-button__content"><!----><span class="van-button__text">CONFIRM</span><!----></div></button>
+      <div class="btn-wrap" data-v-425224d2=""><button type="submit" class="van-button van-button--primary van-button--normal van-button--block" data-v-425224d2="" style="background: var(--gradient-text); color: #07090e; border: none; box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);"><div class="van-button__content"><!----><span class="van-button__text">CONFIRM</span><!----></div></button>
       </form>
     </div></div></div></div>
 <br><br>

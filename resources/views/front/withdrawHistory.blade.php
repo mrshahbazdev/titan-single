@@ -47,7 +47,7 @@
       </a>
     </div>
     
-    <div class="main-container no-footer" data-v-08abc850=""><div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #3f8ed0; --van-button-primary-background-color: #3f8ed0;"><div class="container w100" data-v-74290877=""><div class="wrap" data-v-74290877=""><div class="van-nav-bar van-hairline--bottom" data-v-74290877=""><div class="van-nav-bar__content">
+    <div class="main-container no-footer" data-v-08abc850=""><div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #00f2fe; --van-button-primary-background-color: #00f2fe;"><div class="container w100" data-v-74290877=""><div class="wrap" data-v-74290877=""><div class="van-nav-bar van-hairline--bottom" data-v-74290877=""><div class="van-nav-bar__content">
       <a href="deposit">
       <div class="van-nav-bar__left van-haptics-feedback"><i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"><!----><!----><!----></i><!----></div>
       </a>

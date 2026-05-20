@@ -100,7 +100,7 @@
         <source src="assets/video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video> -->
-      <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #3f8ed0; --van-button-primary-background-color: #3f8ed0;">
+      <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #00f2fe; --van-button-primary-background-color: #00f2fe;">
         <div class="container w100" data-v-dad6ad44="">
             <div class="van-nav-bar van-hairline--bottom" data-v-dad6ad44="">
          
@@ -152,7 +152,7 @@
     border: 1px solid #ddd;
     border-radius: 12px;
     padding: 10px;
-    background: #fff; /* White background for the container */
+    background: #07090e; /* White background for the container */
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   }
 
@@ -175,7 +175,7 @@
 
   /* Header styles */
   .table th {
-    background-color: #461a3e; /* Dark purple header */
+    background-color: #07090e; /* Dark purple header */
     color: #fff; /* White text in the header */
     text-transform: uppercase;
     font-weight: bold;
@@ -184,7 +184,7 @@
 
   /* Row styles */
   .table tbody tr:nth-child(odd) {
-    background-color: #f9f9f9; /* Light gray for odd rows */
+    background-color: #0f121d; /* Light gray for odd rows */
   }
 
   .table tbody tr:nth-child(even) {
@@ -193,7 +193,7 @@
 
   /* Hover effect */
   .table tbody tr:hover {
-    background-color: #461a3e; /* Dark purple on hover */
+    background-color: #07090e; /* Dark purple on hover */
     color: #fff; /* White text on hover */
     transition: background-color 0.3s ease, color 0.3s ease;
   }

@@ -46,7 +46,7 @@
       </a>
     </div>
     <div class="main-container" data-v-08abc850="">
-      <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #3f8ed0; --van-button-primary-background-color: #3f8ed0;"><div class="container w100" data-v-916224ec=""><div class="van-nav-bar van-hairline--bottom" data-v-916224ec=""><div class="van-nav-bar__content">
+      <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #00f2fe; --van-button-primary-background-color: #00f2fe;"><div class="container w100" data-v-916224ec=""><div class="van-nav-bar van-hairline--bottom" data-v-916224ec=""><div class="van-nav-bar__content">
         <a href="journey">
         <div class="van-nav-bar__left van-haptics-feedback"><i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"><!----><!----><!----></i><!----></div>
         </a>
@@ -105,7 +105,7 @@
     </div>
   </div>
 
-      <div class="button-wrap" data-v-916224ec=""><button type="button" data-user-id="<?php echo $pendingProduts->id; ?>" class="submit van-button van-button--primary van-button--normal van-button--block" data-v-916224ec="" style="color: white; background: #461a3e; border-color: #461a3e;"><div class="van-button__content"><!----><span class="van-button__text">SUBMIT</span><!----></div></button></div></div><!----></div></div>
+      <div class="button-wrap" data-v-916224ec=""><button type="button" data-user-id="<?php echo $pendingProduts->id; ?>" class="submit van-button van-button--primary van-button--normal van-button--block" data-v-916224ec="" style="background: var(--gradient-text); color: #07090e; border: none; box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);"><div class="van-button__content"><!----><span class="van-button__text">SUBMIT</span><!----></div></button></div></div><!----></div></div>
 
 
       </div>
@@ -316,14 +316,14 @@
 .star:has(~ .star:hover),
 .star:has(:checked),
 .star:has(~ .star :checked) {
-  --star: #461a3e;
+  --star: #07090e;
 }
 
 .number:hover ~ .star:has(~ .star :checked),
 .number:hover ~ .star:has(:checked),
 .star:hover ~ .star:has(~ .star :checked),
 .star:hover ~ .star:has(:checked) {
-  --star: #461a3e;
+  --star: #07090e;
 }
 
 
@@ -409,7 +409,7 @@
   font-family: 'Days One', sans-serif;
   display: grid;
   place-items: center;
-  background: #461a3e;
+  background: #07090e;
   color: var(--dark);
   position: absolute;
   border-radius: 100%;
