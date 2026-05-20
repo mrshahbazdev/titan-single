@@ -152,7 +152,7 @@
             text-align: center;
             margin-top: 20px;
             padding: 20px;
-            background: #fff;
+            background: #07090e;
             border-radius: 12px;
             box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
         }
@@ -274,7 +274,7 @@
     border: 1px solid #ddd;
     border-radius: 12px;
     padding: 10px;
-    background: #fff; /* White background for the container */
+    background: #07090e; /* White background for the container */
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   }
 
@@ -310,7 +310,7 @@
   }
 
   .table tbody tr:nth-child(even) {
-    background-color: #ffffff; /* White for even rows */
+    background-color: #07090efff; /* White for even rows */
   }
 
   /* Hover effect */

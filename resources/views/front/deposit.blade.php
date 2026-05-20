@@ -137,7 +137,7 @@
     border: 1px solid #ddd;
     border-radius: 12px;
     padding: 10px;
-    background: #fff; /* White background for the container */
+    background: #07090e; /* White background for the container */
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   }
 
@@ -173,7 +173,7 @@
   }
 
   .table tbody tr:nth-child(even) {
-    background-color: #ffffff; /* White for even rows */
+    background-color: #07090efff; /* White for even rows */
   }
 
   /* Hover effect */
@@ -220,7 +220,7 @@
   font-size: 14px;
   font-family: 'Instrument Sans', sans-serif;
   color: #1b1b18;
-  background-color: #fff;
+  background-color: #07090e;
   border: 1px solid #e5e5e0;
   border-radius: 8px;
   cursor: pointer;
@@ -246,7 +246,7 @@
 
 .styled-select option {
   padding: 12px;
-  background-color: #fff;
+  background-color: #07090e;
   color: #1b1b18;
 }
 
