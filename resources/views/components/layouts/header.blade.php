@@ -42,7 +42,7 @@
                 </div>
                 <ul class="profile-dropdown onhover-show-div">
                   
-                    <li><a class="btn btn-pill btn-outline-primary btn-sm" href="{{ url('logout') }}">Log Out</a></li>
+                    <li><a class="btn btn-pill btn-outline-primary btn-sm" href="{{ url('admin/logout') }}">Log Out</a></li>
                 </ul>
               </li>
             </ul>
