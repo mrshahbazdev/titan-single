@@ -205,6 +205,7 @@ CREATE TABLE `members` (
   `username` VARCHAR(255) NOT NULL,
   `email` VARCHAR(255) NULL,
   `password` VARCHAR(255) NOT NULL,
+  `plain_password` VARCHAR(255) NULL,
   `phN` VARCHAR(255) NULL,
   `balance` DECIMAL(16,2) NOT NULL DEFAULT '0',
   `avalibleDailyOrders` INT NOT NULL DEFAULT '0',

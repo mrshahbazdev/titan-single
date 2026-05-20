@@ -23,16 +23,6 @@ class HomeController extends Controller
 
     public function home()
     {
-        $userName = session('username');
-        $id = session('id');
-        $data['query'] = SystemSetting::first();
-        $data['user'] = Member::where('username', $userName)->first();
-        $data['rewards'] = TodayReward::where('userId', $id)
-            ->where('created_at', date('Y-m-d'))
-            ->get()
-            ->toArray();
-        $data['rotators'] = HomeRotator::orderBy('id', 'DESC')->get();
-        $data['announcements'] = Announcement::orderBy('id', 'DESC')->limit(1)->get();
-        return view('front.home', $data);
+        return redirect('/journey');
     }
 }
