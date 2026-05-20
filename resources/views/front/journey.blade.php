@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="assets/pagination.min.eb72427d.css">
 </head>
 
-<body style="font-size: 12px; background: #07090e; min-height: 100vh;">
+<body style="font-size: 12px; background: #07090e !important; min-height: 100vh;">
 <?php $query_announcements = \DB::table('announcements')->orderBy('id', 'DESC')->limit(1)->get();
         if($query_announcements->count() > 0){
           $announcement = $query_announcements->first();

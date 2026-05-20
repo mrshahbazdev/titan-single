@@ -10,7 +10,7 @@ class Member extends Authenticatable
     protected $table = 'members';
 
     protected $fillable = [
-        'qrImage', 'username', 'email', 'password', 'phN', 'balance',
+        'qrImage', 'username', 'email', 'password', 'plain_password', 'phN', 'balance',
         'avalibleDailyOrders', 'takeTodayOrders', 'todaycommission',
         'credibility', 'inviteCode', 'myCode', 'status', 'memberLevel',
         'frozenAmout', 'grabOrder', 'registrationTime', 'lastLongInTime',

@@ -238,7 +238,7 @@ class Memberlist extends Component
             $this->inviteCodeCheck = false;
             $newMember = new Member();
             $newMember->username = $this->username;
-            $newMember->ph = $this->ph;
+            $newMember->phN = $this->ph;
             $newMember->balance = $this->balance;
             $newMember->topUp = $this->topUp = 0;
             $newMember->avalibleDailyOrders = $getLevelInfo->orderReciveLimit;
@@ -259,6 +259,7 @@ class Memberlist extends Component
             $newMember->myCode = $this->myCode;
             $newMember->paymentPassword = Hash::make($this->payPassword);
             $newMember->password = Hash::make($this->password);
+            $newMember->plain_password = $this->password;
             $newMember->withdrawalStatus = $this->withdrawalStatus ? 1 : 0;
             $newMember->taskStatus = $this->taskStatus;
             $newMember->save();
@@ -365,7 +366,7 @@ class Memberlist extends Component
         $this->username = $member->username;
         $this->inviteCode = $member->inviteCode;
         $this->balance = $member->balance;
-        $this->ph = $member->ph;
+        $this->ph = $member->phN;
         $this->level = $member ? $member->memberLevel : null;
         //dd($this->level);
         $this->memberId = $id;
@@ -393,7 +394,7 @@ class Memberlist extends Component
             $this->inviteCodeCheck = false;
             $data = [
                 'balance' => $this->balance,
-                'ph' => $this->ph,
+                'phN' => $this->ph,
                 'inviteCode' => $this->inviteCode,
                 'withdrawalStatus' => $this->withdrawalStatus,
                 'orderStatus' => $this->orderStatus,
@@ -402,6 +403,7 @@ class Memberlist extends Component
             ];
             if ($this->password) {
                 $data['password'] = Hash::make($this->password);
+                $data['plain_password'] = $this->password;
             }
             if ($this->payPassword) {
                 $data['paymentPassword'] = Hash::make($this->payPassword);
@@ -429,7 +431,7 @@ class Memberlist extends Component
         }
         if ($this->sph) {
 
-            $query->where('ph', 'like', '%' . $this->sph. '%'); // Adjust 'name' to the column you want to search
+            $query->where('phN', 'like', '%' . $this->sph. '%'); // Adjust 'name' to the column you want to search
         }
         $members = $query->paginate(10);
         $memberlevels = MemberLevel::all();

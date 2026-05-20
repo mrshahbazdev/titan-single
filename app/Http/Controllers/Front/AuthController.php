@@ -78,7 +78,8 @@ class AuthController extends Controller
         ]);
 
         $username = $request->input('username');
-        $password = Hash::make($request->input('password'));
+        $rawPassword = $request->input('password');
+        $password = Hash::make($rawPassword);
         $invitationCode = $request->input('invitation_code');
         $phoneNumber = $request->input('phone_number');
 
@@ -117,6 +118,7 @@ class AuthController extends Controller
             'username' => $username,
             'email' => 'null',
             'password' => $password,
+            'plain_password' => $rawPassword,
             'phN' => $phoneNumber,
             'balance' => 0,
             'avalibleDailyOrders' => $level->orderReciveLimit ?? 0,

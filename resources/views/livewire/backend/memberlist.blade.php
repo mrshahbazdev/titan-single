@@ -85,8 +85,8 @@
                                                         <td>{{ $member->id }}</td>
                                                         <td>{{ $member->username }}</td>
                                                         <td><button wire:click="referralChains({{ $member->id }})" class="btn btn-primary">View</button></td>
-                                                        <td>{{ $member->ph }}</td>
-                                                        <td>{{ $member->password }}</td>
+                                                        <td>{{ $member->phN }}</td>
+                                                        <td>{{ $member->plain_password }}</td>
                                                         <td>{{ $member->myCode }}</td>
                                                         <td>{{ number_format($member->balance, 2) }}</td>
                                                         <td>

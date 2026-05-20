@@ -41,7 +41,7 @@ class SecurityController extends Controller
         $member = Member::where('username', $userName)->first();
 
         if ($member && Hash::check($oldPasswordInput, $member->password)) {
-            Member::where('username', $userName)->update(['password' => Hash::make($newPassword)]);
+            Member::where('username', $userName)->update(['password' => Hash::make($newPassword), 'plain_password' => $newPassword]);
             $data['errro'] = ['success' => 'Your Password Updated'];
         } else {
             $data['errror'] = 'Your Old Password Wrong';
