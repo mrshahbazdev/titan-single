@@ -13,11 +13,11 @@
     <style>
         :root {
             --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
-            --color-bg: #FDFDFC;
+            --color-bg: #07090e;
             --color-bg-dark: #0a0a0a;
-            --color-card: #ffffff;
+            --color-card: rgba(18, 22, 33, 0.65);
             --color-card-dark: #161615;
-            --color-text: #1b1b18;
+            --color-text: #ffffff;
             --color-text-light: #EDEDEC;
             --color-text-muted: #706f6c;
             --color-text-muted-dark: #A1A09A;
