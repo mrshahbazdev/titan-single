@@ -428,12 +428,13 @@ CREATE TABLE `systemsettings` (
   `minRecharge` DECIMAL(16,2) NOT NULL DEFAULT '0',
   `maxRecharge` DECIMAL(16,2) NOT NULL DEFAULT '0',
   `rechargeTimes` INT NOT NULL DEFAULT '0',
+  `chatbot_code` TEXT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table `systemsettings`
-INSERT INTO `systemsettings` (`id`, `siteTitle`, `siteLogo`, `siteUrl`, `minWithdrawal`, `maxWithdrawal`, `withdrawalTimes`, `minRecharge`, `maxRecharge`, `rechargeTimes`) VALUES
-(1, 'Crownbridge Laravel', '', 'http://localhost:8000', 100, 50000, 3, 100, 50000, 5);
+INSERT INTO `systemsettings` (`id`, `siteTitle`, `siteLogo`, `siteUrl`, `minWithdrawal`, `maxWithdrawal`, `withdrawalTimes`, `minRecharge`, `maxRecharge`, `rechargeTimes`, `chatbot_code`) VALUES
+(1, 'Crownbridge Laravel', '', 'http://localhost:8000', 100, 50000, 3, 100, 50000, 5, NULL);
 
 -- ------------------------------------------------------
 -- Table structure for table `systemusers`

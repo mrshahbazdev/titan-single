@@ -11,6 +11,6 @@ class SystemSetting extends Model
 
     protected $fillable = [
         'siteTitle', 'siteLogo', 'siteUrl', 'minWithdrawal', 'maxWithdrawal',
-        'withdrawalTimes', 'minRecharge', 'maxRecharge', 'rechargeTimes'
+        'withdrawalTimes', 'minRecharge', 'maxRecharge', 'rechargeTimes', 'chatbot_code'
     ];
 }

@@ -20,6 +20,7 @@ class SiteSettings extends Component
     public $minRecharge;
     public $maxRecharge;
     public $rechargeTimes;
+    public $chatbotCode;
 
     protected $rules = [
         'siteTitle' => 'nullable|string|max:255',
@@ -40,6 +41,7 @@ class SiteSettings extends Component
             $this->minRecharge = $settings->minRecharge;
             $this->maxRecharge = $settings->maxRecharge;
             $this->rechargeTimes = $settings->rechargeTimes;
+            $this->chatbotCode = $settings->chatbot_code;
         }
     }
 
@@ -85,6 +87,7 @@ class SiteSettings extends Component
         $settings->minRecharge = $this->minRecharge;
         $settings->maxRecharge = $this->maxRecharge;
         $settings->rechargeTimes = $this->rechargeTimes;
+        $settings->chatbot_code = $this->chatbotCode;
         $settings->save();
 
         $this->dispatch('swal', [

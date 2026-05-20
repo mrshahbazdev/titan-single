@@ -113,6 +113,17 @@
                                         <input type="number" wire:model="rechargeTimes" class="form-control">
                                     </div>
 
+                                    <!-- Chatbot Integration -->
+                                    <div class="col-md-12 mb-3">
+                                        <hr>
+                                        <h5><i class="fa fa-comments me-2"></i>Chatbot Integration</h5>
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <label class="form-label fw-bold">Chatbot Embed Code</label>
+                                        <textarea wire:model="chatbotCode" class="form-control" rows="6" placeholder="Paste your chatbot embed code here (e.g. LiveChat, Tawk.to, Tidio, etc.)"></textarea>
+                                        <small class="text-muted">Paste the full script/embed code from your chatbot provider. It will be rendered on all frontend pages.</small>
+                                    </div>
+
                                     <!-- Submit Button -->
                                     <div class="col-md-12 mt-3">
                                         <button type="submit" class="btn btn-primary btn-lg">
