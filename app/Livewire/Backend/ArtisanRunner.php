@@ -33,6 +33,12 @@ class ArtisanRunner extends Component
         'db:seed' => 'Run Database Seeders',
     ];
 
+    protected $allowedShellCommands = [
+        'composer install' => 'Composer Install',
+        'composer update' => 'Composer Update',
+        'composer dump-autoload' => 'Composer Dump Autoload',
+    ];
+
     public function mount()
     {
         $this->user = Auth::user();
@@ -125,6 +131,60 @@ class ArtisanRunner extends Component
         $this->selectedCommand = $baseCmd;
         $this->runCommand($baseCmd);
         $this->customCommand = '';
+    }
+
+    public function runShellCommand($command)
+    {
+        if (!array_key_exists($command, $this->allowedShellCommands)) {
+            $this->output = 'Error: This shell command is not allowed.';
+            return;
+        }
+
+        try {
+            $basePath = base_path();
+            $fullCommand = "cd {$basePath} && {$command} 2>&1";
+            $result = shell_exec($fullCommand);
+
+            if (empty(trim($result ?? ''))) {
+                $result = "Command '{$command}' executed successfully.";
+            }
+
+            $this->output = $result;
+
+            array_unshift($this->commandHistory, [
+                'command' => $command,
+                'label' => $this->allowedShellCommands[$command],
+                'output' => $result,
+                'status' => 'success',
+                'time' => now()->format('H:i:s'),
+            ]);
+
+            if (count($this->commandHistory) > 20) {
+                array_pop($this->commandHistory);
+            }
+
+            $this->dispatch('swal', [
+                'title' => 'Success!',
+                'text' => "Command '{$this->allowedShellCommands[$command]}' executed.",
+                'icon' => 'success',
+            ]);
+        } catch (\Exception $e) {
+            $this->output = 'Error: ' . $e->getMessage();
+
+            array_unshift($this->commandHistory, [
+                'command' => $command,
+                'label' => $this->allowedShellCommands[$command],
+                'output' => $e->getMessage(),
+                'status' => 'error',
+                'time' => now()->format('H:i:s'),
+            ]);
+
+            $this->dispatch('swal', [
+                'title' => 'Error!',
+                'text' => $e->getMessage(),
+                'icon' => 'error',
+            ]);
+        }
     }
 
     public function clearHistory()

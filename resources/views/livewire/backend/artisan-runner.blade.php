@@ -136,6 +136,28 @@
                                                         <span wire:loading wire:target="runCommand('config:cache')"><span class="spinner-border spinner-border-sm me-1"></span>Running...</span>
                                                     </button>
                                                 </div>
+                                                <!-- Composer Commands -->
+                                                <div class="col-12 mt-3">
+                                                    <h6 class="text-warning"><i class="fa fa-box me-1"></i> Composer</h6>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <button wire:click="runShellCommand('composer install')" class="btn btn-warning w-100" wire:loading.attr="disabled">
+                                                        <span wire:loading.remove wire:target="runShellCommand('composer install')"><i class="fa fa-download me-1"></i>Install</span>
+                                                        <span wire:loading wire:target="runShellCommand('composer install')"><span class="spinner-border spinner-border-sm me-1"></span>Running...</span>
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <button wire:click="runShellCommand('composer update')" class="btn btn-outline-warning w-100" wire:loading.attr="disabled" onclick="return confirm('Are you sure you want to run composer update?')">
+                                                        <span wire:loading.remove wire:target="runShellCommand('composer update')"><i class="fa fa-sync me-1"></i>Update</span>
+                                                        <span wire:loading wire:target="runShellCommand('composer update')"><span class="spinner-border spinner-border-sm me-1"></span>Running...</span>
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <button wire:click="runShellCommand('composer dump-autoload')" class="btn btn-outline-warning w-100" wire:loading.attr="disabled">
+                                                        <span wire:loading.remove wire:target="runShellCommand('composer dump-autoload')"><i class="fa fa-refresh me-1"></i>Dump Autoload</span>
+                                                        <span wire:loading wire:target="runShellCommand('composer dump-autoload')"><span class="spinner-border spinner-border-sm me-1"></span>Running...</span>
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

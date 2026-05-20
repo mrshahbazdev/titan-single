@@ -20,7 +20,7 @@
 });
 
 </script>
-<script src="https://cdn.tiny.cloud/1/npx8gmi42fypd2z1vcxn4o5a9eok6zy5s3l963nhp79oj8y4/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.jsdelivr.net/npm/tinymce@7/tinymce.min.js" referrerpolicy="origin"></script>
 <div class="page-body">
  	<div class="container-fluid basic_table">
    		<div class="col-sm-12"> 
