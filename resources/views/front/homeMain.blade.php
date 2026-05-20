@@ -562,7 +562,7 @@
     <header>
         <div class="container header-content">
             <a href="/" class="logo">
-                <i class="bi bi-box-seam-fill"></i>
+                <img src="{{ asset('assets/uploads/img/crownbridge-logo.png') }}" alt="logo" style="height: 32px; width: auto;">
                 Crownbridge
             </a>
             

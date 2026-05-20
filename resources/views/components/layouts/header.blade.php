@@ -13,7 +13,7 @@
             </div>
           </form>
           <div class="header-logo-wrapper col-auto p-0">  
-            <div class="logo-wrapper"> <a href="index-2.html"><img class="img-fluid for-light" src="{{ asset('assets/uploads/img/new_logo.png') }}" alt="logo-light"><img class="img-fluid for-dark" src="{{ asset('backend/images/logo/logo.png ') }}" alt="logo-dark"></a></div>
+            <div class="logo-wrapper"> <a href="index-2.html"><img class="img-fluid for-light" src="{{ asset('assets/uploads/img/crownbridge-logo.png') }}" alt="logo-light"><img class="img-fluid for-dark" src="{{ asset('backend/images/logo/logo.png ') }}" alt="logo-dark"></a></div>
             <div class="toggle-sidebar"> <i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i></div>
           </div>
           <div class="left-header col-xxl-5 col-xl-6 col-lg-5 col-md-4 col-sm-3 p-0">

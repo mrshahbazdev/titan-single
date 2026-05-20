@@ -4,7 +4,7 @@
           <div class="login-card login-dark">
             <div>
              
-              <div><a class="logo" href="#"><img class="img-fluid for-dark" src="/assets/uploads/img/new_logo.png" alt="looginpage"><img class="img-fluid for-light" src="/assets/uploads/img/new_logo.png" alt="looginpage" style="width:200px;"></a></div>
+              <div><a class="logo" href="#"><img class="img-fluid for-dark" src="/assets/uploads/img/crownbridge-logo.png" alt="looginpage"><img class="img-fluid for-light" src="/assets/uploads/img/crownbridge-logo.png" alt="looginpage" style="width:200px;"></a></div>
               @if (session()->has('error'))
                     <div class="alert alert-danger">
                         <ul>
