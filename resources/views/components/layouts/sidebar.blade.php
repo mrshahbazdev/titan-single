@@ -49,6 +49,7 @@
                     <li><a href="{{ url('systems/bank') }}">Banks Details</a></li>
                     <li><a href="{{ url('systems/trialperiod') }}">Trial Period</a></li>
                     <li><a href="{{ url('systems/sitesettings') }}">Site Settings</a></li>
+                    <li><a href="{{ url('systems/artisan') }}">Artisan Commands</a></li>
                   </ul>
                 </li>
                 <li class="sidebar-list">
