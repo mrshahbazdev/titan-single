@@ -176,74 +176,25 @@
               .main-container {
                 position: relative;
                 z-index: 1;
-                /* Ensures content is above the video */
                 color: white;
-                /* Adjust text color for contrast */
                 text-align: center;
               }
 
-              #background-video {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 1200px;
-                object-fit: cover;
-                /* Ensures the video covers the whole area */
-                z-index: -1;
-                /* Places the video behind other content */
-
-              }
-
               @media only screen and (min-width: 1450px) and (max-width: 3000px) {
-                #background-video {
-                  height: 1200px;
-                  /* Adjust height for larger screens */
-                }
-
                 .swal2-popup {
                   width: 40% !important;
-                  /* Adjust the width as needed */
                   font-size: 14px;
-                  /* Adjust font size for smaller screens */
                   height: 30% !important;
                 }
               }
 
-              @media only screen and (min-width: 950px) and (max-width: 1449px) {
-                #background-video {
-                  height: 1600px;
-                  /* Adjust height for larger screens */
-                }
-              }
-
-              @media only screen and (min-width: 775px) and (max-width: 949px) {
-                #background-video {
-                  height: 2000px;
-                  /* Adjust height for larger screens */
-                }
-              }
-
               @media only screen and (min-width: 100px) and (max-width: 774px) {
-                #background-video {
-                  height: 2700px;
-                  /* Adjust height for larger screens */
-                }
-
                 .swal2-popup {
                   width: 90% !important;
-                  /* Adjust the width as needed */
                   font-size: 11px;
-                  /* Adjust font size for smaller screens */
-
                 }
               }
             </style>
-
-            <video autoplay muted loop id="background-video">
-              <source src="assets/video.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
             <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #00f2fe; --van-button-primary-background-color: #00f2fe;">
               <div class="container w100" data-v-dad6ad44="">
                 <div class="van-nav-bar van-hairline--bottom" data-v-dad6ad44="">
@@ -764,7 +715,7 @@
                             <h3><?php echo $value->levelName; ?></h3>
                           </div>
                           <div class="card-image">
-                            <img src="livewire/public/backend/level/<?php echo $value->levelImage; ?>" alt="Level 1 Badge">
+                            <img src="backend/level/<?php echo $value->levelImage; ?>" alt="Level 1 Badge">
                           </div>
                           <div class="card-body">
                             <?php
@@ -823,7 +774,7 @@
                             <h3><?php echo $value->levelName; ?></h3>
                           </div>
                           <div class="card-image">
-                            <img src="livewire/public/backend/level/<?php echo $value->levelImage; ?>" alt="Level 1 Badge">
+                            <img src="backend/level/<?php echo $value->levelImage; ?>" alt="Level 1 Badge">
                           </div>
                           <div class="card-body">
                             <?php
