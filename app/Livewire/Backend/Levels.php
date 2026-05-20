@@ -81,18 +81,13 @@ class Levels extends Component
 		
 			 
     	$post = new MemberLevel();
-    	$post->name = $this->name;
+    	$post->levelName = $this->name;
     	$post->ordersGrabbed = $this->ordersGrabbed;
     	$post->commissionRate = $this->commissionRate;
-    	$post->commissionPercentageOrder = 0;
-    	$post->minimumBalanceLimit = $this->minimumBalanceLimit;
+    	$post->price = $this->minimumBalanceLimit;
     	$post->orderReciveLimit = $this->orderReciveLimit;
-    	$post->withdrawLimit = 0;
-    	$post->minimumWithdrawLimit = 0;
-    	$post->maxWithdrawLimit = 0;
-    	$post->withdrawFee = 0;
     	$post->level = $this->level;
-    	$post->img = $filename;
+    	$post->levelImage = $filename;
     	$post->save();
     	$this->addProductModel = false;
     	$this->dispatch('swal',[
@@ -106,24 +101,24 @@ class Levels extends Component
     	$this->postId = $id;
     	$post = MemberLevel::where('id',$id)->first();
     	$this->editProductModel = true;
-    	$this->name = $post->name;
+    	$this->name = $post->levelName;
     	$this->commissionRate = $post->commissionRate;
     	$this->orderReciveLimit = $post->orderReciveLimit;
     	$this->level = $post->level;
 		$this->ordersGrabbed = $post->ordersGrabbed;
-		$this->minimumBalanceLimit = $post->minimumBalanceLimit;
+		$this->minimumBalanceLimit = $post->price;
 		
     }
     public function update()
     {
     	$update = MemberLevel::where('id',$this->postId)->first();
     	$data = array(
-    		'name' => $this->name,
+    		'levelName' => $this->name,
     		'commissionRate' => $this->commissionRate,
     		'orderReciveLimit' => $this->orderReciveLimit,
     		'level' => $this->level,
 			'ordersGrabbed' => $this->ordersGrabbed,
-			'minimumBalanceLimit' => $this->minimumBalanceLimit,
+			'price' => $this->minimumBalanceLimit,
     	);
     	$update->update($data);
     	$this->editProductModel = false;
@@ -138,7 +133,7 @@ class Levels extends Component
     	$this->resetModel = true;
     	$this->postId = $id;
     	$post = MemberLevel::where('id',$id)->first();
-    	$this->imageName = $post->img;
+    	$this->imageName = $post->levelImage;
     	
     }
     public function resetnow()
