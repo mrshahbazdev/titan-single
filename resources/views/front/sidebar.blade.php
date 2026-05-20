@@ -47,11 +47,7 @@ $querys = \DB::table('user_trials')->where('user_id', $user->id)->where('payment
    
 </div></div></div></div><div class="flex-center w100 mt20" data-v-55585ad4="" style="font-size: 14px;"><div class="van-progress" data-v-55585ad4="" style="height: 6px; width: 100%;"><span class="van-progress__portion" style="width: 100%; background: #07090e;"></span><span class="van-progress__pivot" style="left: 100%; transform: translate(-100%, -50%); background: #07090e;">100%</span></div></div></div><div class="money-card-wrap" data-v-55585ad4=""><div class="money-card txt-center van-hairline--right" data-v-55585ad4=""><div class="title" data-v-55585ad4="">Rs <?php echo number_format($user->balance, 2); ?></div><div class="text mt6" data-v-55585ad4="">Account Balance</div></div><div class="money-card txt-center" data-v-55585ad4=""><div class="title" data-v-55585ad4="">Rs <?php echo $vales; ?></div><div class="text mt6" data-v-55585ad4="">Commission</div></div></div></div></div>
 
-    
-
-    
-
-</div><div class="cell-group" data-v-55585ad4="">
+<div class="cell-group" data-v-55585ad4="">
 <a href="journey">
     <div class="cell-item" data-v-55585ad4=""><div class="cell-left" data-v-55585ad4=""><img src="assets/cell-icon-8.bccc6256.png" alt="" data-v-55585ad4=""><span data-v-55585ad4="">Start journey</span></div><i class="van-badge__wrapper van-icon van-icon-arrow" data-v-55585ad4=""><!----><!----><!----></i></div>
     </a>
