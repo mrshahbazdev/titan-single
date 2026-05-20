@@ -13,13 +13,13 @@
             </div>
           </form>
           <div class="header-logo-wrapper col-auto p-0">  
-            <div class="logo-wrapper"> <a href="index-2.html"><img class="img-fluid for-light" src="{{ asset('assets/uploads/img/new_logo.png') }}" alt="logo-light"><img class="img-fluid for-dark" src="{{ asset('backend/images/logo/logo.png ') }}" alt="logo-dark"></a></div>
+            <div class="logo-wrapper"> <a href="{{ url('member') }}"><img class="img-fluid for-light" src="{{ $siteLogoUrl ?? asset('assets/uploads/img/new_logo.png') }}" alt="logo-light" style="max-width: 140px; max-height: 50px; object-fit: contain;"><img class="img-fluid for-dark" src="{{ $siteLogoUrl ?? asset('backend/images/logo/logo.png') }}" alt="logo-dark" style="max-width: 140px; max-height: 50px; object-fit: contain;"></a></div>
             <div class="toggle-sidebar"> <i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i></div>
           </div>
           <div class="left-header col-xxl-5 col-xl-6 col-lg-5 col-md-4 col-sm-3 p-0">
             <div> <a class="toggle-sidebar" href="#"> <i class="iconly-Category icli"> </i></a>
               <div class="d-flex align-items-center gap-2 ">
-                <h4 class="f-w-600">Welcome {{ $user->username }}</h4><img class="mt-0" src="{{ asset('backend/images/hand.gif ') }}" alt="hand-gif">
+                <h4 class="f-w-600">Welcome {{ $user->username }}</h4><img class="mt-0" src="{{ asset('backend/images/hand.gif') }}" alt="hand-gif">
               </div>
             </div>
             <div class="welcome-content d-xl-block d-none"><span class="text-truncate col-12">Here’s what’s happening with Back End. </span></div>
@@ -34,7 +34,7 @@
               </li>
               
               <li class="profile-nav onhover-dropdown"> 
-                <div class="media profile-media"><img class="b-r-10" src="{{ asset('backend/images/dashboard/profile.png  ') }}" alt="">
+                <div class="media profile-media"><img class="b-r-10" src="{{ asset('backend/images/dashboard/profile.png') }}" alt="">
                   <div class="media-body d-xxl-block d-none box-col-none">
                     <div class="d-flex align-items-center gap-2"> <span>{{ $user->username }}</span><i class="middle fa fa-angle-down"> </i></div>
                     <p class="mb-0 font-roboto">{{ $user->role }}</p>

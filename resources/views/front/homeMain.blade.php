@@ -562,8 +562,12 @@
     <header>
         <div class="container header-content">
             <a href="/" class="logo">
-                <i class="bi bi-box-seam-fill"></i>
-                Crownbridge
+                @if(isset($query) && $query->siteLogo)
+                    <img src="{{ $query->siteLogo }}" alt="Logo" style="max-width: 160px; max-height: 50px; object-fit: contain;">
+                @else
+                    <i class="bi bi-box-seam-fill"></i>
+                    Crownbridge
+                @endif
             </a>
             
             <div class="nav-actions">

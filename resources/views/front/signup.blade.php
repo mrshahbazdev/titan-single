@@ -168,7 +168,13 @@
 <body>
     <div class="container">
         <div class="card">
-            <div class="logo">CrownBridge Travel</div>
+            <div class="logo">
+                @if(isset($query) && $query->siteLogo)
+                    <img src="{{ $query->siteLogo }}" alt="Logo" style="max-width: 180px; max-height: 60px; object-fit: contain;">
+                @else
+                    CrownBridge Travel
+                @endif
+            </div>
             <p class="tagline">Your gateway to exclusive travel experiences</p>
             
             <h1 class="title">Create account</h1>
