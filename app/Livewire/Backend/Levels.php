@@ -9,8 +9,6 @@ use Illuminate\Http\Request;
 use Illuminate\Http\File;
 use Carbon\Carbon;
 use App\Models\product;
-use Livewire\WithFileUploads;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File as FileSystem;
 
 class Levels extends Component
@@ -26,14 +24,14 @@ class Levels extends Component
 	public $postId;
 	public $ordersGrabbed;
 	public $minimumBalanceLimit;
-	public array $img = [];
+	public $imgBase64 = '';
 	public $imageName;
 	public $memberlevels;
 	protected $rules = [
             'name' => 'required',
             'commissionRate' => 'required',
             'orderReciveLimit' => 'required',
-            'img' => 'required',
+            'imgBase64' => 'required',
             'level' => 'required|unique:memberlevels',
 			'ordersGrabbed' => 'required',
 			'minimumBalanceLimit' => 'required',
@@ -44,7 +42,7 @@ class Levels extends Component
     		'orderReciveLimit.required' => 'Please Enter Daily Order Limit',
     		'level.required' => 'Please Enter Level Number',
     		'level.unique' => 'This Level Number Already Enter',
-    		'img.required' => 'Please Upload Level Image',
+    		'imgBase64.required' => 'Please Upload Level Image',
 			'ordersGrabbed.required' => 'Please Enter Minimum Referral Users Required',
 			'minimumBalanceLimit.required' => 'Please Enter Minimum Balance Limit',
     ];
@@ -62,21 +60,26 @@ class Levels extends Component
     public function add()
     {
     	$this->validate();
-    	$photo = $this->img[0];
-        //Storage::putFile('productImage', new File($photo['path']));
-        $file = new File($photo['path']);
-        $filename = uniqid() . '.' . $file->extension();
-        
-		// Get the public directory path
+
+		// Decode base64 image
+		$imageData = $this->imgBase64;
+		$imageInfo = explode(',', $imageData);
+		$decodedImage = base64_decode($imageInfo[1]);
+
+		// Determine extension from mime type
+		$extension = 'png';
+		if (strpos($imageInfo[0], 'jpeg') !== false || strpos($imageInfo[0], 'jpg') !== false) {
+		    $extension = 'jpg';
+		}
+
+		$filename = uniqid() . '.' . $extension;
 		$publicPath = public_path('backend/level');
 
-		// Ensure the directory exists; if not, create it
 		if (!FileSystem::exists($publicPath)) {
 		    FileSystem::makeDirectory($publicPath, 0755, true, true);
 		}
 
-		// Move the file to the public directory
-		$file->move($publicPath, $filename);
+		file_put_contents($publicPath . '/' . $filename, $decodedImage);
 
 		
 			 
@@ -160,7 +163,7 @@ class Levels extends Component
     	$this->commissionRate = '';
     	$this->orderReciveLimit = '';
     	$this->level = '';
-    	$this->img = [];
+    	$this->imgBase64 = '';
     }
     public function render()
     {
