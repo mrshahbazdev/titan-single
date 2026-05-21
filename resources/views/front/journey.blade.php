@@ -715,7 +715,7 @@
                             <h3><?php echo $value->levelName; ?></h3>
                           </div>
                           <div class="card-image">
-                            <img src="backend/level/<?php echo $value->levelImage; ?>" alt="Level 1 Badge">
+                            <img src="/backend/level/<?php echo $value->levelImage; ?>" alt="Level 1 Badge">
                           </div>
                           <div class="card-body">
                             <?php
@@ -774,7 +774,7 @@
                             <h3><?php echo $value->levelName; ?></h3>
                           </div>
                           <div class="card-image">
-                            <img src="backend/level/<?php echo $value->levelImage; ?>" alt="Level 1 Badge">
+                            <img src="/backend/level/<?php echo $value->levelImage; ?>" alt="Level 1 Badge">
                           </div>
                           <div class="card-body">
                             <?php
