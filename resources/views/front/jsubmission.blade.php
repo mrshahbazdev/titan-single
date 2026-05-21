@@ -51,7 +51,7 @@
         <div class="van-nav-bar__left van-haptics-feedback"><i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"><!----><!----><!----></i><!----></div>
         </a>
       <div class="van-nav-bar__title van-ellipsis">Journey</div><!----></div></div><div class="white-bg" data-v-916224ec=""><div class="goods-wrap" data-v-916224ec="">
-      <img src="livewire/backend/productImage/<?php echo $rewards->productImage; ?>" class="goods-banner" data-v-916224ec=""><p class="text" data-v-916224ec=""><?php echo $rewards->productName; ?></p><div class="goods-cell flex-center van-hairline--top" data-v-916224ec="">
+      <img src="/backend/productImage/<?php echo $rewards->productImage; ?>" class="goods-banner" data-v-916224ec=""><p class="text" data-v-916224ec=""><?php echo $rewards->productName; ?></p><div class="goods-cell flex-center van-hairline--top" data-v-916224ec="">
         <!-- <div class="cell-item flex-row w100 pt10 pb10" data-v-916224ec=""><div class="cell-item-title" data-v-916224ec="">Total Price</div>
       <div class="cell-item-value" data-v-916224ec="">$ <?php echo $rewards->productPrice; ?></div> -->
     </div></div>

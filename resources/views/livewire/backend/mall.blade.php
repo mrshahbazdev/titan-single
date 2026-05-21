@@ -43,10 +43,9 @@ function handleProductImage(input) {
                         <table class="table table-hover">
                           <thead class="table-dark">
                             <tr>
+                              <th scope="col">Image</th>
                               <th scope="col">Product Name</th>
                               <th scope="col">Price</th>
-                              <th scope="col">Add Time</th>
-                              <th scope="col">Update Time</th>
                               <th scope="col">Action</th>
                             </tr>
                           </thead>
@@ -54,10 +53,15 @@ function handleProductImage(input) {
                           	@if($products)
                           		@foreach($products as $product)
 		                            <tr>
+		                              <td>
+		                              	@if($product->productImage)
+		                              		<img src="/backend/productImage/{{ $product->productImage }}" style="max-width:60px;max-height:60px;border-radius:6px;object-fit:cover;">
+		                              	@else
+		                              		<span class="text-muted">No image</span>
+		                              	@endif
+		                              </td>
 		                              <td>{{ $product->productName }}</td>
 		                              <td>{{ $product->productPrice }}</td>
-		                              <td>{{ $product->created_at }}</td>
-		                              <td>{{ $product->updated_at }}</td>
 		                              
 		                              <td><button class="btn btn-default" title="Edit" wire:click="edit({{ $product->id }})" style="margin: 2px;"><i class="fa fa-edit"></i></button><button class="btn btn-default" title="delete" wire:click="pdelete({{ $product->id }})" style="margin: 2px;"><i class="fa fa-trash"></i></button></td>
 		                              
