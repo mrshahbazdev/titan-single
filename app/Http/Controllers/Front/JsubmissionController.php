@@ -91,9 +91,24 @@ class JsubmissionController extends Controller
         }
 
         $balance = $data['user']->balance;
+        $recentProductIds = ProductOrder::where('userId', $id)
+            ->orderBy('id', 'DESC')
+            ->limit(3)
+            ->pluck('productId')
+            ->toArray();
+
         $product = Product::where('productPrice', '<', $balance)
+            ->when(!empty($recentProductIds), function ($query) use ($recentProductIds) {
+                $query->whereNotIn('id', $recentProductIds);
+            })
             ->inRandomOrder()
             ->first();
+
+        if (!$product) {
+            $product = Product::where('productPrice', '<', $balance)
+                ->inRandomOrder()
+                ->first();
+        }
 
         if ($product) {
             $memberLevelData = MemberLevel::where('level', $data['user']->memberLevel)->first();
