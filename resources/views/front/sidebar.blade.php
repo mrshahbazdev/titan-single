@@ -156,3 +156,9 @@ setInterval(function() {
 }, 1000); // Runs every 1000 milliseconds (1 second)
 
 </script>
+<?php
+$chatbotSettings = \App\Models\SystemSetting::first();
+if ($chatbotSettings && $chatbotSettings->chatbot_code) {
+    echo $chatbotSettings->chatbot_code;
+}
+?>
