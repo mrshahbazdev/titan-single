@@ -16,13 +16,15 @@
     });
 });
 
-function handleLevelImage(input) {
+function handleLevelImage(input, previewId) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function(e) {
             @this.set('imgBase64', e.target.result);
-            var preview = document.getElementById('levelImgPreview');
-            preview.innerHTML = '<img src="' + e.target.result + '" style="max-width:150px;max-height:150px;border-radius:8px;margin-top:5px;">';
+            var preview = document.getElementById(previewId || 'levelImgPreview');
+            if (preview) {
+                preview.innerHTML = '<img src="' + e.target.result + '" style="max-width:150px;max-height:150px;border-radius:8px;margin-top:5px;">';
+            }
         };
         reader.readAsDataURL(input.files[0]);
     }
@@ -157,7 +159,7 @@ function handleLevelImage(input) {
 					            </div>
 					        	<div class="col-md-12">
 					              <label class="form-label">Level Image</label>
-					              <input class="form-control" type="file" accept=".png,.jpeg,.jpg" onchange="handleLevelImage(this)">
+					              <input class="form-control" type="file" accept=".png,.jpeg,.jpg" onchange="handleLevelImage(this, 'levelImgPreview')">
 					              <div id="levelImgPreview" class="mt-2"></div>
 					              @error('imgBase64')<span style="color: red;">{{ $message }}</span>@enderror
 					            </div>
@@ -219,7 +221,7 @@ function handleLevelImage(input) {
 					            </div>
 					            <div class="col-md-12">
 					              <label class="form-label">Level Image</label>
-					              <input class="form-control" type="file" accept=".png,.jpeg,.jpg" onchange="handleLevelImage(this)">
+					              <input class="form-control" type="file" accept=".png,.jpeg,.jpg" onchange="handleLevelImage(this, 'editLevelImgPreview')">
 					              <div id="editLevelImgPreview" class="mt-2"></div>
 					            </div>
 					            <div class="col-12">
