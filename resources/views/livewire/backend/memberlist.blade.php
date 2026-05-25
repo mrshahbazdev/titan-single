@@ -520,28 +520,28 @@
                                 <div class="col-md-12">
                                     <p class="form-label"><strong>Whether to allow rob order</strong></p>
                                     <label class="switch">
-                                        <input type="checkbox" wire:model="orderStatus"
-                                            {{ $orderStatus ? 'checked' : '' }}>
+                                        <input type="checkbox" wire:model.live="orderStatus">
                                         <span class="slider"></span>
                                     </label>
+                                    <span class="ms-2">{{ $orderStatus ? 'Enabled' : 'Disabled' }}</span>
                                 </div>
 
                                 <div class="col-md-12">
                                     <p class="form-label"><strong>Whether to allow withdrawal</strong></p>
                                     <label class="switch">
-                                        <input type="checkbox" wire:model="withdrawalStatus"
-                                            {{ $withdrawalStatus ? 'checked' : '' }}>
+                                        <input type="checkbox" wire:model.live="withdrawalStatus">
                                         <span class="slider"></span>
                                     </label>
+                                    <span class="ms-2">{{ $withdrawalStatus ? 'Enabled' : 'Disabled' }}</span>
                                 </div>
 
                                 <div class="col-md-12">
                                     <p class="form-label"><strong>First Task Level</strong></p>
                                     <label class="switch">
-                                        <input type="checkbox" wire:model="taskStatus"
-                                            {{ $taskStatus ? 'checked' : '' }}>
+                                        <input type="checkbox" wire:model.live="taskStatus">
                                         <span class="slider"></span>
                                     </label>
+                                    <span class="ms-2">{{ $taskStatus ? 'Enabled' : 'Disabled' }}</span>
                                 </div>
 
                                 <div class="col-12">

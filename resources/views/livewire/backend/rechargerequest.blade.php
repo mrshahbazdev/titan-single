@@ -20,7 +20,7 @@
    		<div class="col-sm-12"> 
                 <div class="card">
                   <div class="card-header">
-                    <h4>Withdraw Records @if($userRecord) {{ $userRecord }} @else {{ 'All Users' }} @endif</h4>
+                    <h4>Recharge Requests @if($userRecord) {{ $userRecord }} @else {{ 'All Users' }} @endif</h4>
                   </div>
                   <div class="container mt-5">
 					  <div class="row justify-content-center">
@@ -42,31 +42,49 @@
                               <th scope="col">TID</th>
                               <th scope="col">Method</th>
                               <th scope="col">Amount</th>
-                              <th scope="col">Operation</th>
+                              <th scope="col">Screenshot</th>
                               <th scope="col">Status</th>
+                              <th scope="col">Operation</th>
                             </tr>
                           </thead>
                           <tbody>
                           	@if($members)
                           		@foreach($members as $key => $member)
-		                            <tr>
-		                              <td>{{ $usernames }}</td>
-		                              <td>{{ $member->tid }}</td>
-		                              <td>{{ $member->method }}</td>
-		                              <td>{{ $member->amount }}</td>
-		                              <td>
-		                              	@if($member->status==1)
-		                              		{{ 'Pending' }}
-		                              	@elseif($member->status == 2)
-		                              		{{ 'Approved' }}
-		                              	@else
-		                              		{{ 'Decline' }}
-		                              	@endif
-		                              </td>
-		                              <td><button class="btn btn-success" wire:click="approval({{ $member->id }})" style="margin: 2px;">Approval</button><button class="btn btn-danger" wire:click="decline({{ $member->id }})" style="margin: 2px;">Decline</button></td>
-		                              
-		                            </tr>
-		                        @endforeach
+	                            <tr>
+	                              <td>{{ $usernames[$member->user_id] ?? 'N/A' }}</td>
+	                              <td>{{ $member->tid }}</td>
+	                              <td>{{ $member->method }}</td>
+	                              <td>{{ $member->amount }}</td>
+	                              <td>
+	                              	@if($member->screenshot)
+	                              		<a href="{{ asset('storage/' . $member->screenshot) }}" target="_blank">
+	                              			<img src="{{ asset('storage/' . $member->screenshot) }}" alt="Screenshot" style="max-width: 80px; max-height: 60px; border-radius: 4px; cursor: pointer;">
+	                              		</a>
+	                              	@else
+	                              		<span class="text-muted">No screenshot</span>
+	                              	@endif
+	                              </td>
+	                              <td>
+	                              	@if($member->status==1)
+	                              		<span class="badge bg-warning text-dark">Pending</span>
+	                              	@elseif($member->status == 2)
+	                              		<span class="badge bg-success">Approved</span>
+	                              	@else
+	                              		<span class="badge bg-danger">Declined</span>
+	                              	@endif
+	                              </td>
+	                              <td>
+	                              	@if($member->status == 1)
+	                              		<button class="btn btn-success btn-sm" wire:click="approval({{ $member->id }})" style="margin: 2px;">Approve</button>
+	                              		<button class="btn btn-danger btn-sm" wire:click="decline({{ $member->id }})" style="margin: 2px;">Decline</button>
+	                              	@elseif($member->status == 2)
+	                              		<span class="text-success"><i class="fa fa-check-circle"></i> Approved</span>
+	                              	@else
+	                              		<span class="text-danger"><i class="fa fa-times-circle"></i> Declined</span>
+	                              	@endif
+	                              </td>
+	                            </tr>
+	                        @endforeach
                             @endif
                           </tbody>
                         </table>

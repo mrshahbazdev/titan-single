@@ -75,7 +75,6 @@ class Rechargerequested extends Component
     public function render()
     {	
     	$query = RechargeRequest::orderBy('id', 'desc');
-    	$query->where('status', 1);
         if ($this->search) {
          	$this->username = false;
             $this->userRecord = $this->search;
@@ -85,7 +84,7 @@ class Rechargerequested extends Component
 			$this->userRecord = $this->username;
             $query->where('username', 'like', '%' . $this->username . '%'); 
         }
-        $usernames = Member::whereIn('id', $query->pluck('user_id')->toArray())->pluck('username');
+        $usernames = Member::whereIn('id', $query->pluck('user_id')->toArray())->pluck('username', 'id');
         $members = $query->paginate(15);
         return view('livewire.backend.rechargerequest',compact('members','usernames'))->layout('components.layouts.admin',['user' => $this->user]);
     }

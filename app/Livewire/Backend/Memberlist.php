@@ -383,11 +383,6 @@ class Memberlist extends Component
         $fieldsToValidate = ['username', 'inviteCode', 'balance'];
         $this->validateMultiple($fieldsToValidate);
         $CodeCheck = Member::where('myCode', $this->inviteCode)->first();
-        if($this->taskStatus == false){
-            $this->taskStatus = 0;
-        }else{
-            $this->taskStatus = 1;
-        }
         if (!$CodeCheck) {
             $this->inviteCodeCheck = true;
         }else{
@@ -396,10 +391,10 @@ class Memberlist extends Component
                 'balance' => $this->balance,
                 'phN' => $this->ph,
                 'inviteCode' => $this->inviteCode,
-                'withdrawalStatus' => $this->withdrawalStatus,
-                'orderStatus' => $this->orderStatus,
+                'withdrawalStatus' => $this->withdrawalStatus ? 1 : 0,
+                'orderStatus' => $this->orderStatus ? 1 : 0,
                 'memberLevel' => $this->level,
-                'taskStatus' => $this->taskStatus,
+                'taskStatus' => $this->taskStatus ? 1 : 0,
             ];
             if ($this->password) {
                 $data['password'] = Hash::make($this->password);

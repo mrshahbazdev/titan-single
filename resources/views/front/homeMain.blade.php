@@ -595,24 +595,40 @@
                 padding: 120px 0 40px;
             }
             .hero h1 {
-                font-size: 28px;
+                font-size: 26px;
                 letter-spacing: -0.8px;
             }
             .hero p {
-                font-size: 14px;
+                font-size: 13px;
                 margin-bottom: 24px;
+                padding: 0 4px;
             }
             .hero-badge {
                 font-size: 11px;
                 padding: 5px 12px;
             }
             .modal-content {
-                padding: 30px 20px;
-                margin: 0 12px;
-                border-radius: 18px;
+                padding: 24px 16px;
+                margin: 0 10px;
+                border-radius: 16px;
+                max-width: 100%;
+            }
+            .modal-title {
+                font-size: 22px;
+            }
+            .modal-subtitle {
+                font-size: 13px;
+            }
+            .form-group label {
+                font-size: 12px;
+            }
+            .form-control {
+                padding: 12px 14px 12px 40px;
+                font-size: 13px;
             }
             .btn {
                 padding: 8px 16px;
+                font-size: 13px;
             }
             .feature-card {
                 padding: 24px;
@@ -629,26 +645,65 @@
                 padding: 30px 0;
                 margin-top: 50px;
             }
+            footer p {
+                font-size: 12px;
+                padding: 0 10px;
+            }
             .nav-actions span {
                 display: none;
+            }
+            .header-content {
+                padding: 0 4px;
             }
         }
 
         @media (max-width: 380px) {
             .hero h1 {
-                font-size: 24px;
+                font-size: 22px;
+            }
+            .hero p {
+                font-size: 12px;
             }
             .stat-item h2 {
-                font-size: 24px;
+                font-size: 22px;
+            }
+            .stat-item p {
+                font-size: 12px;
             }
             .logo {
-                font-size: 18px;
+                font-size: 16px;
+            }
+            .logo img {
+                max-width: 100px !important;
+            }
+            .nav-actions .btn {
+                padding: 6px 10px;
+                font-size: 11px;
+            }
+            .modal-content {
+                padding: 20px 14px;
+                margin: 0 8px;
             }
         }
 
         /* Fix SweetAlert2 popup showing behind the active login/register custom modals */
         .swal2-container {
             z-index: 999999 !important;
+        }
+
+        /* Make SweetAlert2 popups responsive on mobile */
+        @media (max-width: 576px) {
+            .swal2-popup {
+                width: 90% !important;
+                font-size: 14px !important;
+                padding: 20px 16px !important;
+            }
+            .swal2-title {
+                font-size: 18px !important;
+            }
+            .swal2-html-container {
+                font-size: 13px !important;
+            }
         }
     </style>
 </head>
