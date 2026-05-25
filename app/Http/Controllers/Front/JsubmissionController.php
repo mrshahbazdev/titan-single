@@ -111,9 +111,7 @@ class JsubmissionController extends Controller
             $commissionRate = $memberLevelData->commissionRate ?? 0;
             $price = $product->productPrice;
             $productId = $product->id;
-            $userBalance = $data['user']->balance;
             $commsion = $price * $commissionRate;
-            $parentCommssions = $price * $commissionRate;
 
             ProductOrder::create([
                 'userId' => $id,
@@ -124,9 +122,6 @@ class JsubmissionController extends Controller
                 'time' => time(),
             ]);
 
-            $newBalance = $userBalance - $price;
-            $this->memberBalanceUpdate($id, $newBalance, $parentCommssions);
-
             $pendingProducts = ProductOrder::where('userId', $id)->where('status', 0)->first();
             $data['pendingProduts'] = $pendingProducts;
             $data['rewards'] = $product;
@@ -136,19 +131,5 @@ class JsubmissionController extends Controller
             $data['error'] = 'Please Wait No More Ticket';
             return view('front.journey', $data);
         }
-    }
-
-    private function memberBalanceUpdate($id, $newBalance, $parentCommssions)
-    {
-        $parentUser = Member::find($id);
-        $parentRefCode = $parentUser->inviteCode;
-        $parentUserGet = Member::where('myCode', $parentRefCode)->first();
-
-        if ($parentUserGet) {
-            $parentUserNewBalance = $parentUserGet->balance + $parentCommssions;
-            // Parent balance update commented out in original code
-        }
-
-        Member::where('id', $id)->update(['balance' => $newBalance]);
     }
 }
