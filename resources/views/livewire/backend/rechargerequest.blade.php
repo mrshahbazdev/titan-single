@@ -57,8 +57,8 @@
 	                              <td>{{ $member->amount }}</td>
 	                              <td>
 	                              	@if($member->screenshot)
-	                              		<a href="{{ asset('storage/' . $member->screenshot) }}" target="_blank">
-	                              			<img src="{{ asset('storage/' . $member->screenshot) }}" alt="Screenshot" style="max-width: 80px; max-height: 60px; border-radius: 4px; cursor: pointer;">
+	                              		<a href="{{ asset($member->screenshot) }}" target="_blank">
+	                              			<img src="{{ asset($member->screenshot) }}" alt="Screenshot" style="max-width: 80px; max-height: 60px; border-radius: 4px; cursor: pointer;">
 	                              		</a>
 	                              	@else
 	                              		<span class="text-muted">No screenshot</span>
