@@ -797,7 +797,9 @@
                     <?php
 
                     $referral = \DB::table('referrals')->where('referrer_id', $user->id)->get();
-                    $row = $referral->count();
+                    $totalReferrals = $referral->count();
+                    $claimedReferrals = $user->claimedReferrals ?? 0;
+                    $row = $totalReferrals - $claimedReferrals;
 
                     // Assume $user_balance is already defined and holds the user's balance
                     $user_balance = $user->balance; // Replace with actual balance retrieval logic
@@ -996,9 +998,10 @@
     var level = $(this).attr('id');
     // ajex request
     $.ajax({
-      url: '{{ asset('') }}proxy/level_claim',
+      url: '{{ url("proxy/level_claim") }}',
       type: 'POST',
       data: {
+        _token: '{{ csrf_token() }}',
         level: level
       },
       dataType: 'json',

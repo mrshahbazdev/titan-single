@@ -72,6 +72,7 @@ Route::middleware(['front.auth'])->group(function () {
 
         // Journey / Tasks
         Route::get('/journey', [JourneyController::class, 'index']);
+        Route::post('/proxy/level_claim', [JourneyController::class, 'claimLevel']);
         Route::get('/jsubmission', [JsubmissionController::class, 'index']);
         Route::get('/jsubmission/submit', [JsubmissionController::class, 'submit']);
         Route::get('/jhistory', [JhistoryController::class, 'index']);
