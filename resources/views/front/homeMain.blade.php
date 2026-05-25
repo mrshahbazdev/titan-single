@@ -127,6 +127,70 @@
             gap: 16px;
         }
 
+        /* Hamburger Toggle Button */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1002;
+        }
+
+        .menu-toggle .bar {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: var(--transition-smooth);
+        }
+
+        .menu-toggle.active .bar:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active .bar:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 576px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-actions {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(7, 9, 14, 0.95);
+                backdrop-filter: blur(16px);
+                flex-direction: column;
+                padding: 20px 24px;
+                gap: 12px;
+                border-bottom: 1px solid var(--card-border);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            }
+
+            .nav-actions.open {
+                display: flex;
+            }
+
+            .nav-actions .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 12px 20px;
+                font-size: 15px;
+            }
+        }
+
         .btn {
             display: inline-flex;
             align-items: center;
@@ -725,7 +789,13 @@
                 @endif
             </a>
             
-            <div class="nav-actions">
+            <button class="menu-toggle" id="menuToggle" onclick="toggleMobileMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <div class="nav-actions" id="navActions">
                 @if (session('username'))
                     <span style="font-size: 14px; font-weight: 500; color: var(--text-secondary); margin-right: 8px;">
                         Welcome, {{ session('username') }}
@@ -934,8 +1004,23 @@
             }
         });
 
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const toggle = document.getElementById('menuToggle');
+            const nav = document.getElementById('navActions');
+            toggle.classList.toggle('active');
+            nav.classList.toggle('open');
+        }
+
         // Modal Functionality
         function openModal(id) {
+            // Close mobile menu when opening a modal
+            const toggle = document.getElementById('menuToggle');
+            const nav = document.getElementById('navActions');
+            if (toggle && nav) {
+                toggle.classList.remove('active');
+                nav.classList.remove('open');
+            }
             document.getElementById(id).classList.add('active');
             document.body.style.overflow = 'hidden';
         }
