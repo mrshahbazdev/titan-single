@@ -217,6 +217,11 @@ function handleLevelImage(input) {
 					              <input class="form-control" id="inputEmailEnter" type="number" wire:model="minimumBalanceLimit" placeholder="Minimum Balance Limit">
 					              @error('minimumBalanceLimit')<span style="color: red;">{{ $message }}</span>@enderror
 					            </div>
+					            <div class="col-md-12">
+					              <label class="form-label">Level Image</label>
+					              <input class="form-control" type="file" accept=".png,.jpeg,.jpg" onchange="handleLevelImage(this)">
+					              <div id="editLevelImgPreview" class="mt-2"></div>
+					            </div>
 					            <div class="col-12">
 					              <button class="btn btn-primary" type="submit">Update</button>
 					              <button class="btn btn-danger" wire:click="editModelClose" type="button" data-bs-dismiss="modal" style="position:absolute; right:10px;">Close </button>
