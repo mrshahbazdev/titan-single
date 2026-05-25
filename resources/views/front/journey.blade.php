@@ -728,7 +728,7 @@
                             <p>Minimum Referral: <?php echo $row; ?>/<?php echo $value->ordersGrabbed; ?></p>
                             <p>Featured </p>
                             <p>Daily Journey: <?php echo $value->orderReciveLimit; ?></p>
-                            <p>Commission Rate: <?php echo $value->commissionRate; ?> PKR</p>
+                            <p>Commission Rate: <?php echo ($value->commissionRate * 100); ?>%</p>
                             <button class="unlock-button <?php
                                                           if ($row >= $value->ordersGrabbed && $user_balance >= $value->price) {
                                                             if ($value->level <= $user->memberLevel) {
@@ -788,7 +788,7 @@
                             <p>Minimum Referral: <?php echo $row; ?>/<?php echo $value->ordersGrabbed; ?></p>
                             <p>Featured </p>
                             <p>Daily Journey: <?php echo $value->orderReciveLimit; ?></p>
-                            <p>Commission Rate: <?php echo $value->commissionRate; ?> PKR</p>
+                            <p>Commission Rate: <?php echo ($value->commissionRate * 100); ?>%</p>
                             <button class="unlock-button <?php
                                                           if ($row >= $value->ordersGrabbed && $user_balance >= $value->price) {
                                                             if ($value->level <= $user->memberLevel) {
