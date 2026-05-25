@@ -93,12 +93,14 @@
             border-bottom: 1px solid var(--card-border);
             padding: 18px 0;
             transition: var(--transition-smooth);
+            overflow-x: hidden;
         }
 
         .header-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            overflow: hidden;
         }
 
         .logo {
@@ -112,6 +114,9 @@
             -webkit-text-fill-color: transparent;
             text-decoration: none;
             letter-spacing: -0.5px;
+            min-width: 0;
+            overflow: hidden;
+            flex-shrink: 1;
         }
 
         .logo i {
@@ -135,6 +140,7 @@
             cursor: pointer;
             padding: 8px;
             z-index: 1002;
+            flex-shrink: 0;
         }
 
         .menu-toggle .bar {
@@ -717,7 +723,14 @@
                 display: none;
             }
             .header-content {
-                padding: 0 4px;
+                padding: 0 12px;
+            }
+            .logo {
+                font-size: 18px;
+            }
+            .logo img {
+                max-width: 110px !important;
+                max-height: 40px !important;
             }
         }
 
