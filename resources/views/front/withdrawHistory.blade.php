@@ -70,6 +70,15 @@
               <span class="dark-history-label">Date</span>
               <span class="dark-history-value"><?php echo $user->created_at ? $user->created_at->format("Y-m-d H:i:s") : ""; ?></span>
             </div>
+            <?php if(!empty($user->screenshot)): ?>
+            <div class="dark-screenshot-row">
+              <span class="dark-history-label">Screenshot Proof</span>
+              <a href="<?php echo asset($user->screenshot); ?>" class="dark-screenshot-link" onclick="event.preventDefault(); document.getElementById('screenshotModal').style.display='flex'; document.getElementById('screenshotModalImg').src=this.href;">
+                <img src="<?php echo asset($user->screenshot); ?>" alt="Payment Screenshot" class="dark-screenshot-thumb">
+                <span>View Proof</span>
+              </a>
+            </div>
+            <?php endif; ?>
           </div>
         <?php endforeach;
         } else { ?>
@@ -84,6 +93,51 @@
     </div>
   </div>
 </div>
+
+<!-- Screenshot Modal -->
+<div id="screenshotModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:9999; align-items:center; justify-content:center; cursor:pointer;" onclick="this.style.display='none';">
+  <div style="position:relative; max-width:90%; max-height:90%;">
+    <img id="screenshotModalImg" src="" alt="Screenshot" style="max-width:100%; max-height:85vh; border-radius:12px; box-shadow:0 8px 40px rgba(0,0,0,0.5);">
+    <div style="position:absolute; top:-12px; right:-12px; width:32px; height:32px; background:rgba(255,255,255,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; border:1px solid rgba(255,255,255,0.2);">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </div>
+  </div>
+</div>
+
+<style>
+  .dark-screenshot-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .dark-screenshot-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #00f2fe;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: rgba(0, 242, 254, 0.08);
+    border: 1px solid rgba(0, 242, 254, 0.15);
+    transition: all 0.2s;
+  }
+  .dark-screenshot-link:hover {
+    background: rgba(0, 242, 254, 0.15);
+  }
+  .dark-screenshot-thumb {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid rgba(0, 242, 254, 0.2);
+  }
+</style>
 
 </van-number-keyboard></van-nav-bar><!----><!----><div data-v-app=""></div><!----><div class="van-popup van-popup--center van-toast van-toast--middle van-toast--loading custom-toast" style="z-index: 2001; display: none;"><div class="van-loading van-loading--circular van-toast__loading"><span class="van-loading__spinner van-loading__spinner--circular" style="width: 20px; height: 20px;"><svg class="van-loading__circular" viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span><!----></div><!----><!----></div>@include('front.sidebar')
 </body></html>
