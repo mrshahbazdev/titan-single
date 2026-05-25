@@ -110,7 +110,7 @@ class Levels extends Component
     	$this->level = $post->level;
 		$this->ordersGrabbed = $post->ordersGrabbed;
 		$this->minimumBalanceLimit = $post->price;
-		
+		$this->imgBase64 = '';
     }
     public function update()
     {
@@ -123,11 +123,38 @@ class Levels extends Component
 			'ordersGrabbed' => $this->ordersGrabbed,
 			'price' => $this->minimumBalanceLimit,
     	);
+
+    	if ($this->imgBase64) {
+    		$imageData = $this->imgBase64;
+    		$imageInfo = explode(',', $imageData);
+    		$decodedImage = base64_decode($imageInfo[1]);
+
+    		$extension = 'png';
+    		if (strpos($imageInfo[0], 'jpeg') !== false || strpos($imageInfo[0], 'jpg') !== false) {
+    		    $extension = 'jpg';
+    		}
+
+    		$filename = uniqid() . '.' . $extension;
+    		$publicPath = public_path('backend/level');
+
+    		if (!FileSystem::exists($publicPath)) {
+    		    FileSystem::makeDirectory($publicPath, 0755, true, true);
+    		}
+
+    		file_put_contents($publicPath . '/' . $filename, $decodedImage);
+
+    		if ($update->levelImage && FileSystem::exists(public_path('backend/level/' . $update->levelImage))) {
+    		    FileSystem::delete(public_path('backend/level/' . $update->levelImage));
+    		}
+
+    		$data['levelImage'] = $filename;
+    	}
+
     	$update->update($data);
     	$this->editProductModel = false;
     	$this->dispatch('swal',[
                     'title' => 'Success!',
-                    'text' => 'Product Added Successfully',
+                    'text' => 'Level Updated Successfully',
                     'icon' => 'success',
                 ]);
     }
