@@ -138,8 +138,104 @@
         }
 
         .content-box[data-v-dad6ad44] {
-          opacity: 80%;
+          opacity: 1;
+        }
 
+        .journey-hero-banner {
+          width: 100%;
+          border-radius: 0.26667rem;
+          overflow: hidden;
+          position: relative;
+          height: 4rem;
+          background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 0.26667rem;
+        }
+        .journey-hero-banner::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: url('assets/hotel-6.813ec2bf.png') center/cover no-repeat;
+          opacity: 0.35;
+        }
+        .journey-hero-banner .hero-content {
+          position: relative;
+          z-index: 2;
+          text-align: center;
+          color: #fff;
+        }
+        .journey-hero-banner .hero-content h2 {
+          font-size: 0.48rem;
+          font-weight: 700;
+          margin: 0 0 0.1rem;
+          text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .journey-hero-banner .hero-content p {
+          font-size: 0.32rem;
+          margin: 0;
+          opacity: 0.9;
+          text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+        }
+
+        .content-box .list-top[data-v-dad6ad44] {
+          background: linear-gradient(135deg, #1a1e2e, #252a3a) !important;
+          border: 1px solid rgba(0, 242, 254, 0.15);
+          box-shadow: 0 4px 20px rgba(0, 242, 254, 0.08);
+        }
+        .content-box .list-top .title[data-v-dad6ad44] {
+          color: rgba(255,255,255,0.7) !important;
+          font-size: 0.34rem !important;
+          letter-spacing: 0.02rem;
+          text-transform: uppercase;
+        }
+        .content-box .list-top .subtitle[data-v-dad6ad44] {
+          color: #00f2fe !important;
+          font-size: 0.58rem !important;
+          font-weight: 800 !important;
+          text-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+        }
+        .content-box .list-top img[data-v-dad6ad44] {
+          width: 1.2rem !important;
+          margin: 0.13rem 0 !important;
+          filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.4));
+        }
+
+        .content-box .list-bottom .list-item[data-v-dad6ad44] {
+          background: linear-gradient(135deg, #1a1e2e, #252a3a) !important;
+          border: 1px solid rgba(255,255,255,0.08);
+          box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .content-box .list-bottom .list-item .title[data-v-dad6ad44] {
+          color: rgba(255,255,255,0.65) !important;
+          font-size: 0.28rem !important;
+          letter-spacing: 0.01rem;
+        }
+        .content-box .list-bottom .list-item .subtitle[data-v-dad6ad44] {
+          color: #ffffff !important;
+          font-size: 0.42rem !important;
+          font-weight: 700 !important;
+        }
+
+        .van-button--primary[data-v-dad6ad44] {
+          background: linear-gradient(135deg, #00f2fe, #00b4d8) !important;
+          color: #07090e !important;
+          font-weight: 700 !important;
+          font-size: 0.37rem !important;
+          border: none !important;
+          border-radius: 0.21rem !important;
+          box-shadow: 0 4px 20px rgba(0, 242, 254, 0.35) !important;
+          transition: all 0.3s ease;
+        }
+
+        .banner-top[data-v-dad6ad44] {
+          position: relative !important;
+          z-index: 2 !important;
+        }
+
+        .container[data-v-dad6ad44] {
+          background: #07090e !important;
         }
       </style>
       <script type="module" crossorigin="" src="assets/index.3fb3bc1b.js"></script>
@@ -208,7 +304,14 @@
                     <div class="van-nav-bar__right van-haptics-feedback"><a href="jhistory" class="history" data-v-dad6ad44="">History</a></div>
                   </div>
                 </div>
-                <div class="banner-top" data-v-dad6ad44=""></div>
+                <div class="banner-top" data-v-dad6ad44="">
+                  <div class="journey-hero-banner">
+                    <div class="hero-content">
+                      <h2>✈ CrownBridge Travel</h2>
+                      <p>Complete journeys & earn rewards</p>
+                    </div>
+                  </div>
+                </div>
                 <div class="content-box" data-v-dad6ad44="">
                   <div class="list-top" data-v-dad6ad44=""><img src="assets/booking-1.d2bf80f8.png" alt="" data-v-dad6ad44="">
                     <div class="title" data-v-dad6ad44="">Account Balance</div>
