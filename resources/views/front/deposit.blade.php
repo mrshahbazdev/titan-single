@@ -41,7 +41,7 @@
     </div>
     <div class="main-container" data-v-08abc850="">
       <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #00f2fe; --van-button-primary-background-color: #00f2fe;"><div class="container h100 w100" data-v-eb047502="">
-      <form method="post" >
+      <form method="post" enctype="multipart/form-data">
       @csrf
       <div class="content-wrap" data-v-eb047502=""><div class="van-nav-bar van-hairline--bottom" data-v-eb047502=""><div class="van-nav-bar__content"><a href="journey"><div class="van-nav-bar__left van-haptics-feedback"><i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"><!----><!----><!----></i><!----></div></a><div class="van-nav-bar__title van-ellipsis">Home</div>
       <a href="deposit/deposithistory">
@@ -81,7 +81,7 @@
     <br>
     <div class="custom-input" data-v-eb047502="">
       <span class="prefix" data-v-eb047502="">Payment Method</span>
-    <div class="input-wrap select-wrap" style="width: 155px;">
+    <div class="input-wrap select-wrap" style="width: 100%; flex: 1;">
      
       <!-- select drop down payment method -->
       <select name="paymentmethod" class="paymentmethod styled-select" data-v-eb047502="">
@@ -97,8 +97,15 @@
       </select>
       <!-- end select drop down payment method -->
   </div>
-</div> 
-      <button type="submit" class="van-button van-button--primary van-button--normal van-button--block" data-v-eb047502="" style="background: var(--gradient-text); color: #07090e; border: none; box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);"><div class="van-button__content"><!----><span class="van-button__text">Recharge</span><!----></div></button>
+</div>
+    <br>
+    <div class="custom-input" data-v-eb047502="">
+      <span class="prefix" data-v-eb047502="">Payment Screenshot</span>
+      <div class="input-wrap" data-v-eb047502="" style="width: 100%; flex: 1;">
+        <input type="file" name="screenshot" accept="image/*" class="screenshot-upload" data-v-eb047502="" style="color: #ffffff; font-size: 13px; padding: 8px 0;">
+      </div>
+    </div>
+      <button type="submit" class="van-button van-button--primary van-button--normal van-button--block" data-v-eb047502="" style="background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); color: #07090e; border: none; box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);"><div class="van-button__content"><!----><span class="van-button__text">Recharge</span><!----></div></button>
 
         </div>
       </form>
@@ -132,53 +139,58 @@
     width: 100%;
     overflow-x: auto;
     margin: 20px 0;
-    border: 1px solid #ddd;
+    border: 1px solid rgba(0, 242, 254, 0.15);
     border-radius: 12px;
     padding: 10px;
-    background: #07090e; /* White background for the container */
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background: #0f121d;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   }
 
   /* Table styles */
   .table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 650px;
+    min-width: 450px;
     font-family: "Arial", sans-serif;
-    color: #333; /* Default text color */
+    color: #ffffff;
   }
 
   .table th,
   .table td {
-    padding: 15px;
+    padding: 12px 10px;
     text-align: center;
-    font-size: 14px;
-    border: 1px solid #ddd; /* Light gray borders */
+    font-size: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   /* Header styles */
   .table th {
-    background-color: #07090e; /* Dark purple header */
-    color: #fff; /* White text in the header */
+    background-color: rgba(0, 242, 254, 0.08);
+    color: #00f2fe;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 0.5px;
+    font-size: 12px;
   }
 
   /* Row styles */
   .table tbody tr:nth-child(odd) {
-    background-color: #0f121d; /* Light gray for odd rows */
+    background-color: #0f121d;
   }
 
   .table tbody tr:nth-child(even) {
-    background-color: #07090e; /* White for even rows */
+    background-color: #0b0e17;
   }
 
   /* Hover effect */
   .table tbody tr:hover {
-    background-color: #07090e; /* Dark purple on hover */
-    color: #fff; /* White text on hover */
+    background-color: rgba(0, 242, 254, 0.05);
+    color: #fff;
     transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .table tbody td {
+    color: #e0e0e0;
   }
 
   /* Responsive and word wrapping */
@@ -196,6 +208,17 @@
   .table th:last-child,
   .table td:last-child {
     border-radius: 0 8px 8px 0;
+  }
+
+  @media (max-width: 576px) {
+    .table th,
+    .table td {
+      padding: 8px 6px;
+      font-size: 11px;
+    }
+    .table {
+      min-width: 350px;
+    }
   }
 </style>
 <!-- session()->set_flashdata('success', 'Deposit request has been submitted successfully.'); print message -->
@@ -217,39 +240,39 @@
   padding: 12px 16px;
   font-size: 14px;
   font-family: 'Instrument Sans', sans-serif;
-  color: #1b1b18;
-  background-color: #07090e;
-  border: 1px solid #e5e5e0;
+  color: #ffffff;
+  background-color: #0f121d;
+  border: 1px solid rgba(0, 242, 254, 0.2);
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%231b1b18' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2300f2fe' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   padding-right: 40px;
 }
 
 .styled-select:hover {
-  border-color: #07090e;
+  border-color: #00f2fe;
 }
 
 .styled-select:focus {
   outline: none;
-  border-color: #07090e;
-  box-shadow: 0 0 0 3px rgba(70, 26, 62, 0.1);
+  border-color: #00f2fe;
+  box-shadow: 0 0 0 3px rgba(0, 242, 254, 0.15);
 }
 
 .styled-select option {
   padding: 12px;
-  background-color: #07090e;
-  color: #1b1b18;
+  background-color: #0f121d;
+  color: #ffffff;
 }
 
 .select-wrap {
   position: relative;
-  width: 155px;
+  width: 100%;
 }
 </style>

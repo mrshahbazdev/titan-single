@@ -28,13 +28,20 @@ class DepositController extends Controller
                 'amount' => 'required|numeric',
                 'tid' => 'required',
                 'paymentmethod' => 'required',
+                'screenshot' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120',
             ]);
+
+            $screenshotPath = null;
+            if ($request->hasFile('screenshot')) {
+                $screenshotPath = $request->file('screenshot')->store('recharge_screenshots', 'public');
+            }
 
             RechargeRequest::create([
                 'user_id' => $id,
                 'amount' => $request->input('amount'),
                 'tid' => $request->input('tid'),
                 'method' => $request->input('paymentmethod'),
+                'screenshot' => $screenshotPath,
                 'status' => '1',
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),

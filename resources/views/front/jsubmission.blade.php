@@ -89,7 +89,7 @@
       <div class="cell-item-value" data-v-916224ec="">$ <?php if(isset($pendingProduts)){  echo $pendingProduts->comission; } ?></div></div></div> -->
     </div>
 
-      <div class="button-wrap" data-v-916224ec=""><button type="button" data-user-id="<?php echo $pendingProduts->id; ?>" class="submit van-button van-button--primary van-button--normal van-button--block" data-v-916224ec="" style="background: var(--gradient-text); color: #07090e; border: none; box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);"><div class="van-button__content"><!----><span class="van-button__text">SUBMIT</span><!----></div></button></div></div><!----></div></div>
+      <div class="button-wrap" data-v-916224ec=""><button type="button" data-user-id="<?php echo $pendingProduts->id; ?>" class="submit van-button van-button--primary van-button--normal van-button--block" data-v-916224ec="" style="background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); color: #07090e; border: none; box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3); font-size: 16px; font-weight: 700; letter-spacing: 1px; padding: 12px 0;"><div class="van-button__content"><!----><span class="van-button__text" style="color: #07090e; font-weight: 700; font-size: 16px;">SUBMIT</span><!----></div></button></div></div><!----></div></div>
 
 
       </div>
@@ -215,15 +215,22 @@
 })
 </script>
 <style>
-  @media only screen and (max-width: 700px) {
-      .swal2-popup {
-        width: 90% !important;
+  .swal2-popup {
+        width: 40% !important;
         font-size: 14px;
+      }
+  @media only screen and (max-width: 768px) {
+      .swal2-popup {
+        width: 85% !important;
+        height: auto !important;
+        font-size: 14px;
+        padding: 20px 16px !important;
+      }
+      .swal2-title {
+        font-size: 18px !important;
+      }
+      .swal2-html-container {
+        font-size: 13px !important;
       }
     }
-.swal2-popup {
-        width: 30% !important;
-        height: 30% !important; 
-        font-size: 14px;
-      }
 </style>

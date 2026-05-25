@@ -195,6 +195,22 @@
         </div>
     </div>
 
+    <style>
+        /* Make SweetAlert2 popups responsive on mobile */
+        @media (max-width: 576px) {
+            .swal2-popup {
+                width: 90% !important;
+                font-size: 14px !important;
+                padding: 20px 16px !important;
+            }
+            .swal2-title {
+                font-size: 18px !important;
+            }
+            .swal2-html-container {
+                font-size: 13px !important;
+            }
+        }
+    </style>
     <script>
         $(document).ready(function() {
             $('#loginForm').on('submit', function(e) {
