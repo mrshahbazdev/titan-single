@@ -90,14 +90,15 @@ class JsubmissionController extends Controller
             return view('front.jsubmission', $data);
         }
 
-        $balance = $data['user']->balance;
+        $memberLevelData = MemberLevel::where('level', $data['user']->memberLevel)->first();
+        $levelPrice = $memberLevelData->price ?? 0;
         $recentProductIds = ProductOrder::where('userId', $id)
             ->orderBy('id', 'DESC')
             ->limit(3)
             ->pluck('productId')
             ->toArray();
 
-        $product = Product::where('productPrice', '<', $balance)
+        $product = Product::where('productPrice', '<=', $levelPrice)
             ->when(!empty($recentProductIds), function ($query) use ($recentProductIds) {
                 $query->whereNotIn('id', $recentProductIds);
             })
@@ -105,19 +106,18 @@ class JsubmissionController extends Controller
             ->first();
 
         if (!$product) {
-            $product = Product::where('productPrice', '<', $balance)
+            $product = Product::where('productPrice', '<=', $levelPrice)
                 ->inRandomOrder()
                 ->first();
         }
 
         if ($product) {
-            $memberLevelData = MemberLevel::where('level', $data['user']->memberLevel)->first();
             $commissionRate = $memberLevelData->commissionRate ?? 0;
             $price = $product->productPrice;
             $productId = $product->id;
             $userBalance = $data['user']->balance;
-            $commsion = $commissionRate;
-            $parentCommssions = $commissionRate;
+            $commsion = $price * $commissionRate;
+            $parentCommssions = $price * $commissionRate;
 
             ProductOrder::create([
                 'userId' => $id,
