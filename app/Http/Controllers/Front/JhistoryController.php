@@ -33,17 +33,11 @@ class JhistoryController extends Controller
         $id = $request->query('id');
         $user = Member::where('username', $userName)->first();
 
-        $balance = $user->balance;
-        if ($balance < 0) {
-            return response('recharge');
-        }
-
         $getProductOrder = ProductOrder::where('id', $id)->where('status', 0)->first();
         if ($getProductOrder) {
-            $price = $getProductOrder->price;
             $commission = $getProductOrder->comission;
             $userBalance = $user->balance;
-            $newBalance = $price + $commission + $userBalance;
+            $newBalance = $commission + $userBalance;
 
             // Update extra reward
             $total = TodayReward::where('userId', $userID)->count();
