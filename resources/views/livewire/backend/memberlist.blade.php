@@ -463,7 +463,7 @@
                                         <select class="form-control" id="exampleFormControlSelect1"
                                             wire:model="level">
                                             @foreach ($memberlevels as $memberlevel)
-                                                <option value="{{ $memberlevel->level }}">{{ $memberlevel->name }}
+                                                <option value="{{ $memberlevel->level }}">{{ $memberlevel->levelName }}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -587,7 +587,7 @@
                                         <select class="form-control" id="exampleFormControlSelect1"
                                             wire:model="level">
                                             @foreach ($memberlevels as $memberlevel)
-                                                <option value="{{ $memberlevel->level }}">{{ $memberlevel->name }}
+                                                <option value="{{ $memberlevel->level }}">{{ $memberlevel->levelName }}
                                                 </option>
                                             @endforeach
                                         </select>
