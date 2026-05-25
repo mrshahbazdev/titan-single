@@ -108,10 +108,10 @@ class JsubmissionController extends Controller
         }
 
         if ($product) {
-            $commissionRate = $memberLevelData->commissionRate ?? 0;
+            $commission = $memberLevelData->commissionRate ?? 0;
             $price = $product->productPrice;
             $productId = $product->id;
-            $commsion = $price * $commissionRate;
+            $commsion = $commission;
 
             ProductOrder::create([
                 'userId' => $id,
