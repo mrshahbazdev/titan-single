@@ -28,7 +28,7 @@ class DepositController extends Controller
                 'amount' => 'required|numeric',
                 'tid' => 'required',
                 'paymentmethod' => 'required',
-                'screenshot' => 'nullable|file|max:5120',
+                'screenshot' => 'required|file|max:5120',
             ]);
 
             $screenshotPath = null;
