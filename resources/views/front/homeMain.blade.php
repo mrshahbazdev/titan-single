@@ -39,6 +39,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            overflow-x: hidden;
+        }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-primary);
@@ -46,6 +50,7 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
+            max-width: 100vw;
         }
 
         /* Glowing Background Blobs */
@@ -59,19 +64,19 @@
         }
 
         .blob-1 {
-            width: 400px;
-            height: 400px;
+            width: 300px;
+            height: 300px;
             background: radial-gradient(circle, var(--accent-primary) 0%, transparent 70%);
             top: -100px;
-            right: -100px;
+            right: -50px;
         }
 
         .blob-2 {
-            width: 500px;
-            height: 500px;
+            width: 300px;
+            height: 300px;
             background: radial-gradient(circle, var(--accent-secondary) 0%, transparent 70%);
-            bottom: -150px;
-            left: -150px;
+            bottom: -100px;
+            left: -50px;
         }
 
         /* Container Layout */
@@ -100,7 +105,6 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            overflow: hidden;
         }
 
         .logo {
@@ -172,17 +176,20 @@
 
             .nav-actions {
                 display: none;
-                position: absolute;
-                top: 100%;
+                position: fixed;
+                top: 0;
                 left: 0;
                 right: 0;
-                background: rgba(7, 9, 14, 0.95);
+                padding-top: 80px;
+                background: rgba(7, 9, 14, 0.97);
                 backdrop-filter: blur(16px);
                 flex-direction: column;
-                padding: 20px 24px;
+                padding-left: 24px;
+                padding-right: 24px;
+                padding-bottom: 24px;
                 gap: 12px;
-                border-bottom: 1px solid var(--card-border);
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+                z-index: 1001;
+                min-height: 100vh;
             }
 
             .nav-actions.open {
@@ -285,7 +292,7 @@
         /* Feature Cards */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
             gap: 24px;
             margin-top: 60px;
         }
@@ -1023,6 +1030,11 @@
             const nav = document.getElementById('navActions');
             toggle.classList.toggle('active');
             nav.classList.toggle('open');
+            if (nav.classList.contains('open')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
         }
 
         // Modal Functionality
@@ -1036,6 +1048,16 @@
             }
             document.getElementById(id).classList.add('active');
             document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            const toggle = document.getElementById('menuToggle');
+            const nav = document.getElementById('navActions');
+            if (toggle && nav) {
+                toggle.classList.remove('active');
+                nav.classList.remove('open');
+                document.body.style.overflow = 'auto';
+            }
         }
 
         function closeModal(id) {
