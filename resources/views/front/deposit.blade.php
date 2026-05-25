@@ -2,24 +2,20 @@
   <meta charset="UTF-8">
   <link rel="icon" href="/favicon.ico">
 	<link rel="stylesheet" href="at.alicdn.com/t/font_3353145_az0dbuzh42s.css">
-	<!-- 在 head 标签中添加 meta 标签，并设置 viewport-fit=cover 值 -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
-	<!-- 开启顶部安全区适配 -->
 	<base href="{{ asset('') }}">
 	<link rel="modulepreload" as="script" crossorigin="" href="assets/layout.b5f6c65d.js">
   <link rel="stylesheet" href="assets/layout.323f08e7.css">
   <link rel="stylesheet" href="assets/Recharge.ad970ee6.css">
-  <link rel="modulepreload" as="script" crossorigin="" href="assets/notice-icon.d521a667.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/logo.5f4029de.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/My.24dd7f65.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/date-icon.ca17ac52.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/My.vue_vue_type_style_index_0_scoped_true_lang.4ef297a9.js"><link rel="stylesheet" href="assets/My.vue_vue_type_style_index_0_scoped_true_lang.b055621c.css"><link rel="modulepreload" as="script" crossorigin="" href="assets/cell-icon-6.487544f7.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/index.df31b0f6.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/clipboard.40f7df85.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/auth.4a81d264.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/Login.3610fde4.js"><link rel="stylesheet" href="assets/Login.6c7bf6ec.css"><link rel="modulepreload" as="script" crossorigin="" href="assets/Index.8594bc53.js"><link rel="stylesheet" href="assets/Index.d3868fad.css"><link rel="modulepreload" as="script" crossorigin="" href="assets/user.d0d43c87.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/hotel-6.813ec2bf.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/booking.2149056b.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/pagination.min.917afa28.js"><link rel="stylesheet" href="assets/pagination.min.eb72427d.css"></head><body style="font-size: 12px;"><svg id="__svg__icons__dom__1705120061777__" style="position: absolute; width: 0px; height: 0px;"><symbol xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20" id="icon-common-delete"><defs><path id="icon-common-delete_b" d="M0 0h375v50H0z"></path><path id="icon-common-delete_c" d="M0 0h19v20H0z"></path><path id="icon-common-delete_e" d="M0 0h19v20H0z"></path><filter x="-2.7%" y="-20%" width="105.3%" height="140%" filterUnits="objectBoundingBox" id="icon-common-delete_a"><feOffset dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur stdDeviation="8" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0" in="shadowBlurOuter1"></feColorMatrix></filter></defs><g fill="none" fill-rule="evenodd"><path fill="#FFF" d="M-15-957h375V292H-15z"></path><path d="M0 0h20v20H0z"></path><g transform="translate(1)"><mask id="icon-common-delete_d" fill="#fff"><use xlink:href="#icon-common-delete_c"></use></mask><path d="M12.805 15.417c0 .23-.186.417-.414.417a.414.414 0 0 1-.412-.417V6.25c0-.229.184-.417.412-.417.228 0 .414.188.414.417v9.167Zm-3.305 0c0 .23-.185.417-.413.417a.415.415 0 0 1-.413-.417V6.25c0-.229.185-.417.413-.417.228 0 .413.188.413.417v9.167ZM6.195 2.501h5.783V.834H6.195V2.5Zm0 12.916c0 .231-.184.417-.412.417a.415.415 0 0 1-.414-.417V6.25c0-.229.186-.417.414-.417.228 0 .412.188.412.418v9.166ZM18.587 2.501h-5.782V.417A.416.416 0 0 0 12.39 0H5.783a.416.416 0 0 0-.414.417V2.5H.412A.415.415 0 0 0 0 2.917c0 .23.184.417.412.417h1.653v16.25c0 .23.185.417.413.417h13.218a.415.415 0 0 0 .413-.417V3.334h2.478a.415.415 0 0 0 .414-.417.415.415 0 0 0-.414-.416Z" fill="#606063" mask="url(#icon-common-delete_d)"></path></g><path d="M0 0h20v20H0z"></path><g transform="translate(1)"><mask id="icon-common-delete_f" fill="#fff"><use xlink:href="#icon-common-delete_e"></use></mask><path d="M12.805 15.417c0 .23-.186.417-.414.417a.414.414 0 0 1-.412-.417V6.25c0-.229.184-.417.412-.417.228 0 .414.188.414.417v9.167Zm-3.305 0c0 .23-.185.417-.413.417a.415.415 0 0 1-.413-.417V6.25c0-.229.185-.417.413-.417.228 0 .413.188.413.417v9.167ZM6.195 2.501h5.783V.834H6.195V2.5Zm0 12.916c0 .231-.184.417-.412.417a.415.415 0 0 1-.414-.417V6.25c0-.229.186-.417.414-.417.228 0 .412.188.412.418v9.166ZM18.587 2.501h-5.782V.417A.416.416 0 0 0 12.39 0H5.783a.416.416 0 0 0-.414.417V2.5H.412A.415.415 0 0 0 0 2.917c0 .23.184.417.412.417h1.653v16.25c0 .23.185.417.413.417h13.218a.415.415 0 0 0 .413-.417V3.334h2.478a.415.415 0 0 0 .414-.417.415.415 0 0 0-.414-.416Z" fill="#606063" mask="url(#icon-common-delete_f)"></path></g></g></symbol><symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-common-error"><path d="m9.645 8.554 1.359 1.358a.782.782 0 1 1-1.107 1.107L8.538 9.66a.782.782 0 0 0-1.106 0l-1.36 1.36a.782.782 0 1 1-1.106-1.108l1.359-1.358a.783.783 0 0 0 0-1.107l-1.359-1.36a.782.782 0 1 1 1.106-1.105l1.36 1.358c.305.305.8.305 1.106 0l1.36-1.358a.781.781 0 1 1 1.106 1.106l-1.36 1.359a.783.783 0 0 0 0 1.107M15.93 7.1C15.545 3.139 12.043-.002 8.013 0 3.095.002-.677 4.381.103 9.243c.13.823.474 1.617.775 2.403.188.493.499.5.846.088.066-.077.126-.162.204-.223.228-.178.473-.18.696-.003.23.182.26.428.134.682-.06.123-.15.235-.246.334-.7.728-1.415 1.443-2.102 2.182-.124.134-.229.386-.186.54.035.125.305.26.47.26 1.028.002 2.04-.124 3.026-.436a.872.872 0 0 1 .591.048c1.679.83 3.43 1.085 5.268.72 4.037-.802 6.758-4.546 6.35-8.738" fill="#FF2632" fill-rule="evenodd"></path></symbol><symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 18" id="icon-common-footer-1"><path d="M3.374 14.145v-2.791c0-.525-.368-.828-1.018-.836-.428-.006-.858.013-1.284-.015C.277 10.45-.222 9.78.098 9.214c.061-.108.155-.207.254-.296C3.495 6.08 6.639 3.241 9.786.404c.6-.54 1.439-.538 2.041.005 3.144 2.839 6.284 5.68 9.429 8.519.321.29.44.615.26.982-.187.378-.556.582-1.054.605-.38.018-.763.008-1.145.01-.754.005-1.093.279-1.093.886v5.514c0 .678-.48 1.07-1.312 1.072-.624.002-1.248.001-1.87 0-.86 0-1.336-.385-1.337-1.076v-4.697c0-.561-.358-.857-1.043-.859a893.376 893.376 0 0 0-3.378 0c-.683.002-1.044.302-1.045.86v4.744c0 .62-.488 1.023-1.25 1.028-.79.004-1.581.005-2.373 0-.742-.006-1.24-.415-1.241-1.015-.002-.946 0-1.892 0-2.837" fill-rule="evenodd"></path></symbol><symbol class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" id="icon-common-footer-2"><path d="M871.673 770.813a53.393 53.393 0 0 1 0 75.42l-37.713 37.714c-27.867 27.866-64.52 44.84-108.947 50.46a264.333 264.333 0 0 1-33.213 2.04c-32.333 0-67.22-5.46-104.147-16.32C487.42 890.667 382 824.227 290.9 733.1S133.333 536.587 103.873 436.347c-14.666-49.94-19.493-96.154-14.28-137.334 5.62-44.426 22.594-81.08 50.46-108.946l37.714-37.714a53.393 53.393 0 0 1 75.42 0l165.94 165.934a53.4 53.4 0 0 1 0 75.426L381.413 431.4c-21.333 21.333-.1 90.413 60.34 150.847s129.487 81.7 150.847 60.34l37.713-37.714a53.4 53.4 0 0 1 75.427 0zM924.727 175.4c-8.8-17.84-21.334-33.8-37.247-47.44-32.073-27.487-74.5-42.627-119.48-42.627s-87.407 15.14-119.48 42.627c-15.913 13.64-28.447 29.6-37.247 47.44a132.833 132.833 0 0 0-13.94 59.267 135.093 135.093 0 0 0 19.46 69.38A152.84 152.84 0 0 0 646.933 340c-9.486 7.947-21.953 16.093-38.666 25.4a21.333 21.333 0 0 0 10.4 39.933c47.86 0 88.553-8.2 118.393-23.786A196.347 196.347 0 0 0 768 384c44.98 0 87.407-15.14 119.48-42.627 15.913-13.64 28.447-29.6 37.247-47.44a132.96 132.96 0 0 0 0-118.533z" fill-rule="evenodd"></path></symbol><symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" id="icon-common-footer-3"><path d="M10.762 10.771c.033.05.06.085.082.124l3.481 6.2c.154.274.146.53-.033.714-.075.077-.176.128-.265.191H.422A.758.758 0 0 1 0 17.578v-.281l3.539-6.483c.448.38.88.747 1.313 1.111.606.509 1.35.593 1.99.225.096-.055.185-.123.239-.16.287.122.543.273.82.34.54.133 1.032-.015 1.458-.371.395-.331.786-.667 1.18-1l.223-.188zm2.717-1.018c.24-.003.42.112.54.328 1.293 2.347 2.59 4.691 3.884 7.037.206.373.1.649-.325.882h-2.11c.181-.596.038-1.126-.267-1.656-.93-1.618-1.834-3.252-2.752-4.876-.069-.121-.073-.213-.006-.336.185-.338.357-.684.53-1.03.106-.21.267-.346.506-.35zM11.4 0c.245 0 .435.1.54.322a.546.546 0 0 1-.09.622l-.796.932c.263.307.522.607.778.91.196.23.218.508.062.726-.136.19-.331.243-.554.242-1.142-.002-2.284 0-3.426 0h-.221v1.01l.003.497c.001.064.046.131.08.191l2.317 4.114c.035.06.068.122.11.197-.106.091-.21.182-.317.272-.402.34-.804.682-1.207 1.021-.325.274-.593.262-.894-.038-.215-.215-.427-.433-.66-.668-.218.222-.425.433-.634.642-.334.334-.586.346-.948.043-.444-.373-.884-.75-1.333-1.117-.105-.085-.105-.147-.043-.26.77-1.398 1.538-2.798 2.3-4.202a.8.8 0 0 0 .093-.364c.002-1.458-.004-2.916-.007-4.374 0-.082.003-.165.016-.245a.538.538 0 0 1 .543-.472L11.401 0z" fill-rule="evenodd"></path></symbol><symbol class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" id="icon-common-footer-4"><defs><style>@font-face{font-family:element-icons;src:url(chrome-extension://moombeodfomdpjnpocobemoiaemednkg/fonts/element-icons.woff) format("woff"),url("chrome-extension://moombeodfomdpjnpocobemoiaemednkg/fonts/element-icons.ttf ") format("truetype")}@font-face{font-family:feedback-iconfont;src:url(//at.alicdn.com/t/font_1031158_u69w8yhxdu.woff2?t=1630033759944) format("woff2"),url(//at.alicdn.com/t/font_1031158_u69w8yhxdu.woff?t=1630033759944) format("woff"),url(//at.alicdn.com/t/font_1031158_u69w8yhxdu.ttf?t=1630033759944) format("truetype")}</style></defs><path d="M960 42.667H106.667a21.333 21.333 0 0 0 0 42.666h64V960a21.333 21.333 0 0 0 30.873 19.08l76.767-38.38 97.773 39.107a21.333 21.333 0 0 0 15.84 0l98.747-39.5 98.746 39.5a21.333 21.333 0 0 0 15.84 0L705.52 939.7l164 40.993a21.02 21.02 0 0 0 5.173.667 21.333 21.333 0 0 0 21.334-21.333V85.333h64a21.333 21.333 0 0 0 0-42.666zm-640 128h85.333a21.333 21.333 0 0 1 0 42.666H320a21.333 21.333 0 0 1 0-42.666zm298.667 426.666A21.333 21.333 0 0 1 640 618.667v128A21.333 21.333 0 0 1 618.667 768h-64v21.333a21.333 21.333 0 0 1-42.667 0V768h-64a21.333 21.333 0 0 1 0-42.667h149.333V640H448a21.333 21.333 0 0 1-21.333-21.333v-128A21.333 21.333 0 0 1 448 469.333h64V448a21.333 21.333 0 0 1 42.667 0v21.333h64a21.333 21.333 0 0 1 0 42.667H469.333v85.333zm128-256H320a21.333 21.333 0 0 1 0-42.666h426.667a21.333 21.333 0 0 1 0 42.666zm0-128h-256a21.333 21.333 0 0 1 0-42.666h256a21.333 21.333 0 0 1 0 42.666z"></path></symbol><symbol class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" id="icon-common-footer-5"><path d="M512 458.24c86.528 0 156.672-84.48 156.672-187.904S598.528 81.92 512 81.92 355.328 166.4 355.328 269.824 425.472 458.24 512 458.24zm0-335.36c63.488 0 115.712 66.048 115.712 146.944S575.488 417.28 512 417.28s-115.712-66.048-115.712-147.456S448.512 122.88 512 122.88zm300.032 461.824C731.648 536.064 624.64 508.928 512 508.928c-113.152 0-219.648 27.136-300.032 75.776C128 635.392 81.92 704 81.92 777.728c0 73.216 44.544 120.32 135.68 143.36 76.8 19.456 178.688 20.992 294.4 20.992s218.112-1.536 294.4-20.992c91.136-23.04 135.68-70.144 135.68-143.36 0-73.728-46.08-142.336-130.048-193.024zM512 901.12c-227.84 0-389.12-8.704-389.12-123.392 0-125.952 174.592-228.352 389.12-228.352s389.12 102.4 389.12 228.352c0 114.688-161.28 123.392-389.12 123.392z"></path></symbol><symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" id="icon-common-success"><path d="m6.505 11.507-2.636-2.64c.427-.428.88-.88 1.343-1.341l1.192 1.25 4.283-4.282L12.1 5.909l-5.596 5.598M15.93 7.1C15.545 3.14 12.043-.002 8.013 0 3.095.003-.677 4.382.103 9.244c.13.821.474 1.616.775 2.402.188.492.499.5.847.088.065-.077.125-.162.203-.222.228-.178.473-.182.697-.003.228.181.258.427.133.68-.06.124-.15.236-.246.335-.7.728-1.415 1.443-2.102 2.182-.124.133-.229.386-.186.54.035.125.305.26.47.26 1.028.002 2.04-.124 3.026-.436a.875.875 0 0 1 .591.048c1.679.83 3.43 1.085 5.268.72 4.036-.802 6.758-4.547 6.35-8.738" fill="#00B25E" fill-rule="evenodd"></path></symbol></svg><van-nav-bar safe-area-inset-top="">
-	<!-- 开启底部安全区适配 -->
+  <link rel="modulepreload" as="script" crossorigin="" href="assets/notice-icon.d521a667.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/logo.5f4029de.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/My.24dd7f65.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/date-icon.ca17ac52.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/My.vue_vue_type_style_index_0_scoped_true_lang.4ef297a9.js"><link rel="stylesheet" href="assets/My.vue_vue_type_style_index_0_scoped_true_lang.b055621c.css"><link rel="modulepreload" as="script" crossorigin="" href="assets/cell-icon-6.487544f7.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/index.df31b0f6.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/clipboard.40f7df85.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/auth.4a81d264.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/Login.3610fde4.js"><link rel="stylesheet" href="assets/Login.6c7bf6ec.css"><link rel="modulepreload" as="script" crossorigin="" href="assets/Index.8594bc53.js"><link rel="stylesheet" href="assets/Index.d3868fad.css"><link rel="modulepreload" as="script" crossorigin="" href="assets/user.d0d43c87.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/hotel-6.813ec2bf.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/booking.2149056b.js"><link rel="modulepreload" as="script" crossorigin="" href="assets/pagination.min.917afa28.js"><link rel="stylesheet" href="assets/pagination.min.eb72427d.css"></head><body style="font-size: 12px; background: #07090e !important; min-height: 100vh;"><svg id="__svg__icons__dom__1705120061777__" style="position: absolute; width: 0px; height: 0px;"><symbol xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20" id="icon-common-delete"><defs><path id="icon-common-delete_b" d="M0 0h375v50H0z"></path><path id="icon-common-delete_c" d="M0 0h19v20H0z"></path></defs><g fill="none" fill-rule="evenodd"><mask id="icon-common-delete_a" fill="#fff"><use xlink:href="#icon-common-delete_b"></use></mask><g mask="url(#icon-common-delete_a)"><mask id="icon-common-delete_d" fill="#fff"><use xlink:href="#icon-common-delete_c"></use></mask><g mask="url(#icon-common-delete_d)" stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"><path d="M14.25 7.25v8.5a1 1 0 0 1-1 1h-7.5a1 1 0 0 1-1-1v-8.5M3.75 4.75h11.5M7.75 4.75v-1.5a1 1 0 0 1 1-1h1.5a1 1 0 0 1 1 1v1.5M7.75 9v4.5M11.25 9v4.5"></path></g></g></g></symbol></svg>
 	<van-number-keyboard safe-area-inset-bottom="">
-  <title>sites</title>
+  <title>Recharge</title>
 	<style>
       @media screen and (min-width: 750px){
 		html {
 			font-size: 60px !important;
 		}
       }
-
 	</style>
   <script type="module" crossorigin="" src="assets/index.3fb3bc1b.js"></script>
   <link rel="modulepreload" href="assets/vendor.a9caa298.js">
@@ -40,239 +36,781 @@
       </a>
     </div>
     <div class="main-container" data-v-08abc850="">
-      <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #00f2fe; --van-button-primary-background-color: #00f2fe;"><div class="container h100 w100" data-v-eb047502="">
+      <div class="van-config-provider" data-v-08abc850="" style="--van-primary-color: #00f2fe; --van-button-primary-background-color: #00f2fe;">
+      <div class="recharge-page">
+
+      <!-- Nav Bar -->
+      <div class="recharge-nav">
+        <a href="journey" class="recharge-nav-back">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </a>
+        <span class="recharge-nav-title">Recharge</span>
+        <a href="deposit/deposithistory" class="recharge-nav-history">History</a>
+      </div>
+
       <form method="post" enctype="multipart/form-data">
       @csrf
-      <div class="content-wrap" data-v-eb047502=""><div class="van-nav-bar van-hairline--bottom" data-v-eb047502=""><div class="van-nav-bar__content"><a href="journey"><div class="van-nav-bar__left van-haptics-feedback"><i class="van-badge__wrapper van-icon van-icon-arrow-left van-nav-bar__arrow"><!----><!----><!----></i><!----></div></a><div class="van-nav-bar__title van-ellipsis">Home</div>
-      <a href="deposit/deposithistory">
-      <div class="van-nav-bar__right van-haptics-feedback"><span class="bold" data-v-eb047502="">Recharge History</span></div>
-      </a>
-    </div></div><div class="form-wrap" data-v-eb047502=""><div class="form-item balance" data-v-eb047502=""><div class="title" data-v-eb047502="">Account Balance</div><div class="text" data-v-eb047502="">Rs <?php echo number_format($user->balance, 2); ?></div></div><div class="form-item" data-v-eb047502=""><div class="title" data-v-eb047502="">Bank Account List</div>
-    <div class="table-container">
-  <table class="table">
-    <thead>
-      <tr class="table-header">
-        <th scope="col">Bank Name</th>
-        <th scope="col">Account Number</th>
-        <th scope="col">Account Holder Name</th>
-      </tr>
-    </thead>
-    <tbody>
-        <!-- in CodeIgniter check $bankData and foreach loop -->
-        <?php
-            if(!empty($bankData)){
-            foreach($bankData as $bank){
-        ?>
-      <tr>
-        <td><?php echo $bank->name; ?></td>
-        <td><?php echo $bank->account_number; ?></td>
-        <td><?php echo $bank->account_name; ?></td>
-      </tr>
-      <?php } } else { ?>
-      <tr>
-        <td colspan="3">No Bank Accounts Found</td>
-      </tr>
-      <?php } ?>
-    </tbody>
-  </table>
-</div>
-<div class="title" data-v-eb047502="">Recharge Amount</div>
-    <div class="quick-money" data-v-eb047502=""><div class="money-item" data-v-eb047502=""><div data-v-eb047502="">100</div></div><div class="money-item" data-v-eb047502=""><div data-v-eb047502="">200</div></div><div class="money-item" data-v-eb047502=""><div data-v-eb047502="">500</div></div></div><div class="custom-input" data-v-eb047502=""><span class="prefix" data-v-eb047502="">Amount</span><div class="input-wrap select-wrap" style="width: 155px;"><input type="number" name="amount" placeholder="Rs 0.00" class="deposit" data-v-eb047502=""></div></div><br><div class="custom-input" data-v-eb047502=""><span class="prefix" data-v-eb047502="">Transaction ID</span><div class="input-wrap" data-v-eb047502="" ><input type="text" name="tid" placeholder="Enter Transaction ID" class="tid" data-v-eb047502=""></div></div></div></div>
-    <br>
-    <div class="custom-input" data-v-eb047502="">
-      <span class="prefix" data-v-eb047502="">Payment Method</span>
-    <div class="input-wrap select-wrap" style="width: 100%; flex: 1;">
-     
-      <!-- select drop down payment method -->
-      <select name="paymentmethod" class="paymentmethod styled-select" data-v-eb047502="">
-        <option value="" disabled selected>Select Payment Method</option>
-        <?php
-            if(!empty($bankData)){
-            foreach($bankData as $bank){
-        ?>
-         <option value="<?php echo $bank->name; ?>"><?php echo $bank->name; ?></option>
-        <?php } } else { ?>
-        <option value="0">No Bank Found</option>
-        <?php } ?>
-      </select>
-      <!-- end select drop down payment method -->
-  </div>
-</div>
-    <br>
-    <div class="custom-input" data-v-eb047502="">
-      <span class="prefix" data-v-eb047502="">Payment Screenshot</span>
-      <div class="input-wrap" data-v-eb047502="" style="width: 100%; flex: 1;">
-        <input type="file" name="screenshot" accept="image/*" class="screenshot-upload" data-v-eb047502="" style="color: #ffffff; font-size: 13px; padding: 8px 0;">
-      </div>
-    </div>
-      <button type="submit" class="van-button van-button--primary van-button--normal van-button--block" data-v-eb047502="" style="background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%); color: #07090e; border: none; box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);"><div class="van-button__content"><!----><span class="van-button__text">Recharge</span><!----></div></button>
 
+      <!-- Balance Card -->
+      <div class="balance-card">
+        <div class="balance-card-label">Account Balance</div>
+        <div class="balance-card-amount">Rs <?php echo number_format($user->balance, 2); ?></div>
+        <div class="balance-card-glow"></div>
+      </div>
+
+      <!-- Quick Amount Section -->
+      <div class="recharge-section">
+        <div class="section-title">Select Amount</div>
+        <div class="quick-amounts">
+          <div class="quick-amount-btn" data-amount="100">Rs 100</div>
+          <div class="quick-amount-btn" data-amount="200">Rs 200</div>
+          <div class="quick-amount-btn" data-amount="500">Rs 500</div>
+          <div class="quick-amount-btn" data-amount="1000">Rs 1,000</div>
+          <div class="quick-amount-btn" data-amount="2000">Rs 2,000</div>
+          <div class="quick-amount-btn" data-amount="5000">Rs 5,000</div>
         </div>
+      </div>
+
+      <!-- Form Fields -->
+      <div class="recharge-section">
+        <div class="section-title">Recharge Details</div>
+
+        <div class="form-group">
+          <label class="form-label">Amount</label>
+          <div class="form-input-wrap">
+            <span class="input-prefix">Rs</span>
+            <input type="number" name="amount" placeholder="0.00" class="form-input deposit" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Transaction ID</label>
+          <div class="form-input-wrap">
+            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <input type="text" name="tid" placeholder="Enter Transaction ID" class="form-input" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Payment Method</label>
+          <div class="form-input-wrap select-wrapper">
+            <select name="paymentmethod" class="form-select" required>
+              <option value="" disabled selected>Select Payment Method</option>
+              <?php if(!empty($bankData)){ foreach($bankData as $bank){ ?>
+              <option value="<?php echo $bank->name; ?>"><?php echo $bank->name; ?></option>
+              <?php } } else { ?>
+              <option value="0">No Bank Found</option>
+              <?php } ?>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Payment Screenshot</label>
+          <div class="file-upload-area" id="fileUploadArea">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+            <span class="file-upload-text">Tap to upload screenshot</span>
+            <span class="file-upload-hint">JPG, PNG, GIF up to 5MB</span>
+            <input type="file" name="screenshot" accept="image/*" class="file-input" id="screenshotInput">
+          </div>
+          <div class="file-preview" id="filePreview" style="display:none;">
+            <img id="previewImg" src="" alt="Preview">
+            <button type="button" class="file-remove" id="removeFile">&times;</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bank Accounts Section -->
+      <div class="recharge-section">
+        <div class="section-title">Bank Accounts</div>
+        <div class="bank-cards">
+          <?php if(!empty($bankData)){ foreach($bankData as $bank){ ?>
+          <div class="bank-card">
+            <div class="bank-card-header">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="2"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"></path></svg>
+              <span class="bank-card-name"><?php echo $bank->name; ?></span>
+            </div>
+            <div class="bank-card-detail">
+              <span class="bank-detail-label">Account Number</span>
+              <span class="bank-detail-value"><?php echo $bank->account_number; ?></span>
+            </div>
+            <div class="bank-card-detail">
+              <span class="bank-detail-label">Account Holder</span>
+              <span class="bank-detail-value"><?php echo $bank->account_name; ?></span>
+            </div>
+          </div>
+          <?php } } else { ?>
+          <div class="bank-card empty">
+            <span>No Bank Accounts Found</span>
+          </div>
+          <?php } ?>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="recharge-submit-wrap">
+        <button type="submit" class="recharge-submit-btn">
+          <span>Recharge Now</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </div>
+
       </form>
       </div>
+      </div>
     </div>
   </div>
 </div>
-
-
 
 </van-number-keyboard></van-nav-bar><!----><!----><div data-v-app=""></div><!----><div class="van-popup van-popup--center van-toast van-toast--middle van-toast--loading custom-toast" style="z-index: 2001; display: none;"><div class="van-loading van-loading--circular van-toast__loading"><span class="van-loading__spinner van-loading__spinner--circular" style="width: 20px; height: 20px;"><svg class="van-loading__circular" viewBox="25 25 50 50"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span><!----></div><!----><!----></div>@include('front.sidebar')
 </body></html>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.js"></script>
 
 <script type="text/javascript">
-  $('.money-item').click(function () {
-    $('.money-item').removeClass('active');
+  // Quick amount buttons
+  $('.quick-amount-btn').click(function() {
+    $('.quick-amount-btn').removeClass('active');
     $(this).addClass('active');
-     var secondDivText = $(this).first('div').text();
-     $('.deposit').val(secondDivText);
-  })
+    var amount = $(this).data('amount');
+    $('.deposit').val(amount);
+  });
+
+  // Clear active when typing custom amount
   $('.deposit').on('input', function() {
-    var inputValue = $(this).val();
-    $('.money-item').removeClass('active');
-});
+    $('.quick-amount-btn').removeClass('active');
+  });
+
+  // File upload preview
+  $('#screenshotInput').on('change', function() {
+    var file = this.files[0];
+    if (file) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        $('#previewImg').attr('src', e.target.result);
+        $('#filePreview').show();
+        $('#fileUploadArea').hide();
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Remove file
+  $('#removeFile').click(function() {
+    $('#screenshotInput').val('');
+    $('#filePreview').hide();
+    $('#fileUploadArea').show();
+  });
+
+  // Click upload area to trigger file input
+  $('#fileUploadArea').click(function() {
+    $('#screenshotInput').click();
+  });
 </script>
-<style>
-  /* Container for the table */
-  .table-container {
-    width: 100%;
-    overflow-x: auto;
-    margin: 20px 0;
-    border: 1px solid rgba(0, 242, 254, 0.15);
-    border-radius: 12px;
-    padding: 10px;
-    background: #0f121d;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  }
 
-  /* Table styles */
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 450px;
-    font-family: "Arial", sans-serif;
-    color: #ffffff;
-  }
-
-  .table th,
-  .table td {
-    padding: 12px 10px;
-    text-align: center;
-    font-size: 13px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  /* Header styles */
-  .table th {
-    background-color: rgba(0, 242, 254, 0.08);
-    color: #00f2fe;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    font-size: 12px;
-  }
-
-  /* Row styles */
-  .table tbody tr:nth-child(odd) {
-    background-color: #0f121d;
-  }
-
-  .table tbody tr:nth-child(even) {
-    background-color: #0b0e17;
-  }
-
-  /* Hover effect */
-  .table tbody tr:hover {
-    background-color: rgba(0, 242, 254, 0.05);
-    color: #fff;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .table tbody td {
-    color: #e0e0e0;
-  }
-
-  /* Responsive and word wrapping */
-  .table td {
-    word-wrap: break-word;
-    word-break: break-word;
-  }
-
-  /* Rounded corners for first and last cells */
-  .table th:first-child,
-  .table td:first-child {
-    border-radius: 8px 0 0 8px;
-  }
-
-  .table th:last-child,
-  .table td:last-child {
-    border-radius: 0 8px 8px 0;
-  }
-
-  @media (max-width: 576px) {
-    .table th,
-    .table td {
-      padding: 8px 6px;
-      font-size: 11px;
-    }
-    .table {
-      min-width: 350px;
-    }
-  }
-</style>
-<!-- session()->set_flashdata('success', 'Deposit request has been submitted successfully.'); print message -->
 <?php if(session('success')): ?>
-    <script>
-        Swal.fire({
-            icon: 'success',
-            title: 'Success',
-            text: '<?php echo session('success'); ?>',
-            showConfirmButton: true,
-            confirmButtonText: 'OK'
-        });
-    </script>
+<script>
+  Swal.fire({
+    icon: 'success',
+    title: 'Success',
+    text: '<?php echo session('success'); ?>',
+    showConfirmButton: true,
+    confirmButtonText: 'OK',
+    customClass: { popup: 'dark-swal' }
+  });
+</script>
 <?php endif; ?>
+
 <style>
-/* Custom Select Dropdown Styling */
-.styled-select {
-  width: 100%;
-  padding: 12px 16px;
-  font-size: 14px;
-  font-family: 'Instrument Sans', sans-serif;
+/* ============================================
+   RECHARGE PAGE - COMPLETE STYLES
+   ============================================ */
+
+/* Reset & Base */
+body {
+  background: #07090e !important;
   color: #ffffff;
-  background-color: #0f121d;
-  border: 1px solid rgba(0, 242, 254, 0.2);
+  font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.recharge-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 16px 100px 16px;
+  background: #07090e;
+  min-height: 100vh;
+}
+
+/* Nav Bar */
+.recharge-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 242, 254, 0.08);
+}
+
+.recharge-nav-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(0, 242, 254, 0.08);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.recharge-nav-back:hover {
+  background: rgba(0, 242, 254, 0.15);
+}
+
+.recharge-nav-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.recharge-nav-history {
+  font-size: 13px;
+  font-weight: 600;
+  color: #00f2fe;
+  text-decoration: none;
+  padding: 6px 14px;
   border-radius: 8px;
+  background: rgba(0, 242, 254, 0.08);
+  transition: background 0.2s;
+}
+
+.recharge-nav-history:hover {
+  background: rgba(0, 242, 254, 0.15);
+}
+
+/* Balance Card */
+.balance-card {
+  position: relative;
+  background: linear-gradient(135deg, #0e1a2e 0%, #0a1628 50%, #0d1f35 100%);
+  border: 1px solid rgba(0, 242, 254, 0.15);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.balance-card-glow {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.balance-card-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.balance-card-amount {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section */
+.recharge-section {
+  background: linear-gradient(135deg, #0f1320 0%, #0d1018 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 16px;
+  background: linear-gradient(180deg, #00f2fe, #4facfe);
+  border-radius: 2px;
+}
+
+/* Quick Amount Buttons */
+.quick-amounts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.quick-amount-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #e0e0e0;
   cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.quick-amount-btn:hover {
+  border-color: rgba(0, 242, 254, 0.3);
+  background: rgba(0, 242, 254, 0.05);
+  color: #ffffff;
+}
+
+.quick-amount-btn.active {
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(79, 172, 254, 0.15));
+  border-color: #00f2fe;
+  color: #00f2fe;
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.1);
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+.form-input-wrap {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 0 14px;
   transition: all 0.2s ease;
+  height: 48px;
+}
+
+.form-input-wrap:focus-within {
+  border-color: #00f2fe;
+  box-shadow: 0 0 0 3px rgba(0, 242, 254, 0.08);
+  background: rgba(0, 242, 254, 0.03);
+}
+
+.input-prefix {
+  font-size: 14px;
+  font-weight: 700;
+  color: #00f2fe;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.input-icon {
+  margin-right: 10px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.form-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  height: 100%;
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* Select */
+.select-wrapper {
+  padding: 0;
+  height: auto;
+}
+
+.form-select {
+  width: 100%;
+  padding: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2300f2fe' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 12px center;
+  background-position: right 14px center;
   padding-right: 40px;
 }
 
-.styled-select:hover {
-  border-color: #00f2fe;
-}
-
-.styled-select:focus {
-  outline: none;
-  border-color: #00f2fe;
-  box-shadow: 0 0 0 3px rgba(0, 242, 254, 0.15);
-}
-
-.styled-select option {
+.form-select option {
+  background-color: #0f1320;
+  color: #ffffff;
   padding: 12px;
-  background-color: #0f121d;
+}
+
+/* File Upload */
+.file-upload-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 2px dashed rgba(0, 242, 254, 0.15);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  gap: 8px;
+}
+
+.file-upload-area:hover {
+  border-color: rgba(0, 242, 254, 0.35);
+  background: rgba(0, 242, 254, 0.03);
+}
+
+.file-upload-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.file-upload-hint {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.file-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+}
+
+.file-preview {
+  position: relative;
+  display: inline-block;
+  margin-top: 8px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 242, 254, 0.15);
+}
+
+.file-preview img {
+  max-width: 100%;
+  max-height: 200px;
+  display: block;
+  border-radius: 12px;
+}
+
+.file-remove {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 59, 48, 0.85);
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bank Cards */
+.bank-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bank-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 16px;
+  transition: border-color 0.2s;
+}
+
+.bank-card:hover {
+  border-color: rgba(0, 242, 254, 0.2);
+}
+
+.bank-card.empty {
+  text-align: center;
+  padding: 24px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+}
+
+.bank-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bank-card-name {
+  font-size: 15px;
+  font-weight: 700;
   color: #ffffff;
 }
 
-.select-wrap {
-  position: relative;
+.bank-card-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+}
+
+.bank-detail-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 500;
+}
+
+.bank-detail-value {
+  font-size: 13px;
+  color: #00f2fe;
+  font-weight: 600;
+  text-align: right;
+  word-break: break-all;
+  max-width: 60%;
+}
+
+/* Submit Button */
+.recharge-submit-wrap {
+  padding: 20px 0 40px;
+}
+
+.recharge-submit-btn {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  color: #07090e;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(0, 242, 254, 0.25);
+  transition: all 0.3s ease;
+}
+
+.recharge-submit-btn:hover {
+  box-shadow: 0 6px 32px rgba(0, 242, 254, 0.35);
+  transform: translateY(-1px);
+}
+
+.recharge-submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 16px rgba(0, 242, 254, 0.2);
+}
+
+/* SweetAlert Dark */
+.dark-swal {
+  background: #0f1320 !important;
+  border: 1px solid rgba(0, 242, 254, 0.15);
+}
+
+.dark-swal .swal2-title {
+  color: #ffffff !important;
+}
+
+.dark-swal .swal2-html-container {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.dark-swal .swal2-confirm {
+  background: linear-gradient(135deg, #00f2fe, #4facfe) !important;
+  color: #07090e !important;
+  font-weight: 700 !important;
+}
+
+/* ============================================
+   RESPONSIVE - DESKTOP (> 768px)
+   ============================================ */
+@media (min-width: 769px) {
+  .recharge-page {
+    max-width: 560px;
+    padding: 0 24px 100px 24px;
+  }
+
+  .balance-card {
+    padding: 32px;
+  }
+
+  .balance-card-amount {
+    font-size: 36px;
+  }
+
+  .recharge-section {
+    padding: 24px;
+  }
+
+  .quick-amounts {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .quick-amount-btn {
+    padding: 16px 12px;
+    font-size: 15px;
+  }
+
+  .form-input-wrap {
+    height: 52px;
+  }
+
+  .bank-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .recharge-submit-btn {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+  }
+}
+
+/* ============================================
+   RESPONSIVE - SMALL MOBILE (< 400px)
+   ============================================ */
+@media (max-width: 400px) {
+  .recharge-page {
+    padding: 0 12px 80px 12px;
+  }
+
+  .balance-card {
+    padding: 18px;
+  }
+
+  .balance-card-amount {
+    font-size: 22px;
+  }
+
+  .recharge-section {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .quick-amounts {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .quick-amount-btn {
+    padding: 12px 6px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .recharge-nav-title {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 14px;
+  }
+
+  .bank-card-detail {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .bank-detail-value {
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
+/* ============================================
+   SweetAlert Responsive
+   ============================================ */
+.swal2-popup {
+  width: 40% !important;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 768px) {
+  .swal2-popup {
+    width: 85% !important;
+    height: auto !important;
+    font-size: 14px;
+    padding: 20px 16px !important;
+  }
+  .swal2-title {
+    font-size: 18px !important;
+  }
+  .swal2-html-container {
+    font-size: 13px !important;
+  }
+}
+
+/* Hide Vant nav bar since we have custom one */
+.van-nav-bar {
+  display: none !important;
 }
 </style>
