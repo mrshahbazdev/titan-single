@@ -2824,26 +2824,7 @@ footer .footer-column ul li {
 
 </div></span></div>
 <style></style>
-<script type="text/javascript">
-document.addEventListener('click', function(event) {
-    // Check if the clicked element matches the selector
-    if (event.target.matches('.chaport-launcher-button, .no-photo, .chaport-launcher-anim, .chaport-anim-show')) {
-        // Remove elements with the specified classes
-        document.querySelectorAll('.chaport-launcher-button, .no-photo, .chaport-launcher-anim, .chaport-anim-show').forEach(function(el) {
-            el.remove();
-        });
-    }
-});
 
-
-
-(function(w,d,v3){
-w.chaportConfig = {
-  appId : '67051ecc0e4f9896b7ac6492'
-};
-
-if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
-</script>
 
 
 
