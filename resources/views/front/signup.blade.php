@@ -184,7 +184,7 @@
                 @csrf
                 <div class="form-group">
                     <label class="input-label" for="username">Username</label>
-                    <input type="text" id="username" name="username" class="input-field" placeholder="Choose a username" required autocomplete="username">
+                    <input type="text" id="username" name="username" class="input-field" placeholder="Choose a username" required autocomplete="username" pattern="^\S*$" title="Username must not contain spaces">
                 </div>
                 <div class="form-group">
                     <label class="input-label" for="phone_number">Phone Number</label>
@@ -230,7 +230,12 @@
                         }
                     },
                     error: function(xhr, status, error) {
-                        Swal.fire({ icon: 'error', title: 'Error!', text: 'Something went wrong.', confirmButtonColor: '#00f2fe' });
+                        var msg = 'Something went wrong.';
+                        if (xhr.status === 422 && xhr.responseJSON && xhr.responseJSON.errors) {
+                            var errors = xhr.responseJSON.errors;
+                            msg = Object.values(errors).flat().join('\n');
+                        }
+                        Swal.fire({ icon: 'error', title: 'Error!', text: msg, confirmButtonColor: '#00f2fe' });
                         submitBtn.prop('disabled', false).text('Create Account');
                     }
                 });

@@ -71,10 +71,12 @@ class AuthController extends Controller
     public function signupPost(Request $request)
     {
         $request->validate([
-            'username' => 'required',
+            'username' => 'required|regex:/^\S*$/u',
             'password' => 'required',
             'invitation_code' => 'required',
             'phone_number' => 'required',
+        ], [
+            'username.regex' => 'Username must not contain spaces.',
         ]);
 
         $username = $request->input('username');
