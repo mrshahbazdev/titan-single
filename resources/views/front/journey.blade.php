@@ -241,7 +241,7 @@
                         <?php if ($trial_user->count() > 0) { ?>
                           <div class="subtitle" data-v-dad6ad44=""><?php echo $trial_period->tasks; ?></div>
                         <?php } else { ?>
-                          <div class="subtitle" data-v-dad6ad44=""><?php echo $levels->orderReciveLimit; ?></div>
+                          <div class="subtitle" data-v-dad6ad44=""><?php echo $levels ? $levels->orderReciveLimit : 0; ?></div>
                         <?php } ?>
                       </div>
 
