@@ -38,6 +38,13 @@ class JsubmissionController extends Controller
             ->where('payment_status', 'pending')
             ->first();
 
+        if ($data['user']->balance <= 0) {
+            $data['totals'] = TodayReward::where('userId', $id)->count();
+            $data['reward'] = TodayReward::where('userId', $id)->get()->toArray();
+            $data['errortoday'] = 'Insufficient balance. Please recharge your account to start your journey.';
+            return view('front.journey', $data);
+        }
+
         if ($checkTrial) {
             $currentDate = date('Y-m-d');
             if ($currentDate > $checkTrial->trial_end_date) {

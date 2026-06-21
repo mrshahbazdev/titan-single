@@ -91,7 +91,7 @@ if($query_announcements->count() > 0){
         </div>
         <div class="jrn-balance-info">
           <div class="jrn-balance-label">Account Balance</div>
-          <div class="jrn-balance-amount">PKR <?php echo number_format($user->balance, 2); ?></div>
+          <div class="jrn-balance-amount">Rs <?php echo number_format($user->balance, 2); ?></div>
         </div>
       </div>
 
@@ -152,7 +152,12 @@ if($query_announcements->count() > 0){
 
       <!-- Start Journey Button -->
       <?php
-      if ($trial_user->count() > 0) {
+      if ($user->balance <= 0) { ?>
+        <button type="button" class="jrn-start-btn jrn-start-btn-disabled" disabled>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+          Insufficient Balance
+        </button>
+      <?php } elseif ($trial_user->count() > 0) {
         $trial = $trial_user->first();
         $currentDate = date('Y-m-d');
         if ($currentDate > $trial->trial_end_date) {
@@ -221,7 +226,7 @@ if($query_announcements->count() > 0){
           <div class="jrn-level-details">
             <div class="jrn-level-detail-row">
               <span>Min Balance</span>
-              <span><?php echo number_format($value->price); ?> PKR</span>
+              <span><?php echo number_format($value->price); ?> Rs</span>
             </div>
             <div class="jrn-level-detail-row">
               <span>Referrals</span>
@@ -233,7 +238,7 @@ if($query_announcements->count() > 0){
             </div>
             <div class="jrn-level-detail-row">
               <span>Commission</span>
-              <span><?php echo $value->commissionRate; ?> PKR</span>
+              <span><?php echo $value->commissionRate; ?> Rs</span>
             </div>
           </div>
           <?php if ($alreadyClaimed) { ?>
