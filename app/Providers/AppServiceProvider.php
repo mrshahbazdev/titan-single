@@ -19,8 +19,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Remove public/hot file on non-local environments to prevent Vite dev server loading
-        if (app()->environment('production', 'staging') && file_exists(public_path('hot'))) {
+        // Always remove public/hot file to prevent Vite dev server loading on shared hosting
+        if (file_exists(public_path('hot'))) {
             @unlink(public_path('hot'));
         }
 
