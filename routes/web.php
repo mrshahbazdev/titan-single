@@ -125,7 +125,7 @@ Route::get('/admin/logout', [LogoutController::class, 'logout'])->name('logout')
 
 // Admin protected routes (Livewire)
 Route::middleware(['auth'])->group(function () {
-    Route::get('/livewire/user', UserDetails::class);
+    Route::get('/admin/user-details', UserDetails::class);
     Route::get('/member', Memberlist::class);
     Route::get('/member/agent', Agent::class);
     Route::get('/member/grade', Levels::class);

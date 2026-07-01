@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,13 @@ class AppServiceProvider extends ServiceProvider
         if (file_exists(public_path('hot'))) {
             @unlink(public_path('hot'));
         }
+
+        // Use a custom Livewire update route to avoid the /livewire/ prefix,
+        // which is blocked on the production LiteSpeed server.
+        Livewire::setUpdateRoute(function ($handle) {
+            return Route::post('/app/livewire-update', $handle)
+                ->middleware('web');
+        });
 
         view()->composer('front.sidebar', function ($view) {
             $userName = session('username');
