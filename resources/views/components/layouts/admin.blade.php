@@ -43,7 +43,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         
      
-    @livewireStyles
+    @vite(['resources/js/app.js'])
+    @livewireScriptConfig
   </head>
   <body> 
     <!-- loader starts-->
@@ -81,7 +82,6 @@
     <script src="{{ asset('backend/js/header-slick.js') }}"></script>
        <!-- Theme js-->
     <script src="{{ asset('backend/js/script.js') }}"></script>
-    @livewireScripts
   </body>
 
 </html>
