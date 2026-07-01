@@ -26,8 +26,9 @@ class AppServiceProvider extends ServiceProvider
             @unlink(public_path('hot'));
         }
 
-        // Use a custom Livewire update route to avoid the /livewire/ prefix,
-        // which is blocked on the production LiteSpeed server.
+        // Override Livewire's update URI so getUpdateUri() returns the custom
+        // path even when routes are cached (cached routes load after boot,
+        // so the web.php setUpdateRoute call won't run with caching).
         Livewire::setUpdateRoute(function ($handle) {
             return Route::post('/app/livewire-update', $handle)
                 ->middleware('web');

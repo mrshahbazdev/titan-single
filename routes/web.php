@@ -34,6 +34,19 @@ use App\Livewire\Backend\Rechargerequested;
 use App\Livewire\Backend\Addannouncements;
 use App\Livewire\UserDetails;
 use App\Http\Controllers\Admin\LogoutController;
+use Livewire\Livewire;
+
+/*
+|--------------------------------------------------------------------------
+| Livewire Update Route (must be in routes file for route caching)
+|--------------------------------------------------------------------------
+| The production LiteSpeed server blocks all requests under /livewire/,
+| so we reroute the Livewire update endpoint to /app/livewire-update.
+*/
+Livewire::setUpdateRoute(function ($handle) {
+    return Route::post('/app/livewire-update', $handle)
+        ->middleware('web');
+});
 
 /*
 |--------------------------------------------------------------------------
