@@ -13,7 +13,19 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // If a stale route cache (built before the /app/livewire-update route
+        // existed) is present, delete it so Laravel falls back to loading the
+        // route files for this request. This must happen in register() —
+        // before RouteServiceProvider boots and latches onto the cache file.
+        $cachedRoutesPath = $this->app->getCachedRoutesPath();
+
+        if (is_file($cachedRoutesPath)) {
+            $cachedRoutes = @file_get_contents($cachedRoutesPath);
+
+            if ($cachedRoutes !== false && ! str_contains($cachedRoutes, 'app/livewire-update')) {
+                @unlink($cachedRoutesPath);
+            }
+        }
     }
 
     /**
